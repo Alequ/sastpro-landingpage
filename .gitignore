@@ -25,3 +25,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+claude.md
+electrical-components-analysis.md
+.claude/settings.local.json
+.claude/photo/WhatsApp Image 2025-10-23 at 17.54.42.jpeg

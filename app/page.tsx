@@ -1,45 +1,38 @@
-import { HeroSection } from "@/components/hero-section"
-import { ProblemStatement } from "@/components/problem-statement"
-import { KeyFeatures } from "@/components/key-features"
-import { HowItWorks } from "@/components/how-it-works"
-import { UseCases } from "@/components/use-cases"
-import { SocialProof } from "@/components/social-proof"
-import { StatsMetrics } from "@/components/stats-metrics"
-import { FinalCTA } from "@/components/final-cta"
-import { Footer } from "@/components/footer"
-import { SectionGuideModal } from "@/components/section-guide-modal"
+import { Metadata } from "next";
+import HeroSection from "@/components/electrical/hero-section";
+import ServicesOverview from "@/components/electrical/services-overview";
+import IndustriesServed from "@/components/electrical/industries-served";
+import HowWeWork from "@/components/electrical/how-we-work";
+import WhyChooseUs from "@/components/electrical/why-choose-us";
+import ProjectPortfolio from "@/components/electrical/project-portfolio";
+import StatsMetrics from "@/components/electrical/stats-metrics";
+import TestimonialsSection from "@/components/electrical/testimonials-section";
+import FinalCTA from "@/components/electrical/final-cta";
+import Footer from "@/components/electrical/footer";
+import HeaderNavigation from "@/components/electrical/header-navigation";
+import BackToTop from "@/components/electrical/back-to-top";
 
-export default function LandingPage() {
+export const metadata: Metadata = {
+  title: "Electrical Engineering & Safety Services - Expert Solutions",
+  description: "Expert electrical engineering, maintenance, and safety services for onshore and offshore installations. Certified professionals delivering safe and compliant solutions.",
+  keywords: "electrical engineering, maintenance services, permit to work, safety procedures, offshore installations, onshore installations, COHE procedures, authorized energy engineers",
+};
+
+export default function HomePage() {
   return (
-    <main className="min-h-screen">
-      <SectionGuideModal />
-      <div data-section="hero">
-        <HeroSection />
-      </div>
-      <div data-section="problem">
-        <ProblemStatement />
-      </div>
-      <div data-section="features">
-        <KeyFeatures />
-      </div>
-      <div data-section="how-it-works">
-        <HowItWorks />
-      </div>
-      <div data-section="use-cases">
-        <UseCases />
-      </div>
-      <div data-section="social-proof">
-        <SocialProof />
-      </div>
-      <div data-section="stats">
-        <StatsMetrics />
-      </div>
-      <div data-section="final-cta">
-        <FinalCTA />
-      </div>
-      <div data-section="footer">
-        <Footer />
-      </div>
+    <main className="min-h-screen theme-electrical">
+      <HeaderNavigation />
+      <HeroSection />
+      <ServicesOverview />
+      <IndustriesServed />
+      <HowWeWork />
+      <WhyChooseUs />
+      <ProjectPortfolio />
+      <StatsMetrics />
+      <TestimonialsSection />
+      <FinalCTA />
+      <Footer />
+      <BackToTop />
     </main>
-  )
+  );
 }
