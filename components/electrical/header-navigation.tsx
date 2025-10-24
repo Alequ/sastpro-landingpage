@@ -47,7 +47,13 @@ export default function HeaderNavigation() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          
+          <Link href="/" className="flex items-center">
+            <img
+              src="/sast-logo.svg"
+              alt="SAST Logo"
+              className="h-8 sm:h-10 w-auto"
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
