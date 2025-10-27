@@ -35,20 +35,21 @@ export default function HeaderNavigation() {
     {
       label: "WHO WE ARE",
       dropdown: [
-        { label: "About Us", href: "#about" },
+        { label: "Who we are", href: "#about" },
         { label: "Our Team", href: "#team" },
-        { label: "Certifications", href: "#certifications" },
-        { label: "Company History", href: "#history" },
+        { label: "Latest News", href: "#certifications" },
+
       ],
     },
     {
       label: "OUR SERVICES",
       dropdown: [
-        { label: "Commissioning Services", href: "/commissioning" },
-        { label: "Authorised Energy Engineers", href: "#energy-engineers" },
-        { label: "Permit to Work Services", href: "#permit-to-work" },
-        { label: "Safety Rules & Procedures", href: "#safety-rules" },
-        { label: "COHE Procedures", href: "#cohe" },
+        { label: "Engineering and Design Solutions", href: "#" },
+        { label: "Authorised and Competent Personnel", href: "#energy-engineers" },
+        { label: "Safet, Compliance and Management Systems", href: "#permit-to-work" },
+        { label: "Digital Solutions - SASTPro", href: "#safety-rules" },
+        { label: "Training and Development - SastAcademy", href: "#cohe" },
+        { label: "Callout, Fault Response and Technical Support", href: "#cohe" },
       ],
     },
     {
@@ -62,10 +63,9 @@ export default function HeaderNavigation() {
     {
       label: "CONTACT US",
       dropdown: [
-        { label: "Get a Quote", href: "#quote" },
-        { label: "Contact Form", href: "#contact" },
-        { label: "Our Locations", href: "#locations" },
-        { label: "Emergency Services", href: "#emergency" },
+        { label: "General Enquiries", href: "#quote" },
+        { label: "Book A Consultation", href: "#contact" },
+        { label: "Office Locations", href: "#locations" },
       ],
     },
   ];
@@ -84,11 +84,10 @@ export default function HeaderNavigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "bg-black/95 backdrop-blur-md shadow-lg border-b border-neutral-800"
           : "bg-black/90 backdrop-blur-sm"
-      }`}
+        }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
@@ -183,9 +182,8 @@ export default function HeaderNavigation() {
                     >
                       {link.label}
                       <ChevronDown
-                        className={`w-4 h-4 transition-transform ${
-                          openMobileDropdown === link.label ? "rotate-180" : ""
-                        }`}
+                        className={`w-4 h-4 transition-transform ${openMobileDropdown === link.label ? "rotate-180" : ""
+                          }`}
                       />
                     </button>
                     {openMobileDropdown === link.label && (
