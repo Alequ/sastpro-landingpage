@@ -44,9 +44,6 @@ export default function HeaderNavigation() {
     {
       label: "OUR SERVICES",
       dropdown: [
-        { label: "Electrical Engineering", href: "#electrical-engineering" },
-        { label: "Maintenance Services", href: "/maintenance" },
-        { label: "Construction Services", href: "/constructions" },
         { label: "Commissioning Services", href: "/commissioning" },
         { label: "Authorised Energy Engineers", href: "#energy-engineers" },
         { label: "Permit to Work Services", href: "#permit-to-work" },
@@ -57,10 +54,9 @@ export default function HeaderNavigation() {
     {
       label: "SECTORS",
       dropdown: [
-        { label: "Oil & Gas", href: "#oil-gas" },
-        { label: "Industrial Facilities", href: "#industrial" },
-        { label: "Property Development", href: "#property" },
-        { label: "Infrastructure & Utilities", href: "#infrastructure" },
+        { label: "Commissioning", href: "/commissioning" },
+        { label: "Maintenance", href: "/maintenance" },
+        { label: "Construction", href: "/constructions" },
       ],
     },
     {
