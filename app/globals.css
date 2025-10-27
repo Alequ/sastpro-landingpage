@@ -222,3 +222,13 @@
 .section-subtitle {
   @apply text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto;
 }
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
