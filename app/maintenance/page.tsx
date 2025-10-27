@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import HeaderNavigation from "@/components/home/header-navigation";
 
 export const metadata: Metadata = {
   title: "Maintenance Services - Expert Solutions",
@@ -8,11 +9,14 @@ export const metadata: Metadata = {
 
 export default function MaintenancePage() {
   return (
-    <main className="min-h-screen">
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold">Maintenance Services</h1>
-        <p className="mt-4 text-lg">Welcome to our maintenance page.</p>
-      </div>
-    </main>
+    <>
+      <HeaderNavigation />
+      <main className="min-h-screen pt-20">
+        <div className="container mx-auto px-4 py-16">
+          <h1 className="text-4xl font-bold">Maintenance Services</h1>
+          <p className="mt-4 text-lg">Welcome to our maintenance page.</p>
+        </div>
+      </main>
+    </>
   );
 }

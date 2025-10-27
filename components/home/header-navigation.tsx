@@ -45,7 +45,9 @@ export default function HeaderNavigation() {
       label: "OUR SERVICES",
       dropdown: [
         { label: "Electrical Engineering", href: "#electrical-engineering" },
-        { label: "Maintenance Services", href: "#maintenance" },
+        { label: "Maintenance Services", href: "/maintenance" },
+        { label: "Construction Services", href: "/constructions" },
+        { label: "Commissioning Services", href: "/commissioning" },
         { label: "Authorised Energy Engineers", href: "#energy-engineers" },
         { label: "Permit to Work Services", href: "#permit-to-work" },
         { label: "Safety Rules & Procedures", href: "#safety-rules" },
@@ -120,16 +122,18 @@ export default function HeaderNavigation() {
 
                   {/* Dropdown Menu */}
                   {openDropdown === link.label && (
-                    <div className="absolute top-full left-0 mt-2 w-56 bg-black border border-neutral-800 rounded-md shadow-lg py-2 z-50">
-                      {link.dropdown.map((item) => (
-                        <Link
-                          key={item.label}
-                          href={item.href}
-                          className="block px-4 py-2 text-sm text-white hover:bg-neutral-900 hover:text-yellow-500 transition-colors"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
+                    <div className="absolute top-full left-0 pt-1 w-56 z-50">
+                      <div className="bg-black border border-neutral-800 rounded-md shadow-lg py-2">
+                        {link.dropdown.map((item) => (
+                          <Link
+                            key={item.label}
+                            href={item.href}
+                            className="block px-4 py-2 text-sm text-white hover:bg-neutral-900 hover:text-yellow-500 transition-colors"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
