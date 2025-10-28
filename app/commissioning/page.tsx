@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import HeaderNavigation from "@/components/home/header-navigation";
+import HeaderNavigation from "@/components/shared/header-navigation";
 
 export const metadata: Metadata = {
   title: "Commissioning Services - Expert Solutions",

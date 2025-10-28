@@ -2,47 +2,45 @@
 
 import Image from "next/image";
 
-export default function Section2() {
+export default function Section4() {
   const cards = [
     {
-      title: "Electrical & Mechanical Design",
-      image: "/our-services/EMDESIGN.png",
+      title: "Commissioning & Testing Services",
+      image: "/our-services/commissioning.png",
       items: [
-        "HV/LV network and load studies",
-        "Cable sizing, fault level, and discrimination analysis",
-        "Earthing, bonding, and lightning protection design",
-        "Mechanical layouts for HVAC, piping, and pumping systems",
-        "3D model coordination and spatial planning",
-        "Control and instrumentation design (BMS, PLC, SCADA)",
-        "As-built and red-line documentation",
+        "Pre-commissioning inspections and system readiness checks",
+        "Factory Acceptance Testing (FAT) and Site Acceptance Testing (SAT)",
+        "Performance verification and functional testing",
+        "Integrated system testing and coordination",
+        "Defect management and punch list resolution",
+        "Commissioning documentation and handover packages",
+        "Post-commissioning support and optimization",
       ],
     },
     {
-      title: "Technical & Engineering Studies",
-      image: "/our-services/TESTUDIES.png",
+      title: "Training & Competency Development",
+      image: "/our-services/training.png",
       items: [
-
- 
-        "Protection coordination and grading studies",
-        "Power quality and harmonic analysis",
-        "Short-circuit, arc flash, and transient stability studies",
-        "Energy efficiency and optimisation assessments",
-        "Equipment selection and specification support",
-        "Design verification and peer review",
-        "QA/QC checks and compliance validation",
+        "Electrical safety training and certification",
+        "Authorized Person (AP) and Competent Person (CP) training",
+        "Permit to Work system training and workshops",
+        "Equipment-specific operation and maintenance training",
+        "COHE and safety rules implementation training",
+        "Refresher courses and competency assessments",
+        "Customized training programs for client requirements",
       ],
     },
     {
-      title: "Project Support & Documentation",
-      image: "/our-services/psdocumentation.png",
+      title: "Compliance & Safety Audits",
+      image: "/our-services/compliance.png",
       items: [
-        "Engineering packages and work packs",
-        "Interface and design coordination with clients and vendors",
-        "Technical drawing and data managementr",
-        "Review of installation methodologies and constructability",
-        "Change control and design updates",
-        "O&M manuals and commissioning documentation",
-        "Engineering governance and revision control",
+        "Regulatory compliance assessments and gap analysis",
+        "Electrical installation condition reports (EICR)",
+        "Safety system audits and verification",
+        "Document control and record management reviews",
+        "Third-party inspection coordination",
+        "Non-conformance tracking and corrective actions",
+        "Continuous improvement and lessons learned programs",
       ],
     },
   ];
@@ -67,7 +65,7 @@ export default function Section2() {
                 />
 
                 {/* Dark Overlay */}
-              
+
 
                 {/* Content on Top of Background */}
                 <div className="relative z-10 h-full flex flex-col p-6 sm:p-8">
@@ -79,7 +77,7 @@ export default function Section2() {
                     >
                       {card.title}
                     </h3>
-                  
+
                   </div>
 
                   {/* List Items */}
