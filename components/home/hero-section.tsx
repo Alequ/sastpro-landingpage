@@ -36,13 +36,13 @@ export default function HeroSection() {
       <div className="relative z-10 section-container text-center text-white">
         <div className="max-w-5xl mx-auto space-y-8">
           {/* Headline */}
-            <h1 className="text-balance text-4xl font-bold tracking-[0.15em] sm:text-6xl lg:text-7xl leading-[0.85]">
+            <h1 className="text-balance text-4xl font-bold tracking-[0.15em] sm:text-6xl lg:text-7xl leading-[0.85] font-[family-name:var(--font-montserrat)]">
             <span className="text-white">ELECTRICAL</span>{" "}<br />
-            <span className="text-[#D4AF37]">MECHANICAL</span>{" "}<br />
-            <span className="text-white">TURNKEY</span>
+            <span className="text-[#D0B970]">MECHANICAL</span>{" "}<br />
+            <span className="text-[#9f9b9b]">TURNKEY</span>
             <br />
             <span className="text-white">ENGINEERING</span>{" "}<br />
-            <span className="text-[#D4AF37]">SOLUTIONS</span>
+            <span className="text-[#D0B970]">SOLUTIONS</span>
           </h1>
 
           {/* Subheadline */}
@@ -54,7 +54,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Button
               size="lg"
-              className="bg-[#D4AF37] hover:bg-[#C49F2F] text-white px-8 py-6 text-lg glow-pulse"
+              className="bg-[#D0B970] hover:bg-[#BBA860] text-white px-8 py-6 text-lg glow-pulse rounded-full"
               onClick={handleScrollToContact}
             >
               Book Consultation
@@ -62,7 +62,7 @@ export default function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
+              className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg rounded-full"
               onClick={handleScrollToContact}
             >
               Contact Us

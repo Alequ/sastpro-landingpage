@@ -7,8 +7,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-montserrat",
-  display: 'swap',
+  variable: '--font-montserrat'
 });
 
 export const metadata: Metadata = {

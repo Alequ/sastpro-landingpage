@@ -7,39 +7,36 @@ import Image from "next/image";
 
 const footerLinks = {
   company: {
-    title: "Company",
+    title: "Can we help you?",
     links: [
-      { label: "About Us", href: "/about" },
-      { label: "Our Team", href: "/team" },
-      { label: "Careers", href: "/careers" },
-      { label: "News & Updates", href: "/news" }
+      { label: "General enquiries", href: "/about" },
+      { label: "Book a consultation", href: "/team" },
+      { label: "Contact Us", href: "/careers" },
+  
     ]
   },
   services: {
-    title: "Services",
+    title: "More about S.A.S Transition",
     links: [
-      { label: "Electrical Engineering", href: "/services/electrical" },
-      { label: "Maintenance", href: "/services/maintenance" },
-      { label: "Safety Services", href: "/services/safety" },
-      { label: "Emergency Response", href: "/services/emergency" }
+      { label: "About Us", href: "/services/electrical" },
+      { label: "Careers", href: "/services/maintenance" },
+      { label: "News and Publications", href: "/services/safety" },
+      { label: "Business customers", href: "/services/emergency" }
     ]
   },
   resources: {
-    title: "Resources",
+    title: "S.A.S.T Tools",
     links: [
-      { label: "Case Studies", href: "/case-studies" },
-      { label: "Downloads", href: "/downloads" },
-      { label: "Safety Guidelines", href: "/safety" },
-      { label: "FAQs", href: "/faq" }
+      { label: "SASTpro", href: "/case-studies" },
+      { label: "SastAcademy", href: "/downloads" },
+  
     ]
   },
   contact: {
-    title: "Contact",
+    title: "Connect with us",
     links: [
-      { label: "Contact Form", href: "#contact" },
-      { label: "Request Quote", href: "#contact" },
-      { label: "Locations", href: "/locations" },
-      { label: "Emergency Hotline", href: "tel:+447890123456" }
+      { label: "LinkedIN", href: "#contact" },
+
     ]
   }
 };
@@ -60,7 +57,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-gray-950 text-white">
+    <footer style={{ backgroundColor: '#0d1111' }} className="text-white">
       <div className="section-container">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">

@@ -2,15 +2,11 @@ import { Metadata } from "next";
 import HeroSection from "@/components/home/hero-section"
 import ServicesOverview from "@/components/home/services-overview";
 import IndustriesServed from "@/components/home/industries-served";
-import HowWeWork from "@/components/home/how-we-work";
-import WhyChooseUs from "@/components/home/why-choose-us";
-import ProjectPortfolio from "@/components/home/project-portfolio";
-import StatsMetrics from "@/components/home/stats-metrics";
-import TestimonialsSection from "@/components/home/testimonials-section";
-import FinalCTA from "@/components/home/final-cta";
-import Footer from "@/components/home/footer";
-import HeaderNavigation from "@/components/home/header-navigation";
+import HowWeWork from "@/components/home/trackRecord";
+import Footer from "@/components/shared/footer";
+import HeaderNavigation from "@/components/shared/header-navigation";
 import BackToTop from "@/components/home/back-to-top";
+import LatestNews from "@/components/home/LatestNews";
 
 export const metadata: Metadata = {
   title: "Electrical Engineering & Safety Services - Expert Solutions",
@@ -23,14 +19,18 @@ export default function HomePage() {
     <main className="min-h-screen theme-electrical">
       <HeaderNavigation />
       <HeroSection />
-      <ServicesOverview />
-      <IndustriesServed />
+      <div className="relative bg-[url('/home/Background2.png')] bg-cover bg-center bg-fixed">
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 "></div>
+
+        {/* Content wrapper */}
+        <div className="relative z-10">
+          <ServicesOverview />
+          <IndustriesServed />
+          <LatestNews />
+        </div>
+      </div>
       <HowWeWork />
-      <WhyChooseUs />
-      <ProjectPortfolio />
-      <StatsMetrics />
-      <TestimonialsSection />
-      <FinalCTA />
       <Footer />
       <BackToTop />
     </main>
