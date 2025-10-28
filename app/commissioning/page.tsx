@@ -1,11 +1,9 @@
-import { Metadata } from "next";
-import HeaderNavigation from "@/components/shared/header-navigation";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Commissioning Services - Expert Solutions",
-  description: "Professional commissioning services for electrical systems, installations, and infrastructure. Ensuring quality and compliance.",
-  keywords: "commissioning services, electrical commissioning, system testing, installation verification, quality assurance",
-};
+import { useState } from "react";
+import Image from "next/image";
+import HeaderNavigation from "@/components/shared/header-navigation";
+import Footer from "@/components/shared/footer";
 
 export default function CommissioningPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
