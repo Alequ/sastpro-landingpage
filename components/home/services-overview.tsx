@@ -43,27 +43,8 @@ export default function ServicesOverview() {
   });
 
   return (
-    <section ref={targetRef} className="relative py-24 overflow-hidden">
-      {/* Background Image with Grain Effect */}
-      <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('/home/Background2.png')`,
-          }}
-        />
-        <div className="absolute inset-0" />
-        {/* Grain Effect Overlay */}
-        <div
-          className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-            backgroundRepeat: 'repeat'
-          }}
-        />
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+    <section ref={targetRef} className="relative  pt-16 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Grid */}
         <div
           className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 auto-rows-[280px] transition-all duration-1000 ${

@@ -19,35 +19,38 @@ const industries = [
   },
   {
     name: "Nuclear",
-    subtitle: "Nuclear Power Facilities",
-    description: "Comprehensive electrical engineering for nuclear power operations and safety systems.",
+    subtitle: "",
+    description: "Trusted engineering support for nuclear generation and decommissioning projects. We provide safe systems of work, authorised personnel, and digital asset control to ensure safety and compliance at every level.",
     image: "/home/Nuclearav.png",
     applications: [
-      "Nuclear power plants",
-      "Safety systems",
-      "Regulatory compliance"
+      "Authorised personnel",
+      "SSOW setup",
+      "COHE/LOTO",
+      "Testing & maintenance"
     ]
   },
   {
-    name: "Data Centers",
-    subtitle: "Hyper-scale & Enterprise",
-    description: "Full-service electrical solutions for modern data centers and energy complexes.",
+    name: "Renewables",
+    subtitle: "",
+    description: "Delivering electrical and mechanical expertise for wind, solar, and battery energy storage systems (BESS), including EV infrastructure. We help clients design, connect, and maintain assets that power a cleaner future.",
     image: "/home/DataCentresav.png",
     applications: [
-      "Data Centers",
-      "Energy complexes",
-      "Critical infrastructure"
+      "Grid connection",
+      "HV substations",
+      "BESS integration",
+      "Renewable maintenance"
     ]
   },
   {
-    name: "Grid & Infrastructure",
-    subtitle: "Power & Transportation",
-    description: "Critical infrastructure electrical services for power generation and transportation systems.",
+    name: "Data Center",
+    subtitle: "",
+    description: "Turnkey electrical and mechanical solutions for hyperscale and enterprise data centres. From design and installation to commissioning and maintenance, we ensure uptime, efficiency, and safety at every stage.",
     image: "/home/GridAndInfastructure.png",
     applications: [
-      "Power generation facilities",
-      "Grid infrastructure",
-      "Transportation hubs"
+      "HV installations",
+      "Cooling & containment",
+      "IST & maintenance",
+      "SASTpro integration"
     ]
   }
 ];
@@ -61,9 +64,9 @@ export default function IndustriesServed() {
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
-      // Get card width dynamically for responsive scrolling (no gap between cards)
-      const cardWidth = scrollContainerRef.current.querySelector('div')?.offsetWidth || 304;
-      const scrollAmount = cardWidth;
+      // Get card width dynamically for responsive scrolling
+      const cardWidth = scrollContainerRef.current.querySelector('div')?.offsetWidth || 280;
+      const scrollAmount = cardWidth * 1; // Scroll by 1 card at a time
       const newScrollPosition = scrollContainerRef.current.scrollLeft + (direction === 'right' ? scrollAmount : -scrollAmount);
       scrollContainerRef.current.scrollTo({
         left: newScrollPosition,
@@ -73,55 +76,32 @@ export default function IndustriesServed() {
   };
 
   return (
-    <section ref={targetRef} className="relative py-24 overflow-hidden bg-gradient-to-b from-secondary/20 to-background">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl" />
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Header */}
-        <div className="mx-auto max-w-2xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#D4AF37]/10 px-4 py-1.5 text-sm font-medium text-[#D4AF37] dark:text-[#E5C158] mb-6">
-            <Target className="h-4 w-4" />
-            <span>Industries We Serve</span>
-          </div>
-
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Trusted by{" "}
-            <span className="bg-gradient-to-r from-[#D4AF37] via-[#E5C158] to-[#C9A961] bg-clip-text text-transparent">
-              Leading Industries
-            </span>
-          </h2>
-          <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground max-w-xl mx-auto">
-            Delivering specialized electrical and safety solutions across diverse sectors with proven expertise and reliability.
-          </p>
-        </div>
-
-        {/* Carousel Container */}
-        <div className="relative mt-16">
-          {/* Left Navigation Arrow */}
+    <section ref={targetRef} className="relative overflow-hidden py-16">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Carousel Container with Navigation */}
+        <div className="relative">
+          {/* Left Navigation Arrow - positioned outside scroll area */}
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-[#D4AF37]/90 hover:bg-[#D4AF37] text-white rounded-full p-3 shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm"
+            className="hidden md:flex absolute -left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-20 bg-[#D4AF37]/90 hover:bg-[#D4AF37] text-white rounded-full p-3 shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm items-center justify-center"
             aria-label="Scroll left"
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
 
-          {/* Right Navigation Arrow */}
+          {/* Right Navigation Arrow - positioned outside scroll area */}
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-[#D4AF37]/90 hover:bg-[#D4AF37] text-white rounded-full p-3 shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm"
+            className="hidden md:flex absolute -right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-20 bg-[#D4AF37]/90 hover:bg-[#D4AF37] text-white rounded-full p-3 shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm items-center justify-center"
             aria-label="Scroll right"
           >
             <ChevronRight className="h-6 w-6" />
           </button>
 
-          {/* Industries Carousel */}
+          {/* Industries Carousel - responsive card display */}
           <div
             ref={scrollContainerRef}
-            className="flex overflow-x-auto scrollbar-hide scroll-smooth px-8 py-4"
+            className="flex overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {industries.map((industry, index) => (
@@ -157,15 +137,13 @@ function IndustryCard({ industry, index, isVisible, hoveredIndex, setHoveredInde
     <div
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
-      className={`group relative overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl flex-shrink-0
-        h-[550px] sm:h-[600px] lg:h-[650px]
+      className={`group relative overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl flex-shrink-0 snap-start
+        h-[550px]
+        w-full sm:w-1/2 md:w-1/3 lg:w-1/4
         ${isVisible ? `animate-in fade-in slide-in-from-bottom-6 duration-700` : 'opacity-0'
       }`}
       style={{
         animationDelay: `${index * 150}ms`,
-        width: 'calc((100vw - 64px) / 4)', // 4 cards visible, accounting for px-8 padding (32px each side)
-        maxWidth: '304px', // (1280px max-w-7xl - 64px padding) / 4
-        minWidth: '280px',
       }}
     >
       {/* Background Image */}
@@ -224,7 +202,7 @@ function IndustryCard({ industry, index, isVisible, hoveredIndex, setHoveredInde
         </div>
 
         {/* Contact us button */}
-        <button className="mt-6 w-full bg-[#D4AF37] hover:bg-[#E5C158] text-black font-semibold py-3 px-6 transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg hover:shadow-xl hover:shadow-[#D4AF37]/30">
+        <button className="mt-6 w-full rounded-full border-2 border-[#D4AF37] bg-transparent hover:bg-[#D4AF37] text-white hover:text-black font-semibold py-3 px-6 transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg hover:shadow-xl hover:shadow-[#D4AF37]/30">
           <span>Contact us</span>
           <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
         </button>
