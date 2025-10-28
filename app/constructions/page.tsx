@@ -1,16 +1,30 @@
 "use client";
 
-import { Metadata } from "next";
-import HeaderNavigation from "@/components/home/header-navigation";
+import HeaderNavigation from "@/components/shared/header-navigation";
+import Footer from "@/components/shared/footer";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function ConstructionsPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = 3;
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
   return (
     <>
       <HeaderNavigation />
-      <main className="min-h-screen" style={{ backgroundColor: "#c4c4c4" }}>
+      <main
+        className="min-h-screen px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32"
+        style={{ backgroundColor: "#c4c4c4" }}
+      >
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -94,7 +108,7 @@ export default function ConstructionsPage() {
 
         {/* Construction Content Section */}
         <section className="pt-0 mb-15">
-          <div className="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+          <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               {/* Decorative Border Element */}
               <div className="flex justify-center w-full mb-15">
@@ -109,8 +123,8 @@ export default function ConstructionsPage() {
               </div>
 
               {/* White Card Container */}
-              <div className="bg-white rounded-lg shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
+              <div className="bg-white shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
+                <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
                   {/* Left Column - Content */}
                   <div className="space-y-6 sm:space-y-8">
                     {/* Title with underline */}
@@ -169,12 +183,12 @@ export default function ConstructionsPage() {
 
                   {/* Right Column - Image */}
                   <div className="relative order-first lg:order-last">
-                    <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden shadow-xl">
+                    <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
                       <Image
-                        src="/constructions/ConstructionBackgroundImage.png"
+                        src="/constructions/ConstructionImage1.png"
                         alt="Construction site with workers and cranes"
                         fill
-                        className="object-cover"
+                        className="object-contain"
                       />
                     </div>
                   </div>
@@ -186,59 +200,52 @@ export default function ConstructionsPage() {
 
         {/* CTA Section */}
         <section className="mb-15">
-          <div className="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+          <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               {/* White Card Container */}
-              <div className="bg-white rounded-lg shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
+              <div className="bg-white shadow-xl border-b-4 border-[#D0B970] overflow-hidden">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
                   {/* Left Column - CTA Content */}
-                  <div className="space-y-8">
-                    <h2
-                      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      READY TO START YOUR NEXT CONSTRUCTION PROJECT
-                    </h2>
+                  <div className="p-8 sm:p-10 md:p-12 lg:p-16 flex flex-col justify-center">
+                    <div className="space-y-8">
+                      <h2
+                        className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 leading-tight"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        READY TO START YOUR NEXT CONSTRUCTION <br />
+                        PROJECT
+                      </h2>
 
-                    {/* Contact Button */}
-                    <div className="flex items-center">
-                      <button className="group flex items-center gap-3 text-black font-bold text-lg sm:text-xl hover:text-[#D0B970] transition-colors duration-300">
-                        <span style={{ fontFamily: "var(--font-montserrat)" }}>
-                          CONTACT US
-                        </span>
-                        <svg
-                          className="w-6 h-6 text-[#D0B970] group-hover:translate-x-1 transition-transform duration-300"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
-                      </button>
+                      {/* Contact Button */}
+                      <div className="flex items-center">
+                        <button className="group flex items-center gap-3 text-black font-bold text-lg sm:text-xl hover:text-[#D0B970] transition-colors duration-300">
+                          <span
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            CONTACT US
+                          </span>
+                          <div className="relative w-6 h-6 group-hover:translate-x-1 transition-transform duration-300">
+                            <Image
+                              src="/constructions/ButtonGoldav.png"
+                              alt="Arrow"
+                              fill
+                              className="object-contain"
+                            />
+                          </div>
+                        </button>
+                      </div>
                     </div>
                   </div>
 
                   {/* Right Column - Image */}
-                  <div className="relative order-first lg:order-last">
-                    <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[400px] rounded-lg overflow-hidden shadow-xl">
-                      <Image
-                        src="/constructions/ConstructionBackgroundImage.png"
-                        alt="Modern construction buildings with cranes"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
+                  <div className="relative h-[300px] lg:h-auto min-h-[400px]">
+                    <Image
+                      src="/constructions/ConstructionContactimage2.png"
+                      alt="Modern construction buildings with cranes"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
-                </div>
-
-                {/* Golden Bottom Border */}
-                <div className="mt-16 lg:mt-24">
-                  <div className="w-full h-1 bg-[#D0B970]"></div>
                 </div>
               </div>
             </div>
@@ -247,24 +254,23 @@ export default function ConstructionsPage() {
 
         {/* Areas of Expertise & Global Experience Section */}
         <section className="mb-15">
-          <div className="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+          <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Left Card - Areas of expertise */}
-                <div className="bg-black/70 rounded-lg overflow-hidden shadow-xl relative group cursor-pointer">
+                <div className="overflow-hidden shadow-xl relative group cursor-pointer">
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/constructions/ConstructionBackgroundImage.png"
+                      src="/constructions/ConstructionAreasOfExpertise.png"
                       alt="Construction workers with plans"
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/60"></div>
                   </div>
 
                   {/* Content */}
-                  <div className="relative z-10 p-8 sm:p-10 md:p-12 h-full flex flex-col justify-center min-h-[300px] sm:min-h-[400px]">
+                  <div className="relative z-10 p-8 sm:p-10 md:p-12 h-full flex flex-col justify-start min-h-[300px] sm:min-h-[400px]">
                     <div className="flex items-center justify-between">
                       <h3
                         className="text-white text-2xl sm:text-3xl md:text-4xl font-bold"
@@ -272,34 +278,28 @@ export default function ConstructionsPage() {
                       >
                         Areas of expertise
                       </h3>
-                      <svg
-                        className="w-8 h-8 sm:w-10 sm:h-10 text-[#D0B970] group-hover:translate-x-1 transition-transform duration-300"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
+                      <div className="relative w-8 h-8 sm:w-9 sm:h-9 group-hover:translate-x-1 transition-transform duration-300">
+                        <Image
+                          src="/constructions/ButtonGoldav.png"
+                          alt="Arrow"
+                          fill
+                          className="object-contain"
                         />
-                      </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Right Card - Global experience */}
-                <div className="bg-black/70 rounded-lg overflow-hidden shadow-xl relative">
+                <div className="overflow-hidden shadow-xl relative">
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/constructions/ConstructionBackgroundImage.png"
+                      src="/constructions/ConstructionGlobalExperience.png"
                       alt="Global construction site"
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/60"></div>
                   </div>
 
                   {/* Content */}
@@ -314,7 +314,7 @@ export default function ConstructionsPage() {
 
                       <div className="space-y-4">
                         <p
-                          className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed"
+                          className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed italic font-semibold"
                           style={{ fontFamily: "var(--font-montserrat)" }}
                         >
                           With a proven track record across Europe and
@@ -324,7 +324,7 @@ export default function ConstructionsPage() {
                         </p>
 
                         <p
-                          className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed"
+                          className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed italic font-semibold"
                           style={{ fontFamily: "var(--font-montserrat)" }}
                         >
                           Our reputation is built on safety, discipline, and the
@@ -341,222 +341,558 @@ export default function ConstructionsPage() {
         </section>
 
         {/* Project Examples Section */}
-        <section>
-          <div className="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <section className="pb-16 sm:pb-20 md:pb-24 lg:pb-32">
+          <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               <div className="relative">
                 {/* Navigation Arrows - Outside the cards */}
-                <button className="absolute -left-16 top-1/2 -translate-y-1/2 z-10 p-3 hover:bg-black/10 rounded-full transition-colors duration-300">
-                  <svg
-                    className="w-8 h-8 text-gray-700"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 19l-7-7 7-7"
+                <button
+                  onClick={prevSlide}
+                  className="absolute -left-16 top-1/2 -translate-y-1/2 z-10 hover:opacity-80 transition-opacity duration-300"
+                >
+                  <div className="relative w-8 h-8 sm:w-9 sm:h-9 rotate-180">
+                    <Image
+                      src="/constructions/ButtonBlack.png"
+                      alt="Previous"
+                      fill
+                      className="object-contain"
                     />
-                  </svg>
+                  </div>
                 </button>
 
-                <button className="absolute -right-16 top-1/2 -translate-y-1/2 z-10 p-3 hover:bg-black/10 rounded-full transition-colors duration-300">
-                  <svg
-                    className="w-8 h-8 text-gray-700"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
+                <button
+                  onClick={nextSlide}
+                  className="absolute -right-16 top-1/2 -translate-y-1/2 z-10 hover:opacity-80 transition-opacity duration-300"
+                >
+                  <div className="relative w-8 h-8 sm:w-9 sm:h-9">
+                    <Image
+                      src="/constructions/ButtonBlack.png"
+                      alt="Next"
+                      fill
+                      className="object-contain"
                     />
-                  </svg>
+                  </div>
                 </button>
 
-                {/* Project Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                  {/* Project Example 1 */}
-                  <div className="bg-white rounded-lg shadow-xl p-6 sm:p-8">
-                    <div className="space-y-6">
-                      <div>
-                        <h3
-                          className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Project
-                        </h3>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Example 1
-                        </p>
+                {/* Project Cards Carousel */}
+                <div className="overflow-hidden">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                  >
+                    {/* Slide 1 */}
+                    <div className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                      {/* Project Example 1 */}
+                      <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
+                        <div className="space-y-6 flex-1">
+                          <div>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 1
+                            </p>
+                          </div>
+
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
+                          </div>
+
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Netherlands
+                            </p>
+                          </div>
+
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat. Ut wisi
+                            enim ad minim veniam, quis nostrud exerci tation
+                          </p>
+                        </div>
                       </div>
 
-                      <div>
-                        <h4
-                          className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Client
-                        </h4>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Confidential
-                        </p>
+                      {/* Project Example 2 */}
+                      <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
+                        <div className="space-y-6 flex-1">
+                          <div>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 2
+                            </p>
+                          </div>
+
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
+                          </div>
+
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Belgium
+                            </p>
+                          </div>
+
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat. Ut wisi
+                            enim ad minim veniam, quis nostrud exerci tation
+                          </p>
+                        </div>
                       </div>
 
-                      <div>
-                        <h4
-                          className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Location
-                        </h4>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base mb-4"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Netherlands
-                        </p>
-                      </div>
+                      {/* Project Example 3 */}
+                      <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
+                        <div className="space-y-6 flex-1">
+                          <div>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 3
+                            </p>
+                          </div>
 
-                      <p
-                        className="text-gray-700 text-sm sm:text-base leading-relaxed"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet
-                        dolore magna aliquam erat volutpat. Ut wisi enim ad
-                        minim veniam, quis nostrud exerci tation
-                      </p>
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
+                          </div>
+
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              London
+                            </p>
+                          </div>
+
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat. Ut wisi
+                            enim ad minim veniam, quis nostrud exerci tation
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Project Example 2 */}
-                  <div className="bg-white rounded-lg shadow-xl p-6 sm:p-8">
-                    <div className="space-y-6">
-                      <div>
-                        <h3
-                          className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Project
-                        </h3>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Example 2
-                        </p>
+                    {/* Slide 2 - Duplicate of Slide 1 for demo */}
+                    <div className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                      <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
+                        <div className="space-y-6 flex-1">
+                          <div>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 4
+                            </p>
+                          </div>
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
+                          </div>
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Germany
+                            </p>
+                          </div>
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat.
+                          </p>
+                        </div>
                       </div>
-
-                      <div>
-                        <h4
-                          className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Client
-                        </h4>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Confidential
-                        </p>
+                      <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
+                        <div className="space-y-6 flex-1">
+                          <div>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 5
+                            </p>
+                          </div>
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
+                          </div>
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              France
+                            </p>
+                          </div>
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat.
+                          </p>
+                        </div>
                       </div>
-
-                      <div>
-                        <h4
-                          className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Location
-                        </h4>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base mb-4"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Belgium
-                        </p>
+                      <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
+                        <div className="space-y-6 flex-1">
+                          <div>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 6
+                            </p>
+                          </div>
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
+                          </div>
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Spain
+                            </p>
+                          </div>
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat.
+                          </p>
+                        </div>
                       </div>
-
-                      <p
-                        className="text-gray-700 text-sm sm:text-base leading-relaxed"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet
-                        dolore magna aliquam erat volutpat. Ut wisi enim ad
-                        minim veniam, quis nostrud exerci tation
-                      </p>
                     </div>
-                  </div>
 
-                  {/* Project Example 3 */}
-                  <div className="bg-white rounded-lg shadow-xl p-6 sm:p-8">
-                    <div className="space-y-6">
-                      <div>
-                        <h3
-                          className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Project
-                        </h3>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Example 3
-                        </p>
+                    {/* Slide 3 */}
+                    <div className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                      <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
+                        <div className="space-y-6 flex-1">
+                          <div>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 7
+                            </p>
+                          </div>
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
+                          </div>
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Italy
+                            </p>
+                          </div>
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat.
+                          </p>
+                        </div>
                       </div>
-
-                      <div>
-                        <h4
-                          className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Client
-                        </h4>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Confidential
-                        </p>
+                      <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
+                        <div className="space-y-6 flex-1">
+                          <div>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 8
+                            </p>
+                          </div>
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
+                          </div>
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Ireland
+                            </p>
+                          </div>
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat.
+                          </p>
+                        </div>
                       </div>
-
-                      <div>
-                        <h4
-                          className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Location
-                        </h4>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base mb-4"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          London
-                        </p>
+                      <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
+                        <div className="space-y-6 flex-1">
+                          <div>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 9
+                            </p>
+                          </div>
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
+                          </div>
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Portugal
+                            </p>
+                          </div>
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat.
+                          </p>
+                        </div>
                       </div>
-
-                      <p
-                        className="text-gray-700 text-sm sm:text-base leading-relaxed"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet
-                        dolore magna aliquam erat volutpat. Ut wisi enim ad
-                        minim veniam, quis nostrud exerci tation
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -565,6 +901,8 @@ export default function ConstructionsPage() {
           </div>
         </section>
       </main>
+      <div className="h-3 bg-[#D0B970]"></div>
+      <Footer />
     </>
   );
 }
