@@ -2,45 +2,45 @@
 
 import Image from "next/image";
 
-export default function Section4() {
+export default function Section6() {
   const cards = [
     {
-      title: "Electrical Authorised personnel",
-      image: "/our-services/eap.png",
+      title: "Safe Systems & Permit Management",
+      image: "/our-services/sspm.png",
       items: [
-        "HV & LV Authorised and Competent Persons",
-        "Switching, isolation, and energisation operations",
-        "Control of Hazardous Energy (COHE) and LOTO execution",
         "Safe System of Work (SSoW) implementation",
-        "Permit and isolation coordination",
-        "Test engineers and protection relay specialists",
-        "HV Safety Rules compliance and authorisation records",
+        "COHE and LOTO programs",
+        "Isolation coordination and lock management",
+        "Authorisation management systems",
+        "Digital permit tracking through SASTpro",
+        "Permit-to-Work systems (electrical, mechanical, confined space, hot work)",
+
       ],
     },
     {
-      title: "Mechanical & Technical Staff",
-      image: "/our-services/mts.png",
+      title: "Auditing, Governance & Compliance",
+      image: "/our-services/adgc.png",
       items: [
-        "Mechanical fitters, supervisors, and technicians",
-        "Pipework, pumps, and HVAC operations",
-        "Pressure system control and mechanical isolations",
-        "Cooling and plant room operations",
-        "Skilled commissioning engineers (electrical/mechanical)",
-        "QA/QC inspectors and field verification engineers",
-        "Condition monitoring and vibration specialists",
+        "Internal and third-party audits",
+        "QA/QC inspection programs",
+        "Compliance with EN, IEC, NFPA, and DNO standards",
+        "Risk assessments, HAZOP, and method statement reviews",
+        "Technical governance and reporting frameworks",
+        "Non-conformance tracking and corrective actions",
+  
       ],
     },
     {
-      title: "Site Leadership & Support",
-      image: "/our-services/sls.png",
+      title: "Safety Leadership & Assurance",
+      image: "/our-services/Safety Leadership &�Assurance�.png",
       items: [
-        "Construction managers and supervisors",
-        "Commissioning and maintenance leads",
-        "Permit coordinators and control room staff",
-        "HSEQ managers and advisors",
-        "Project and interface coordinators",
-        "Client representatives and technical auditors",
-        "Site documentation and reporting personnel",
+        "Safety rule creation and revision",
+        "Toolbox talks and behavioural safety programs",
+        "Competency and authorisation tracking",
+        "HSEQ monitoring and performance metrics",
+        "Root cause and incident investigations",
+        "Continuous improvement and lessons learned programs",
+  
       ],
     },
   ];

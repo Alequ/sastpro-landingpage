@@ -2,45 +2,45 @@
 
 import Image from "next/image";
 
-export default function Section4() {
+export default function Section8() {
   const cards = [
     {
-      title: "Electrical Authorised personnel",
-      image: "/our-services/eap.png",
+      title: "Permit & Isolation Management",
+      image: "our-services/Permit & Isolation�Management�.png",
       items: [
-        "HV & LV Authorised and Competent Persons",
-        "Switching, isolation, and energisation operations",
-        "Control of Hazardous Energy (COHE) and LOTO execution",
-        "Safe System of Work (SSoW) implementation",
-        "Permit and isolation coordination",
-        "Test engineers and protection relay specialists",
-        "HV Safety Rules compliance and authorisation records",
+        "Isolation tagging and control of hazardous energy (COHE)",
+        "Lock-out / tag-out tracking and verification",
+        "Permit office operations",
+        "Digital SSoW workflows and authorisation control",
+        "Multi-user access and role-based permissions",
+        "Live digital permit system (electrical, mechanical,high-risk works)",
+
       ],
     },
     {
-      title: "Mechanical & Technical Staff",
-      image: "/our-services/mts.png",
+      title: "Asset & Document Management",
+      image: "our-services/Asset & Document�Management�.png",
       items: [
-        "Mechanical fitters, supervisors, and technicians",
-        "Pipework, pumps, and HVAC operations",
-        "Pressure system control and mechanical isolations",
-        "Cooling and plant room operations",
-        "Skilled commissioning engineers (electrical/mechanical)",
-        "QA/QC inspectors and field verification engineers",
-        "Condition monitoring and vibration specialists",
+        "Asset registers and equipment history tracking",
+        "Planned maintenance scheduling and logging",
+        "Work order and inspection workflows",
+        "Document management (RAMS, drawings, QA packs)",
+        "Live reporting dashboards and KPI metrics",
+        "QR and NFC tagging for field verification",
+
       ],
     },
     {
-      title: "Site Leadership & Support",
-      image: "/our-services/sls.png",
+      title: "Training, Competency & Analytics",
+      image: "/our-services/Training, Competency & Analytics.png",
       items: [
-        "Construction managers and supervisors",
-        "Commissioning and maintenance leads",
-        "Permit coordinators and control room staff",
-        "HSEQ managers and advisors",
-        "Project and interface coordinators",
-        "Client representatives and technical auditors",
-        "Site documentation and reporting personnel",
+        "Competency and authorisation records",
+        "Digital training matrix and certificate tracking",
+        "SASTacademy integration for learning verification",
+        "Audit trail of safety actions and performance",
+        "Live analytics for compliance and workforce metrics",
+        "Cloud-based and offline capability for field environments",
+
       ],
     },
   ];

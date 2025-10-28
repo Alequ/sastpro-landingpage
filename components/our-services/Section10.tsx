@@ -2,45 +2,45 @@
 
 import Image from "next/image";
 
-export default function Section4() {
+export default function Section10() {
   const cards = [
     {
-      title: "Electrical Authorised personnel",
-      image: "/our-services/eap.png",
+      title: "Electrical & Mechanical Training",
+      image: "/our-services/Electrical & Mechanical Training�.png",
       items: [
-        "HV & LV Authorised and Competent Persons",
-        "Switching, isolation, and energisation operations",
-        "Control of Hazardous Energy (COHE) and LOTO execution",
-        "Safe System of Work (SSoW) implementation",
-        "Permit and isolation coordination",
-        "Test engineers and protection relay specialists",
-        "HV Safety Rules compliance and authorisation records",
+        "HV/LV switching authorisation courses",
+        "COHE & LOTO practical training",
+        "Electrical safety awareness and risk management",
+        "Mechanical system operation and maintenance",
+        "Commissioning and energisation best practices",
+        "Arc flash and high-energy safety awareness",
+
       ],
     },
     {
-      title: "Mechanical & Technical Staff",
-      image: "/our-services/mts.png",
+      title: "Safety & Leadership Development",
+      image: "/our-services/Safety & Leadership�Development�.png",
       items: [
-        "Mechanical fitters, supervisors, and technicians",
-        "Pipework, pumps, and HVAC operations",
-        "Pressure system control and mechanical isolations",
-        "Cooling and plant room operations",
-        "Skilled commissioning engineers (electrical/mechanical)",
-        "QA/QC inspectors and field verification engineers",
-        "Condition monitoring and vibration specialists",
+        "Safe System of Work implementation",
+        "Permit office and control of work training",
+        "HSEQ leadership and behavioural safety",
+        "Incident prevention and human factors awareness",
+        "Team leadership and supervisor development programs",
+        "Digital safety and permit management workshops",
+
       ],
     },
     {
-      title: "Site Leadership & Support",
-      image: "/our-services/sls.png",
+      title: "Competency & Assessment",
+      image: "/our-services/Competency &�Assessment�.png",
       items: [
-        "Construction managers and supervisors",
-        "Commissioning and maintenance leads",
-        "Permit coordinators and control room staff",
-        "HSEQ managers and advisors",
-        "Project and interface coordinators",
-        "Client representatives and technical auditors",
-        "Site documentation and reporting personnel",
+        "Authorisation and competence verification",
+        "Ongoing refresher and re-certification training",
+        "Performance tracking through SASTpro",
+        "Client-specific course design and delivery",
+        "Blended learning (classroom, practical, digital)",
+        "Skills gap analysis and workforce development planning",
+
       ],
     },
   ];

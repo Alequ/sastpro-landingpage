@@ -107,7 +107,7 @@ function ServiceCard({ service, index, isVisible }: ServiceCardProps) {
       {/* Content */}
       <div className="relative h-full flex flex-col justify-between p-6">
         {/* Title */}
-        <h3 className="text-white text-2xl lg:text-3xl font-bold tracking-tight leading-tight max-w-[80%] transition-transform duration-500 group-hover:translate-x-1">
+        <h3 className="text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-tight max-w-[80%] transition-transform duration-500 group-hover:translate-x-1">
           {title}
         </h3>
 

@@ -2,45 +2,45 @@
 
 import Image from "next/image";
 
-export default function Section4() {
+export default function Section12() {
   const cards = [
     {
-      title: "Electrical Authorised personnel",
-      image: "/our-services/eap.png",
+      title: "Fault Response & Diagnostics",
+      image: "/our-services/Fault Response &�Diagnostics�.png",
       items: [
-        "HV & LV Authorised and Competent Persons",
-        "Switching, isolation, and energisation operations",
-        "Control of Hazardous Energy (COHE) and LOTO execution",
-        "Safe System of Work (SSoW) implementation",
-        "Permit and isolation coordination",
-        "Test engineers and protection relay specialists",
-        "HV Safety Rules compliance and authorisation records",
+        "24/7 emergency callout and remote technical support",
+        "HV/LV fault finding and diagnostics",
+        "Cable testing, VLF, and insulation checks",
+        "Relay and protection fault investigation",
+        "Mechanical breakdown analysis and response",
+        "Incident reporting and recovery documentation",
+
       ],
     },
     {
-      title: "Mechanical & Technical Staff",
-      image: "/our-services/mts.png",
+      title: "On-Site Technical Support",
+      image: "/our-services/On-Site Technical�Support�.png",
       items: [
-        "Mechanical fitters, supervisors, and technicians",
-        "Pipework, pumps, and HVAC operations",
-        "Pressure system control and mechanical isolations",
-        "Cooling and plant room operations",
-        "Skilled commissioning engineers (electrical/mechanical)",
-        "QA/QC inspectors and field verification engineers",
-        "Condition monitoring and vibration specialists",
+        "Short-term and project-based engineering support",
+        "Site supervision and permit coordination",
+        "HV/LV switching and isolation services",
+        "Temporary power setup and management",
+        "Mechanical operations and shutdown support",
+        "QA/QC inspections and equipment verification",
+
       ],
     },
     {
-      title: "Site Leadership & Support",
-      image: "/our-services/sls.png",
+      title: "Preventative & Advisory Services",
+      image: "/our-services/Preventative & Advisory Services�.png",
       items: [
-        "Construction managers and supervisors",
-        "Commissioning and maintenance leads",
-        "Permit coordinators and control room staff",
-        "HSEQ managers and advisors",
-        "Project and interface coordinators",
-        "Client representatives and technical auditors",
-        "Site documentation and reporting personnel",
+        "Root cause analysis and reliability improvement",
+        "Equipment health checks and condition monitoring",
+        "Electrical and mechanical system audits",
+        "Operational risk reviews and energy optimisation",
+        "Documentation updates and procedural reviews",
+        "Client-side advisory for commissioning or shutdown events",
+
       ],
     },
   ];

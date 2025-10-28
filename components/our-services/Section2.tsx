@@ -56,7 +56,7 @@ export default function Section2() {
             {cards.map((card, index) => (
               <div
                 key={index}
-                className="relative rounded-lg shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300 aspect-square"
+                className="relative rounded-lg shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300 min-h-[500px] md:min-h-[600px] lg:min-h-[400px]"
               >
                 {/* Background Image - Full Card */}
                 <Image
@@ -91,7 +91,7 @@ export default function Section2() {
                       >
                         <span className="flex-shrink-0 w-2 h-2 bg-[#D0B970] rounded-full mt-2"></span>
                         <span
-                          className="text-xs leading-relaxed"
+                          className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed"
                           style={{ fontFamily: "var(--font-montserrat)" }}
                         >
                           {item}
