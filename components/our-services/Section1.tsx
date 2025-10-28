@@ -24,7 +24,7 @@ export default function Section1() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
               {/* Left Column - Image */}
               <div className="relative">
-                <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden shadow-xl">
+                <div className="relative h-[300px]  rounded-lg overflow-hidden shadow-xl">
                   <Image
                     src="/our-services/ed.png"
                     alt="Construction site with workers and cranes"
@@ -37,20 +37,21 @@ export default function Section1() {
               {/* Right Column - Content */}
               <div className="space-y-6 sm:space-y-8">
                 {/* Title with underline */}
-                <div className="space-y-3 sm:space-y-4">
+                <div className="space-y-0">
                   <h2
                     className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900"
                     style={{ fontFamily: "var(--font-montserrat)" }}
                   >
                     Construction
                   </h2>
-                  <div className="w-full h-1 bg-[#D0B970]"></div>
-                  <p
+                       <p
                     className="text-base sm:text-lg md:text-xl text-gray-600 font-medium"
                     style={{ fontFamily: "var(--font-montserrat)" }}
                   >
                     Building the backbone of critical infrastructure
                   </p>
+                  <div className="w-full h-1 bg-[#D0B970] mt-4"></div>
+               
                 </div>
 
                 {/* Content paragraphs */}

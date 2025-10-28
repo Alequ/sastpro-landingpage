@@ -3,8 +3,8 @@ import HeroSection from "@/components/home/hero-section"
 import ServicesOverview from "@/components/home/services-overview";
 import IndustriesServed from "@/components/home/industries-served";
 import HowWeWork from "@/components/home/trackRecord";
-import Footer from "@/components/home/footer";
-import HeaderNavigation from "@/components/home/header-navigation";
+import Footer from "@/components/shared/footer";
+import HeaderNavigation from "@/components/shared/header-navigation";
 import BackToTop from "@/components/home/back-to-top";
 import LatestNews from "@/components/home/LatestNews";
 
