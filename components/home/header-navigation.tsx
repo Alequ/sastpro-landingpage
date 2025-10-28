@@ -44,9 +44,10 @@ export default function HeaderNavigation() {
     {
       label: "OUR SERVICES",
       dropdown: [
+        { label: "Our Services Overview", href: "/our-services" },
         { label: "Engineering and Design Solutions", href: "#" },
         { label: "Authorised and Competent Personnel", href: "#energy-engineers" },
-        { label: "Safet, Compliance and Management Systems", href: "#permit-to-work" },
+        { label: "Safety, Compliance and Management Systems", href: "#permit-to-work" },
         { label: "Digital Solutions - SASTPro", href: "#safety-rules" },
         { label: "Training and Development - SastAcademy", href: "#cohe" },
         { label: "Callout, Fault Response and Technical Support", href: "#cohe" },
