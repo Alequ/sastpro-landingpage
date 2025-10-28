@@ -1,7 +1,7 @@
 "use client";
 
-import { Metadata } from "next";
-import HeaderNavigation from "@/components/home/header-navigation";
+import HeaderNavigation from "@/components/shared/header-navigation";
+import Footer from "@/components/shared/footer";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -213,7 +213,9 @@ export default function CommissioningPage() {
                       {/* Contact Button */}
                       <div className="flex items-center">
                         <button className="group flex items-center gap-3 text-black font-bold text-lg sm:text-xl hover:text-[#D0B970] transition-colors duration-300">
-                          <span style={{ fontFamily: "var(--font-montserrat)" }}>
+                          <span
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
                             CONTACT US
                           </span>
                           <div className="relative w-6 h-6 group-hover:translate-x-1 transition-transform duration-300">
@@ -892,6 +894,8 @@ export default function CommissioningPage() {
           </div>
         </section>
       </main>
+      <div className="h-3 bg-[#D0B970]"></div>
+      <Footer />
     </>
   );
 }

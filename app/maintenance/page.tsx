@@ -1,7 +1,7 @@
 "use client";
 
-import { Metadata } from "next";
-import HeaderNavigation from "@/components/home/header-navigation";
+import HeaderNavigation from "@/components/shared/header-navigation";
+import Footer from "@/components/shared/footer";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -19,7 +19,10 @@ export default function MaintenancePage() {
   return (
     <>
       <HeaderNavigation />
-      <main className="min-h-screen px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32" style={{ backgroundColor: "#c4c4c4" }}>
+      <main
+        className="min-h-screen px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32"
+        style={{ backgroundColor: "#c4c4c4" }}
+      >
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
           {/* Background Image with Overlay */}
@@ -141,32 +144,36 @@ export default function MaintenancePage() {
                         className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                     Maintenance is about keeping systems performing - safely, efficiently, and
-continuously. S.A.S Transition provides full electrical and mechanical
-maintenance and operational support across data centres, renewable sites,
-oil and gas facilities, nuclear installations, and grid infrastructure.
+                        Maintenance is about keeping systems performing -
+                        safely, efficiently, and continuously. S.A.S Transition
+                        provides full electrical and mechanical maintenance and
+                        operational support across data centres, renewable
+                        sites, oil and gas facilities, nuclear installations,
+                        and grid infrastructure.
                       </p>
 
                       <p
                         className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Our teams cover HV/LV equipment, switchgear, mechanical systems, and
-building plant, performing planned maintenance, condition monitoring,
-inspections, QA/QC verification, and fault response.
-We also support site operations, including switching, isolations, and
-equipment upgrades - all managed through SASTpro for traceability and
-compliance.
+                        Our teams cover HV/LV equipment, switchgear, mechanical
+                        systems, and building plant, performing planned
+                        maintenance, condition monitoring, inspections, QA/QC
+                        verification, and fault response. We also support site
+                        operations, including switching, isolations, and
+                        equipment upgrades - all managed through SASTpro for
+                        traceability and compliance.
                       </p>
 
                       <p
                         className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Every technician and engineer is authorised, competent, and SAST-trained -
-ready to act quickly while maintaining safety and system integrity. Whether
-through continuous site support or on-call response, SAStransition ensures
-reliability where it matters most.
+                        Every technician and engineer is authorised, competent,
+                        and SAST-trained - ready to act quickly while
+                        maintaining safety and system integrity. Whether through
+                        continuous site support or on-call response,
+                        SAStransition ensures reliability where it matters most.
                       </p>
                     </div>
                   </div>
@@ -209,7 +216,9 @@ reliability where it matters most.
                       {/* Contact Button */}
                       <div className="flex items-center">
                         <button className="group flex items-center gap-3 text-black font-bold text-lg sm:text-xl hover:text-[#D0B970] transition-colors duration-300">
-                          <span style={{ fontFamily: "var(--font-montserrat)" }}>
+                          <span
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
                             CONTACT US
                           </span>
                           <div className="relative w-6 h-6 group-hover:translate-x-1 transition-transform duration-300">
@@ -305,18 +314,18 @@ reliability where it matters most.
                           className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed italic font-semibold"
                           style={{ fontFamily: "var(--font-montserrat)" }}
                         >
-                          We support clients across multiple sectors and
-regions - maintaining critical assets in data centres,
-energy systems, and industrial facilities.
+                          We support clients across multiple sectors and regions
+                          - maintaining critical assets in data centres, energy
+                          systems, and industrial facilities.
                         </p>
 
                         <p
                           className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed italic font-semibold"
                           style={{ fontFamily: "var(--font-montserrat)" }}
                         >
-                          Our approach combines experience, digital
-oversight, and a strong safety culture to keep
-essential infrastructure running.
+                          Our approach combines experience, digital oversight,
+                          and a strong safety culture to keep essential
+                          infrastructure running.
                         </p>
                       </div>
                     </div>
@@ -333,7 +342,10 @@ essential infrastructure running.
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               <div className="relative">
                 {/* Navigation Arrows - Outside the cards */}
-                <button onClick={prevSlide} className="absolute -left-16 top-1/2 -translate-y-1/2 z-10 hover:opacity-80 transition-opacity duration-300">
+                <button
+                  onClick={prevSlide}
+                  className="absolute -left-16 top-1/2 -translate-y-1/2 z-10 hover:opacity-80 transition-opacity duration-300"
+                >
                   <div className="relative w-8 h-8 sm:w-9 sm:h-9 rotate-180">
                     <Image
                       src="/maintenance/ButtonBlack.png"
@@ -344,7 +356,10 @@ essential infrastructure running.
                   </div>
                 </button>
 
-                <button onClick={nextSlide} className="absolute -right-16 top-1/2 -translate-y-1/2 z-10 hover:opacity-80 transition-opacity duration-300">
+                <button
+                  onClick={nextSlide}
+                  className="absolute -right-16 top-1/2 -translate-y-1/2 z-10 hover:opacity-80 transition-opacity duration-300"
+                >
                   <div className="relative w-8 h-8 sm:w-9 sm:h-9">
                     <Image
                       src="/maintenance/ButtonBlack.png"
@@ -363,243 +378,348 @@ essential infrastructure running.
                   >
                     {/* Slide 1 */}
                     <div className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                  {/* Project Example 1 */}
-                  <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
-                    <div className="space-y-6 flex-1">
-                      <div>
-                        <h3
-                          className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Project
-                        </h3>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Example 1
-                        </p>
+                      {/* Project Example 1 */}
+                      <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
+                        <div className="space-y-6 flex-1">
+                          <div>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 1
+                            </p>
+                          </div>
+
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
+                          </div>
+
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Netherlands
+                            </p>
+                          </div>
+
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat. Ut wisi
+                            enim ad minim veniam, quis nostrud exerci tation
+                          </p>
+                        </div>
                       </div>
 
-                      <div>
-                        <h4
-                          className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Client
-                        </h4>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Confidential
-                        </p>
+                      {/* Project Example 2 */}
+                      <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
+                        <div className="space-y-6 flex-1">
+                          <div>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 2
+                            </p>
+                          </div>
+
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
+                          </div>
+
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Belgium
+                            </p>
+                          </div>
+
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat. Ut wisi
+                            enim ad minim veniam, quis nostrud exerci tation
+                          </p>
+                        </div>
                       </div>
 
-                      <div>
-                        <h4
-                          className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Location
-                        </h4>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base mb-4"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Netherlands
-                        </p>
-                      </div>
+                      {/* Project Example 3 */}
+                      <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
+                        <div className="space-y-6 flex-1">
+                          <div>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 3
+                            </p>
+                          </div>
 
-                      <p
-                        className="text-gray-700 text-sm sm:text-base leading-relaxed"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet
-                        dolore magna aliquam erat volutpat. Ut wisi enim ad
-                        minim veniam, quis nostrud exerci tation
-                      </p>
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
+                          </div>
+
+                          <div>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              London
+                            </p>
+                          </div>
+
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat. Ut wisi
+                            enim ad minim veniam, quis nostrud exerci tation
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-
-                  {/* Project Example 2 */}
-                  <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
-                    <div className="space-y-6 flex-1">
-                      <div>
-                        <h3
-                          className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Project
-                        </h3>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Example 2
-                        </p>
-                      </div>
-
-                      <div>
-                        <h4
-                          className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Client
-                        </h4>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Confidential
-                        </p>
-                      </div>
-
-                      <div>
-                        <h4
-                          className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Location
-                        </h4>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base mb-4"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Belgium
-                        </p>
-                      </div>
-
-                      <p
-                        className="text-gray-700 text-sm sm:text-base leading-relaxed"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet
-                        dolore magna aliquam erat volutpat. Ut wisi enim ad
-                        minim veniam, quis nostrud exerci tation
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Project Example 3 */}
-                  <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
-                    <div className="space-y-6 flex-1">
-                      <div>
-                        <h3
-                          className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Project
-                        </h3>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Example 3
-                        </p>
-                      </div>
-
-                      <div>
-                        <h4
-                          className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Client
-                        </h4>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Confidential
-                        </p>
-                      </div>
-
-                      <div>
-                        <h4
-                          className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Location
-                        </h4>
-                        <p
-                          className="text-gray-600 text-sm sm:text-base mb-4"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          London
-                        </p>
-                      </div>
-
-                      <p
-                        className="text-gray-700 text-sm sm:text-base leading-relaxed"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet
-                        dolore magna aliquam erat volutpat. Ut wisi enim ad
-                        minim veniam, quis nostrud exerci tation
-                      </p>
-                    </div>
-                  </div>
-                </div>
 
                     {/* Slide 2 - Duplicate of Slide 1 for demo */}
                     <div className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
                       <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
                         <div className="space-y-6 flex-1">
                           <div>
-                            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Project</h3>
-                            <p className="text-gray-600 text-sm sm:text-base" style={{ fontFamily: "var(--font-montserrat)" }}>Example 4</p>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 4
+                            </p>
                           </div>
                           <div>
-                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Client</h4>
-                            <p className="text-gray-600 text-sm sm:text-base" style={{ fontFamily: "var(--font-montserrat)" }}>Confidential</p>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
                           </div>
                           <div>
-                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Location</h4>
-                            <p className="text-gray-600 text-sm sm:text-base mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Germany</p>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Germany
+                            </p>
                           </div>
-                          <p className="text-gray-700 text-sm sm:text-base leading-relaxed" style={{ fontFamily: "var(--font-montserrat)" }}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat.
                           </p>
                         </div>
                       </div>
                       <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
                         <div className="space-y-6 flex-1">
                           <div>
-                            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Project</h3>
-                            <p className="text-gray-600 text-sm sm:text-base" style={{ fontFamily: "var(--font-montserrat)" }}>Example 5</p>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 5
+                            </p>
                           </div>
                           <div>
-                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Client</h4>
-                            <p className="text-gray-600 text-sm sm:text-base" style={{ fontFamily: "var(--font-montserrat)" }}>Confidential</p>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
                           </div>
                           <div>
-                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Location</h4>
-                            <p className="text-gray-600 text-sm sm:text-base mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>France</p>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              France
+                            </p>
                           </div>
-                          <p className="text-gray-700 text-sm sm:text-base leading-relaxed" style={{ fontFamily: "var(--font-montserrat)" }}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat.
                           </p>
                         </div>
                       </div>
                       <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
                         <div className="space-y-6 flex-1">
                           <div>
-                            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Project</h3>
-                            <p className="text-gray-600 text-sm sm:text-base" style={{ fontFamily: "var(--font-montserrat)" }}>Example 6</p>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 6
+                            </p>
                           </div>
                           <div>
-                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Client</h4>
-                            <p className="text-gray-600 text-sm sm:text-base" style={{ fontFamily: "var(--font-montserrat)" }}>Confidential</p>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
                           </div>
                           <div>
-                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Location</h4>
-                            <p className="text-gray-600 text-sm sm:text-base mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Spain</p>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Spain
+                            </p>
                           </div>
-                          <p className="text-gray-700 text-sm sm:text-base leading-relaxed" style={{ fontFamily: "var(--font-montserrat)" }}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat.
                           </p>
                         </div>
                       </div>
@@ -610,57 +730,162 @@ essential infrastructure running.
                       <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
                         <div className="space-y-6 flex-1">
                           <div>
-                            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Project</h3>
-                            <p className="text-gray-600 text-sm sm:text-base" style={{ fontFamily: "var(--font-montserrat)" }}>Example 7</p>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 7
+                            </p>
                           </div>
                           <div>
-                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Client</h4>
-                            <p className="text-gray-600 text-sm sm:text-base" style={{ fontFamily: "var(--font-montserrat)" }}>Confidential</p>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
                           </div>
                           <div>
-                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Location</h4>
-                            <p className="text-gray-600 text-sm sm:text-base mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Italy</p>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Italy
+                            </p>
                           </div>
-                          <p className="text-gray-700 text-sm sm:text-base leading-relaxed" style={{ fontFamily: "var(--font-montserrat)" }}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat.
                           </p>
                         </div>
                       </div>
                       <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
                         <div className="space-y-6 flex-1">
                           <div>
-                            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Project</h3>
-                            <p className="text-gray-600 text-sm sm:text-base" style={{ fontFamily: "var(--font-montserrat)" }}>Example 8</p>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 8
+                            </p>
                           </div>
                           <div>
-                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Client</h4>
-                            <p className="text-gray-600 text-sm sm:text-base" style={{ fontFamily: "var(--font-montserrat)" }}>Confidential</p>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
                           </div>
                           <div>
-                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Location</h4>
-                            <p className="text-gray-600 text-sm sm:text-base mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Ireland</p>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Ireland
+                            </p>
                           </div>
-                          <p className="text-gray-700 text-sm sm:text-base leading-relaxed" style={{ fontFamily: "var(--font-montserrat)" }}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat.
                           </p>
                         </div>
                       </div>
                       <div className="bg-white shadow-xl p-6 sm:p-8 min-h-[400px] flex flex-col">
                         <div className="space-y-6 flex-1">
                           <div>
-                            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Project</h3>
-                            <p className="text-gray-600 text-sm sm:text-base" style={{ fontFamily: "var(--font-montserrat)" }}>Example 9</p>
+                            <h3
+                              className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Project
+                            </h3>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Example 9
+                            </p>
                           </div>
                           <div>
-                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Client</h4>
-                            <p className="text-gray-600 text-sm sm:text-base" style={{ fontFamily: "var(--font-montserrat)" }}>Confidential</p>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Client
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Confidential
+                            </p>
                           </div>
                           <div>
-                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Location</h4>
-                            <p className="text-gray-600 text-sm sm:text-base mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Portugal</p>
+                            <h4
+                              className="text-lg sm:text-xl font-bold text-gray-900 mb-2"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Location
+                            </h4>
+                            <p
+                              className="text-gray-600 text-sm sm:text-base mb-4"
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              Portugal
+                            </p>
                           </div>
-                          <p className="text-gray-700 text-sm sm:text-base leading-relaxed" style={{ fontFamily: "var(--font-montserrat)" }}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                          <p
+                            className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat.
                           </p>
                         </div>
                       </div>
@@ -672,6 +897,8 @@ essential infrastructure running.
           </div>
         </section>
       </main>
+      <div className="h-3 bg-[#D0B970]"></div>
+      <Footer />
     </>
   );
 }
