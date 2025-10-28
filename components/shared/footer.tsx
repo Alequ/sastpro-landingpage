@@ -52,42 +52,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer style={{ backgroundColor: "#0d1111" }} className="text-white">
+    <footer style={{ backgroundColor: "#223232" }} className="text-white">
       <div className="section-container">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-          {/* Brand Column */}
-          <div className="lg:col-span-1 space-y-6">
-            <div className="flex items-center gap-2">
-              <Image
-                src="/sast-logo.svg"
-                alt="SAST Logo"
-                width={180}
-                height={42}
-                className="h-10 w-auto"
-              />
-            </div>
-            <p className="text-sm text-gray-400">
-              Expert electrical engineering, maintenance, and safety services
-              for onshore and offshore installations.
-            </p>
-            {/* Social Links */}
-            <div className="flex gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-blue-600 flex items-center justify-center transition-colors duration-300"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
-          </div>
-
+        <div className="flex flex-col md:flex-row md:justify-between gap-8 mb-12">
           {/* Links Columns */}
           <FooterColumn
             title={footerLinks.company.title}
@@ -140,7 +108,7 @@ interface FooterColumnProps {
 function FooterColumn({ title, links }: FooterColumnProps) {
   return (
     <div className="space-y-4">
-      <h4 className="font-bold text-white">{title}</h4>
+      <h4 className="font-bold whitespace-nowrap" style={{ color: "#D0B970" }}>{title}</h4>
       <ul className="space-y-3">
         {links.map((link) => (
           <li key={link.label}>
