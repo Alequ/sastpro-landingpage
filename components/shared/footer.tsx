@@ -1,7 +1,7 @@
 "use client";
 
 import { Separator } from "@/components/ui/separator";
-import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -32,7 +32,12 @@ const footerLinks = {
   },
   contact: {
     title: "Connect with us",
-    links: [{ label: "LinkedIN", href: "#contact" }],
+    items: [
+      { label: "info@sastransition.com", href: "mailto:info@sastransition.com", icon: Mail },
+      { label: "123 Business Street, Aberdeen, UK", href: "#", icon: MapPin },
+      { label: "+44 1234 567890", href: "tel:+441234567890", icon: Phone },
+      { label: "LinkedIn", href: "https://linkedin.com/company/sastransition", icon: Linkedin },
+    ],
   },
 };
 
@@ -69,9 +74,9 @@ export default function Footer() {
             title={footerLinks.resources.title}
             links={footerLinks.resources.links}
           />
-          <FooterColumn
+          <FooterContactColumn
             title={footerLinks.contact.title}
-            links={footerLinks.contact.links}
+            items={footerLinks.contact.items}
           />
         </div>
 
@@ -120,6 +125,39 @@ function FooterColumn({ title, links }: FooterColumnProps) {
             </Link>
           </li>
         ))}
+      </ul>
+    </div>
+  );
+}
+
+interface FooterContactColumnProps {
+  title: string;
+  items: Array<{ 
+    label: string; 
+    href: string; 
+    icon: React.ComponentType<any>;
+  }>;
+}
+
+function FooterContactColumn({ title, items }: FooterContactColumnProps) {
+  return (
+    <div className="space-y-4">
+      <h4 className="font-bold whitespace-nowrap" style={{ color: "#D0B970" }}>{title}</h4>
+      <ul className="space-y-3">
+        {items.map((item) => {
+          const IconComponent = item.icon;
+          return (
+            <li key={item.label}>
+              <Link
+                href={item.href}
+                className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors duration-300 group"
+              >
+                <IconComponent size={16} className="flex-shrink-0" style={{ color: "#D0B970" }} />
+                <span>{item.label}</span>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
