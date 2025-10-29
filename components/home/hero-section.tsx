@@ -1,15 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-
+import Link from "next/link";
 import Image from "next/image";
 
 export default function HeroSection() {
-  const handleScrollToContact = () => {
-    const contactSection = document.querySelector('[data-section="contact"]');
-    contactSection?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -52,21 +47,23 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button
-              size="lg"
-              className="bg-[#D0B970] hover:bg-[#BBA860] text-white px-8 py-6 text-lg glow-pulse rounded-full"
-              onClick={handleScrollToContact}
-            >
-              Book Consultation
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg rounded-full"
-              onClick={handleScrollToContact}
-            >
-              Contact Us
-            </Button>
+            <Link href="/consultation">
+              <Button
+                size="lg"
+                className="bg-[#D0B970] hover:bg-[#BBA860] text-white px-8 py-6 text-lg glow-pulse rounded-full"
+              >
+                Book Consultation
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg rounded-full"
+              >
+                Contact Us
+              </Button>
+            </Link>
           </div>
 
           

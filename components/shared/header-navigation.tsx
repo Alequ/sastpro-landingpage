@@ -66,7 +66,7 @@ export default function HeaderNavigation() {
       dropdown: [
         { label: "General Enquiries", href: "/contact" },
         { label: "Book A Consultation", href: "/consultation" },
-        { label: "Office Locations", href: "#locations" },
+        //{ label: "Office Locations", href: "#locations" },
       ],
     },
   ];
@@ -144,8 +144,8 @@ export default function HeaderNavigation() {
               )
             )}
 
-            {/* LinkedIn Icon */}
-            <a
+            {/* LinkedIn Icon - Hidden */}
+            {/* <a
               href="https://www.linkedin.com/company/your-company"
               target="_blank"
               rel="noopener noreferrer"
@@ -153,7 +153,7 @@ export default function HeaderNavigation() {
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
-            </a>
+            </a> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -214,8 +214,8 @@ export default function HeaderNavigation() {
                 )
               )}
 
-              {/* Mobile LinkedIn Link */}
-              <a
+              {/* Mobile LinkedIn Link - Hidden */}
+              {/* <a
                 href="https://www.linkedin.com/company/your-company"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -224,7 +224,7 @@ export default function HeaderNavigation() {
               >
                 <Linkedin className="w-5 h-5" />
                 LinkedIn
-              </a>
+              </a> */}
             </div>
           </div>
         )}

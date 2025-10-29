@@ -3,6 +3,7 @@
 import { ArrowRight, Target, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef } from "react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import Link from "next/link";
 
 const industries = [
   {
@@ -81,22 +82,22 @@ export default function IndustriesServed() {
         {/* Carousel Container with Navigation */}
         <div className="relative">
           {/* Left Navigation Arrow - positioned outside scroll area */}
-          <button
+          {/* <button
             onClick={() => scroll('left')}
             className="hidden md:flex absolute -left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-20 bg-[#D4AF37]/90 hover:bg-[#D4AF37] text-white rounded-full p-3 shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm items-center justify-center"
             aria-label="Scroll left"
           >
             <ChevronLeft className="h-6 w-6" />
-          </button>
+          </button> */}
 
           {/* Right Navigation Arrow - positioned outside scroll area */}
-          <button
+          {/* <button
             onClick={() => scroll('right')}
             className="hidden md:flex absolute -right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-20 bg-[#D4AF37]/90 hover:bg-[#D4AF37] text-white rounded-full p-3 shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm items-center justify-center"
             aria-label="Scroll right"
           >
             <ChevronRight className="h-6 w-6" />
-          </button>
+          </button> */}
 
           {/* Industries Carousel - responsive card display */}
           <div
@@ -171,11 +172,11 @@ function IndustryCard({ industry, index, isVisible, hoveredIndex, setHoveredInde
           </div>
 
           {/* Arrow appears on hover */}
-          <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/30 backdrop-blur-sm transition-all duration-300 ${
+          {/* <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/30 backdrop-blur-sm transition-all duration-300 ${
             isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-2'
           }`}>
             <ArrowRight className="h-5 w-5 text-[#D4AF37]" />
-          </div>
+          </div> */}
         </div>
 
         {/* Description */}
@@ -202,10 +203,12 @@ function IndustryCard({ industry, index, isVisible, hoveredIndex, setHoveredInde
         </div>
 
         {/* Contact us button */}
-        <button className="mt-6 w-full rounded-full border-2 border-[#D4AF37] bg-transparent hover:bg-[#D4AF37] text-white hover:text-black font-semibold py-3 px-6 transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg hover:shadow-xl hover:shadow-[#D4AF37]/30">
-          <span>Contact us</span>
-          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-        </button>
+        <Link href="/contact">
+          <button className="mt-6 w-full rounded-full border-2 border-[#D4AF37] bg-transparent hover:bg-[#D4AF37] text-white hover:text-black font-semibold py-3 px-6 transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg hover:shadow-xl hover:shadow-[#D4AF37]/30">
+            <span>Contact us</span>
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+          </button>
+        </Link>
 
         {/* Bottom gold accent line */}
         <div className="mt-6 h-0.5 rounded-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 transform origin-center scale-x-0 group-hover:scale-x-100" />

@@ -7,7 +7,7 @@ export default function LatestNews() {
     <section className="py-12 px-8 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <Link href="/latest-news" className="block">
-          <div className="relative h-[420px] overflow-hidden rounded-lg cursor-pointer group">
+          <div className="relative h-[420px] overflow-hidden cursor-pointer group">
       {/* Background Image */}
       <Image
         src="/home/LatestNews.png"
