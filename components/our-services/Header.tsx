@@ -8,7 +8,7 @@ export default function Header() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/our-services/Hero.png"
+          src="/our-services/OurServicesHeader.png"
           alt="Construction site"
           fill
           priority

@@ -21,8 +21,6 @@ export default function Section2() {
       title: "Technical & Engineering Studies",
       image: "/our-services/TESTUDIES.png",
       items: [
-
- 
         "Protection coordination and grading studies",
         "Power quality and harmonic analysis",
         "Short-circuit, arc flash, and transient stability studies",
@@ -38,7 +36,7 @@ export default function Section2() {
       items: [
         "Engineering packages and work packs",
         "Interface and design coordination with clients and vendors",
-        "Technical drawing and data managementr",
+        "Technical drawing and data management",
         "Review of installation methodologies and constructability",
         "Change control and design updates",
         "O&M manuals and commissioning documentation",
@@ -67,7 +65,6 @@ export default function Section2() {
                 />
 
                 {/* Dark Overlay */}
-              
 
                 {/* Content on Top of Background */}
                 <div className="relative z-10 h-full flex flex-col p-6 sm:p-8">
@@ -75,11 +72,13 @@ export default function Section2() {
                   <div className="mb-6">
                     <h3
                       className="text-xl sm:text-2xl md:text-2xl font-bold"
-                      style={{ fontFamily: "var(--font-montserrat)", color: "#D0B970" }}
+                      style={{
+                        fontFamily: "var(--font-montserrat)",
+                        color: "#D0B970",
+                      }}
                     >
                       {card.title}
                     </h3>
-                  
                   </div>
 
                   {/* List Items */}

@@ -22,7 +22,7 @@ export default function HeroSection() {
           className="absolute inset-0 opacity-70 mix-blend-overlay pointer-events-none"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-            backgroundRepeat: 'repeat'
+            backgroundRepeat: "repeat",
           }}
         />
       </div>
@@ -31,18 +31,19 @@ export default function HeroSection() {
       <div className="relative z-10 section-container text-center text-white">
         <div className="max-w-5xl mx-auto space-y-8">
           {/* Headline */}
-            <h1 className="text-balance text-4xl font-bold tracking-[0.15em] sm:text-6xl lg:text-7xl leading-[0.85] font-[family-name:var(--font-montserrat)]">
-            <span className="text-white">ELECTRICAL</span>{" "}<br />
-            <span className="text-[#D0B970]">MECHANICAL</span>{" "}<br />
+          <h1 className="text-balance text-4xl font-bold tracking-[0.15em] sm:text-6xl lg:text-7xl leading-[0.85] font-[family-name:var(--font-montserrat)]">
+            <span className="text-white">ELECTRICAL</span> <br />
+            <span className="text-[#D0B970]">MECHANICAL</span> <br />
             <span className="text-[#9f9b9b]">TURNKEY</span>
             <br />
-            <span className="text-white">ENGINEERING</span>{" "}<br />
+            <span className="text-white">ENGINEERING</span> <br />
             <span className="text-[#D0B970]">SOLUTIONS</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl sm:text-2xl lg:text-3xl text-gray-200 max-w-3xl mx-auto">
-            Expert electrical engineering, maintenance, and safety services for onshore and offshore installations
+            Expert electrical engineering, maintenance, and safety services for
+            onshore and offshore installations
           </p>
 
           {/* CTA Buttons */}
@@ -65,8 +66,6 @@ export default function HeroSection() {
               </Button>
             </Link>
           </div>
-
-          
         </div>
       </div>
 
@@ -79,4 +78,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
