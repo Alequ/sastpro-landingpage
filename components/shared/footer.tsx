@@ -9,34 +9,34 @@ const footerLinks = {
   company: {
     title: "Can we help you?",
     links: [
-      { label: "General enquiries", href: "/about" },
-      { label: "Book a consultation", href: "/team" },
-      { label: "Contact Us", href: "/careers" },
+      { label: "General enquiries", href: "/contact" },
+      { label: "Book a consultation", href: "/consultation" },
+      { label: "Contact Us", href: "/contact" },
     ],
   },
   services: {
     title: "More about S.A.S Transition",
     links: [
-      { label: "About Us", href: "/services/electrical" },
-      { label: "Careers", href: "/services/maintenance" },
-      { label: "News and Publications", href: "/services/safety" },
-      { label: "Business customers", href: "/services/emergency" },
+      { label: "Who we are", href: "/who-we-are" },
+      { label: "Careers", href: "/careers" },
+      { label: "News and Publications", href: "/latest-news" },
+      // { label: "Business customers", href: "/services/emergency" },
     ],
   },
   resources: {
     title: "S.A.S.T Tools",
     links: [
-      { label: "SASTpro", href: "/case-studies" },
-      { label: "SastAcademy", href: "/downloads" },
+      { label: "SASTpro", href: "/consultation" },
+      { label: "SastAcademy", href: "/consultation" },
     ],
   },
   contact: {
     title: "Connect with us",
     items: [
-      { label: "info@sastransition.com", href: "mailto:info@sastransition.com", icon: Mail },
-      { label: "123 Business Street, Aberdeen, UK", href: "#", icon: MapPin },
-      { label: "+44 1234 567890", href: "tel:+441234567890", icon: Phone },
-      { label: "LinkedIn", href: "https://linkedin.com/company/sastransition", icon: Linkedin },
+      { label: "enquiries@sastransition.com", href: "mailto:enquiries@sastransition.com", icon: Mail },
+      { label: "Tuleviku tee 10, Peetri, 75312 Harju maakond", href: "#", icon: MapPin },
+      { label: "+372 5886 4233", href: "tel:+37258864233", icon: Phone },
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/s-a-s-transition/posts/?feedView=all", icon: Linkedin },
     ],
   },
 };
@@ -47,11 +47,11 @@ const socialLinks = [
   { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
 ];
 
-const legalLinks = [
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms & Conditions", href: "/terms" },
-  { label: "Cookie Policy", href: "/cookies" },
-];
+// const legalLinks = [
+//   { label: "Privacy Policy", href: "/privacy" },
+//   { label: "Terms & Conditions", href: "/terms" },
+//   { label: "Cookie Policy", href: "/cookies" },
+// ];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -88,7 +88,7 @@ export default function Footer() {
             © {currentYear} Electrical Services. All rights reserved.
           </p>
 
-          <div className="flex flex-wrap gap-6 justify-center">
+          {/* <div className="flex flex-wrap gap-6 justify-center">
             {legalLinks.map((link) => (
               <Link
                 key={link.label}
@@ -98,7 +98,7 @@ export default function Footer() {
                 {link.label}
               </Link>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
@@ -146,11 +146,14 @@ function FooterContactColumn({ title, items }: FooterContactColumnProps) {
       <ul className="space-y-3">
         {items.map((item) => {
           const IconComponent = item.icon;
+          const isLinkedIn = item.label === "LinkedIn";
           return (
             <li key={item.label}>
               <Link
                 href={item.href}
                 className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors duration-300 group"
+                target={isLinkedIn ? "_blank" : undefined}
+                rel={isLinkedIn ? "noopener noreferrer" : undefined}
               >
                 <IconComponent size={16} className="flex-shrink-0" style={{ color: "#D0B970" }} />
                 <span>{item.label}</span>

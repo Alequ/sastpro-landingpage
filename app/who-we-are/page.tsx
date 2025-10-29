@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import HeaderNavigation from "@/components/shared/header-navigation";
 import Footer from "@/components/shared/footer";
 
@@ -139,114 +140,97 @@ export default function WhoWeArePage() {
               </div>
 
               {/* White Card Container */}
-              <div className="bg-white shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
-                {/* Title with underline */}
-                <div className="space-y-3 sm:space-y-4 mb-8">
-                  <h2
-                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900"
-                    style={{ fontFamily: "var(--font-montserrat)" }}
-                  >
-                    Our story
-                  </h2>
-                  <div className="w-full h-1 bg-[#D0B970]"></div>
-                </div>
+        <div className="bg-white shadow-xl p-6 sm:p-8 md:p-12 w-full">
+    {/* Title with underline */}
+    <div className="space-y-3 mb-8 sm:mb-10">
+      <h2
+        className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900"
+        style={{ fontFamily: "var(--font-montserrat)" }}
+      >
+        Our story
+      </h2>
+      <div className="w-24 h-1 bg-[#D0B970]"></div>
+    </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-2 sm:gap-2 md:gap-3 lg:gap-4 items-stretch">
-                  {/* Left Column - Video */}
-                  <div className="relative w-full aspect-video">
-                    <video
-                      className="w-full h-full object-cover"
-                      controls
-                      src="/who-we-are/OurStoryVideo.mp4"
-                    >
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
+    {/* First Row: Video + Story Text */}
+    <div className="flex flex-col 2xl:flex-row 2xl:items-start gap-6 2xl:gap-12 mb-2">
+      {/* Video */}
+      <div className="w-full 2xl:w-[55%]">
+        <video
+          className="w-full h-auto shadow-md rounded-sm"
+          controls
+          src="/videos/Post.mp4"
+        >
+          Your browser does not support the video tag.
+        </video>
+      </div>
 
-                  {/* Right Column - Text */}
-                  <div className="flex items-center justify-center h-full px-6 sm:px-8 md:px-10 lg:px-12">
-                    <p
-                      className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed text-justify"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      S.A.S Transition was founded by Allyn Coady, an engineer
-                      who got tired of watching the industry trip over its own
-                      shoelaces — the wrong people in the wrong jobs, good
-                      engineers undervalued, and safety treated like paperwork
-                      instead of protection. After years in offshore oil & gas,
-                      data centres, and renewable energy, Allyn saw the same
-                      thing everywhere: talent wasted, standards slipping, and
-                      projects surviving on luck instead of leadership. So he
-                      built S.A.S Transition to flip the script - to bring
-                      together the best engineers, give them the tools and
-                      respect they deserve, and raise the bar across every site,
-                      system, and sector.
-                    </p>
-                  </div>
-                </div>
+      {/* Story Text */}
+      <div className="w-full 2xl:w-[45%] flex items-center">
+        <p
+          className="text-base sm:text-lg text-gray-700 leading-relaxed"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          S.A.S Transition was founded by Allyn Coady, an engineer who got tired
+          of watching the industry trip over its own shoelaces — the wrong
+          people in the wrong jobs, good engineers undervalued, and safety
+          treated like paperwork instead of protection. After years in offshore
+          oil & gas, data centres, and renewable energy, Allyn saw the same
+          thing everywhere: talent wasted, standards slipping, and projects
+          surviving on luck instead of leadership. So he built S.A.S Transition
+          to flip the script — to bring together the best engineers, give them
+          the tools and respect they deserve, and raise the bar across every
+          site, system, and sector.
+        </p>
+      </div>
+    </div>
 
-                {/* Full Width Text Below */}
-                <div className="mt-4">
-                  <p
-                    className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed text-justify mb-1"
-                    style={{ fontFamily: "var(--font-montserrat)" }}
-                  >
-                    S.A.S Transition was founded by Allyn Coady, an engineer who
-                    got tired of watching the industry trip over its own
-                    shoelaces - the wrong people in the wrong jobs, good
-                    engineers undervalued, and safety treated like paperwork
-                    instead of protection. After years in offshore oil & gas,
-                    data centres, and renewable energy, Allyn saw the same thing
-                    everywhere: talent wasted, standards slipping, and projects
-                    surviving on
-                  </p>
-                </div>
+    {/* Second Row: Text + Image */}
+    <div className="flex flex-col 2xl:flex-row 2xl:items-center gap-6 2xl:gap-12">
+      {/* Text Section */}
+      <div className="w-full 2xl:w-[55%] space-y-6">
+        <p
+          className="text-base sm:text-lg text-gray-700 leading-relaxed"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          We're a team of engineers who actually engineer — people who take
+          pride in doing it right the first time, safely, and with purpose. From
+          design and commissioning to maintenance and digital control, we
+          deliver electrical and mechanical turnkey solutions that are as sharp
+          as they are safe.
+        </p>
 
-                {/* Text with Image on Right */}
-                <div className="grid grid-cols-1 lg:grid-cols-[75%_25%] gap-0 items-stretch">
-                  {/* Left Column - Text */}
-                  <div className="flex items-center pr-4">
-                    <div>
-                      <p
-                        className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed text-justify mb-4"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        luck instead of leadership. So he built S.A.S Transition
-                        to flip the script - to bring together the best
-                        engineers, give them the tools and respect they deserve,
-                        and raise the bar across every site, system, and sector.
-                        We're a team of engineers who actually engineer - people
-                        who take pride in doing it right the first time, safely,
-                        and with purpose. From design and commissioning Our
-                        digital platform, SASTpro, developed by S.A.S
-                        Transition, turns all that talk about "digital
-                        transformation" into real control - live permits,
-                        tracked isolations, verified competence, and zero
-                        guesswork.
-                      </p>
-                      <p
-                        className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed text-justify"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        We're not here to tick boxes or pad CVs. We're here to
-                        build smarter, work safer, and give real engineers a
-                        place to thrive - while setting a gold standard that the
-                        rest will have to catch up to.
-                      </p>
-                    </div>
-                  </div>
+        <p
+          className="text-base sm:text-lg text-gray-700 leading-relaxed"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          Our digital platform, SASTpro, developed by S.A.S Transition, turns
+          all that talk about "digital transformation" into real control — live
+          permits, tracked isolations, verified competence, and zero guesswork.
+        </p>
 
-                  {/* Right Column - Image */}
-                  <div className="relative w-full aspect-video flex items-center justify-center">
-                    <Image
-                      src="/who-we-are/WhoWeAreOurStoryMonitor.png"
-                      alt="Digital solutions SASTpro"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-              </div>
+        <p
+          className="text-base sm:text-lg text-gray-700 leading-relaxed"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          We're not here to tick boxes or pad CVs. We're here to build smarter,
+          work safer, and give real engineers a place to thrive — while setting
+          a gold standard that the rest will have to catch up to.
+        </p>
+      </div>
+
+      {/* Image */}
+      <div className="w-full 2xl:w-[45%] flex justify-center 2xl:justify-end">
+        <Image
+          src="/who-we-are/WhoWeAreOurStoryMonitor.png"
+          alt="Digital solutions SASTpro"
+          width={500}
+          height={350}
+          className="object-contain w-full max-w-md h-auto drop-shadow-lg"
+        />
+      </div>
+    </div>
+  </div>
             </div>
           </div>
         </section>
@@ -267,7 +251,7 @@ export default function WhoWeArePage() {
                       className="object-cover"
                     />
                     {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-[#D0B970] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-[#D0B970] opacity-0 group-hover:opacity-80 transition-opacity duration-300" />
                   </div>
 
                   {/* Content */}
@@ -324,7 +308,7 @@ export default function WhoWeArePage() {
                       className="object-cover"
                     />
                     {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-[#D0B970] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-[#D0B970] opacity-0 group-hover:opacity-80 transition-opacity duration-300" />
                   </div>
 
                   {/* Content */}
@@ -371,12 +355,12 @@ export default function WhoWeArePage() {
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               {/* White Card Container */}
               <div className="bg-white shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                   {/* Left Column - Content */}
-                  <div className="space-y-6">
+                  <div className="space-y-4">
                     {/* Title */}
                     <h2
-                      className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900"
+                      className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900"
                       style={{ fontFamily: "var(--font-montserrat)" }}
                     >
                       Safety First
@@ -385,7 +369,7 @@ export default function WhoWeArePage() {
                     {/* Main Content */}
                     <div className="space-y-4">
                       <p
-                        className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed text-justify"
+                        className="text-base sm:text-lg md:text-xl text-gray-700 leading-loose text-left"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         Safety is more than a standard; it's the culture that
@@ -401,7 +385,7 @@ export default function WhoWeArePage() {
                       </p>
 
                       <p
-                        className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed text-justify"
+                        className="text-base sm:text-lg md:text-xl text-gray-700 leading-loose text-left"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         SASTpro provides the control, and SASTacademy builds the
@@ -414,7 +398,7 @@ export default function WhoWeArePage() {
                   </div>
 
                   {/* Right Column - Image */}
-                  <div className="relative w-full aspect-video lg:aspect-auto lg:h-[400px] max-w-lg mx-auto">
+                  <div className="relative w-full aspect-video lg:aspect-auto lg:h-[550px] max-w-2xl mx-auto">
                     <Image
                       src="/who-we-are/WhoWeAreEnergyHazardRecognition2.jpg"
                       alt="Energy Hazard Recognition"
@@ -482,16 +466,15 @@ export default function WhoWeArePage() {
                       fontFamily: "var(--font-montserrat)",
                     }}
                   >
-                    Join hundreds of companies that trust us for safe,
-                    compliant, and reliable electrical solutions. Get your free
-                    consultation today.
+                    Our strength lies in the expertise and collaboration of our
+                    people. Every member plays a vital role in delivering
+                    bespoke, compliant, and reliable solutions.
                   </p>
                 </div>
 
-                {/* Team Members Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-x-1 gap-y-8 lg:gap-y-12">
-                  {/* First Row */}
-                  <div className="text-center w-24 mx-auto">
+                {/* Team Members - First Row (4 members) */}
+                <div className="flex justify-center gap-x-25 mb-8 lg:mb-12">
+                  <div className="text-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Allyn.png"
@@ -514,7 +497,7 @@ export default function WhoWeArePage() {
                     </p>
                   </div>
 
-                  <div className="text-center w-32 mx-auto">
+                  <div className="text-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Simon.png"
@@ -537,7 +520,7 @@ export default function WhoWeArePage() {
                     </p>
                   </div>
 
-                  <div className="text-center w-32 mx-auto">
+                  <div className="text-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Bryson.png"
@@ -560,7 +543,7 @@ export default function WhoWeArePage() {
                     </p>
                   </div>
 
-                  <div className="text-center w-32 mx-auto">
+                  <div className="text-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Brian.png"
@@ -582,9 +565,11 @@ export default function WhoWeArePage() {
                       HSEQ Manager
                     </p>
                   </div>
+                </div>
 
-                  {/* Second Row */}
-                  <div className="text-center w-32 mx-auto">
+                {/* Team Members - Second Row (4 members) */}
+                <div className="flex justify-center gap-x-25 mb-8 lg:mb-12">
+                  <div className="text-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Matthew.png"
@@ -607,7 +592,7 @@ export default function WhoWeArePage() {
                     </p>
                   </div>
 
-                  <div className="text-center w-32 mx-auto">
+                  <div className="text-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Laurence.png"
@@ -630,7 +615,7 @@ export default function WhoWeArePage() {
                     </p>
                   </div>
 
-                  <div className="text-center w-32 mx-auto">
+                  <div className="text-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Lizzo.png"
@@ -653,7 +638,7 @@ export default function WhoWeArePage() {
                     </p>
                   </div>
 
-                  <div className="text-center w-32 mx-auto">
+                  <div className="text-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Lewis.png"
@@ -678,8 +663,8 @@ export default function WhoWeArePage() {
                 </div>
 
                 {/* Third Row - Two members centered */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 mt-8">
-                  <div className="text-center col-span-1 md:col-start-2">
+                <div className="flex justify-center gap-x-25">
+                  <div className="text-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Felix.png"
@@ -702,7 +687,7 @@ export default function WhoWeArePage() {
                     </p>
                   </div>
 
-                  <div className="text-center col-span-1">
+                  <div className="text-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Alex.png"
@@ -728,11 +713,14 @@ export default function WhoWeArePage() {
 
                 {/* Join Our Team Button */}
                 <div className="flex justify-center mt-12">
-                  <button className="px-8 py-4 bg-transparent border-2 border-[#D0B970] text-white font-bold text-lg hover:bg-[#D0B970] hover:text-black transition-all duration-300 rounded-full">
+                  <Link
+                    href="/careers"
+                    className="px-8 py-4 bg-transparent border-2 border-[#D0B970] text-white font-bold text-lg hover:bg-[#D0B970] hover:text-black transition-all duration-300 rounded-full inline-block"
+                  >
                     <span style={{ fontFamily: "var(--font-montserrat)" }}>
                       Join our team
                     </span>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

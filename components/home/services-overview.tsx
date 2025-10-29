@@ -80,7 +80,7 @@ function ServiceCard({ service, index, isVisible }: ServiceCardProps) {
       href={link}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`group relative rounded-xl overflow-hidden cursor-pointer transition-all duration-500 ${span} ${
+      className={`group relative overflow-hidden cursor-pointer transition-all duration-500 ${span} ${
         isVisible ? `animate-in fade-in slide-in-from-bottom-4 duration-700` : 'opacity-0'
       }`}
       style={{
@@ -96,26 +96,43 @@ function ServiceCard({ service, index, isVisible }: ServiceCardProps) {
         }}
       />
 
-      {/* Dark Overlay */}
+      {/* Dark Overlay with Yellow Hover */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70 transition-opacity duration-500"
+        className="absolute inset-0 transition-all duration-500"
         style={{
-          opacity: isHovered ? 0.85 : 0.6
+          background: isHovered
+            ? 'rgba(208, 185, 112, 0.75)'
+            : 'rgba(0, 0, 0, 0.35)'
         }}
       />
 
       {/* Content */}
       <div className="relative h-full flex flex-col justify-between p-6">
         {/* Title */}
-        <h3 className="text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-tight max-w-[80%] transition-transform duration-500 group-hover:translate-x-1">
+        <h3
+          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-tight max-w-[80%] transition-all duration-500 group-hover:translate-x-1"
+          style={{
+            color: isHovered ? '#000000' : '#ffffff'
+          }}
+        >
           {title}
         </h3>
 
         {/* Arrow Icon */}
         <div className="flex justify-end">
-          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-500 group-hover:bg-white/20 group-hover:border-white/30 group-hover:scale-110 group-hover:rotate-[-5deg]">
+          <div
+            className="flex items-center justify-center w-12 h-12 rounded-full backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:rotate-[-5deg]"
+            style={{
+              backgroundColor: isHovered ? 'rgba(0, 0, 0, 0.2)' : 'rgba(255, 255, 255, 0.1)',
+              borderWidth: '1px',
+              borderColor: isHovered ? 'rgba(0, 0, 0, 0.3)' : 'rgba(255, 255, 255, 0.2)'
+            }}
+          >
             <ArrowRight
-              className="w-6 h-6 text-white transition-transform duration-500 group-hover:translate-x-1"
+              className="w-6 h-6 transition-all duration-500 group-hover:translate-x-1"
+              style={{
+                color: isHovered ? '#000000' : '#ffffff'
+              }}
               strokeWidth={2.5}
             />
           </div>
@@ -124,7 +141,7 @@ function ServiceCard({ service, index, isVisible }: ServiceCardProps) {
 
       {/* Hover Border Glow */}
       <div
-        className="absolute inset-0 rounded-xl border-2 border-transparent transition-all duration-500"
+        className="absolute inset-0 border-2 border-transparent transition-all duration-500"
         style={{
           borderColor: isHovered ? 'rgba(255, 255, 255, 0.3)' : 'transparent',
           boxShadow: isHovered ? '0 0 30px rgba(255, 255, 255, 0.2)' : 'none'

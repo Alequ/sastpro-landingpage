@@ -353,7 +353,7 @@ export default function LatestNewsPage() {
                       <video
                         className="w-full h-full object-cover"
                         controls
-                        src="/latest-news/AilynCoadyVideo.mp4"
+                        src="/videos/Post.mp4"
                       >
                         Your browser does not support the video tag.
                       </video>
@@ -534,66 +534,66 @@ export default function LatestNewsPage() {
         <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
           <div className="flex justify-center w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32">
             <div className="w-full" style={{ maxWidth: "1400px" }}>
-              <div className="grid grid-cols-1 lg:grid-cols-[65%_35%] gap-4 sm:gap-6 md:gap-8 items-stretch" style={{ minHeight: "350px" }}>
-                {/* Left Card - Content */}
-                <div className="bg-white shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 flex flex-col justify-center">
-                  <div className="space-y-4">
-                    <div>
-                      <h3
-                        className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Hiring beyond technical skills
-                      </h3>
-                      <p
-                        className="text-sm sm:text-base italic text-gray-600 mt-2"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        People & Culture / Wednesday 15th October
-                      </p>
-                    </div>
-                    <div className="w-full h-1 bg-[#D0B970]"></div>
-                    <div className="space-y-4">
-                      <p
-                        className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        When we're hiring new talent at S.A.S, we always look beyond certificates and years of experience. Why? While these are a minimum requirement, they simply aren't enough to prove that someone is the right fit for our team. Many of our colleagues work in critical, high-pressure environments where safety is on the line, so we make it a priority to assess key competencies when looking for future talent.
-                      </p>
-                      <p
-                        className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Even if we're not currently hiring, you're welcome to reach out via our contact page or send us an email at{" "}
-                        <span className="font-semibold text-[#D0B970]">recruitment@sastransition.com</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-4 sm:gap-6 md:gap-8 items-stretch" style={{ minHeight: "350px" }}>
+          {/* Left Card - Content */}
+          <div className="bg-white shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 flex flex-col justify-center">
+            <div className="space-y-4">
+              <div>
+                <h3
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900"
+            style={{ fontFamily: "var(--font-montserrat)" }}
+                >
+            Hiring beyond technical skills
+                </h3>
+                <p
+            className="text-sm sm:text-base italic text-gray-600 mt-2"
+            style={{ fontFamily: "var(--font-montserrat)" }}
+                >
+            People & Culture / Wednesday 15th October
+                </p>
+              </div>
+              <div className="w-full h-1 bg-[#D0B970]"></div>
+              <div className="space-y-4">
+                <p
+            className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
+            style={{ fontFamily: "var(--font-montserrat)" }}
+                >
+            When we're hiring new talent at S.A.S, we always look beyond certificates and years of experience. Why? While these are a minimum requirement, they simply aren't enough to prove that someone is the right fit for our team. Many of our colleagues work in critical, high-pressure environments where safety is on the line, so we make it a priority to assess key competencies when looking for future talent.
+                </p>
+                <p
+            className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
+            style={{ fontFamily: "var(--font-montserrat)" }}
+                >
+            Even if we're not currently hiring, you're welcome to reach out via our contact page or send us an email at{" "}
+            <span className="font-semibold text-[#D0B970]">recruitment@sastransition.com</span>
+                </p>
+              </div>
+            </div>
+          </div>
 
-                {/* Right Card - Image with Overlay Text */}
-                <div className="group relative shadow-xl overflow-hidden cursor-pointer">
-                  {/* Background Image */}
-                  <div className="absolute inset-0 z-0 pointer-events-none">
-                    <Image
-                      src="/latest-news/HiringBeyondTechnicalSkillsImage1.png"
-                      alt="Technical skills and teamwork"
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/60 group-hover:bg-[#D0B970]/80 transition-colors duration-300" />
-                  </div>
+          {/* Right Card - Image with Overlay Text */}
+          <div className="group relative shadow-xl overflow-hidden cursor-pointer">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+              <Image
+                src="/latest-news/HiringBeyondTechnicalSkillsImage1.png"
+                alt="Technical skills and teamwork"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/60 group-hover:bg-[#D0B970]/80 transition-colors duration-300" />
+            </div>
 
-                  {/* Overlay Content */}
-                  <div className="relative z-10 h-full flex items-center justify-center p-4 sm:p-6 md:p-8">
-                    <p
-                      className="text-sm sm:text-base md:text-lg text-white group-hover:text-black leading-relaxed text-center transition-colors duration-300"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      These include the ability to stay composed, collaborate with others, and, most importantly, communicate effectively, both within our team and with external clients. If someone has all of that, as well as the required skills and technical experience, then they might just be a fit. Because at S.A.S, we don't just need technical experts — we need great communicators.
-                    </p>
-                  </div>
-                </div>
+            {/* Overlay Content */}
+            <div className="relative z-10 h-full flex items-center justify-center p-4 sm:p-6 md:p-8">
+              <p
+                className="text-sm sm:text-base md:text-lg text-white group-hover:text-black leading-relaxed text-center transition-colors duration-300"
+                style={{ fontFamily: "var(--font-montserrat)" }}
+              >
+                These include the ability to stay composed, collaborate with others, and, most importantly, communicate effectively, both within our team and with external clients. If someone has all of that, as well as the required skills and technical experience, then they might just be a fit. Because at S.A.S, we don't just need technical experts — we need great communicators.
+              </p>
+            </div>
+          </div>
               </div>
             </div>
           </div>

@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Clock, Home, ChevronDown, ChevronRight } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Home,
+  ChevronDown,
+  ChevronRight,
+} from "lucide-react";
 
 export default function ConsultationForm() {
   const [formData, setFormData] = useState({
@@ -11,6 +19,7 @@ export default function ConsultationForm() {
     email: "",
     phone: "",
     enquiryType: "",
+    location: "",
     message: "",
   });
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -40,9 +49,12 @@ export default function ConsultationForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div
+      className="min-h-screen px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32"
+      style={{ backgroundColor: "#c4c4c4" }}
+    >
       {/* Header Section */}
-      <section className="relative min-h-250 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-250 flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -74,7 +86,7 @@ export default function ConsultationForm() {
                   fontFamily: "var(--font-montserrat)",
                 }}
               >
-               CONSULTATION PAGE
+                CONSULTATION PAGE
               </h1>
 
               {/* Right Squares */}
@@ -101,7 +113,8 @@ export default function ConsultationForm() {
                 }}
               >
                 Committed to clear communication and reliable project delivery.
-Every solution is crafted in collaboration with you - bespoke, compliant, and built to perform.
+                Every solution is crafted in collaboration with you - bespoke,
+                compliant, and built to perform.
               </p>
             </div>
           </div>
@@ -116,11 +129,11 @@ Every solution is crafted in collaboration with you - bespoke, compliant, and bu
       </section>
 
       {/* Info Section */}
-      <section className="pt-0">
-        <div className="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+      <section className="pt-0 mb-8">
+        <div className="flex justify-center w-full">
           <div className="w-full" style={{ maxWidth: "1600px" }}>
             {/* Decorative Border Element */}
-            <div className="flex justify-center w-full mb-15">
+            <div className="flex justify-center w-full mb-8">
               <div
                 className="bg-white border-[#D0B970]"
                 style={{
@@ -131,51 +144,54 @@ Every solution is crafted in collaboration with you - bespoke, compliant, and bu
               />
             </div>
 
-            {/* White Card Container */}
-            <div className="bg-white rounded-lg shadow-xl p-8 sm:p-10 md:p-12 lg:p-16 mb-16">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
-                {/* Left Column - Image */}
-                <div className="relative">
-                  <div className="relative h-[350px] rounded-lg overflow-hidden shadow-xl bg-gray-50">
+            {/* Main Card with Text Left, Image Right */}
+            <div className="bg-white shadow-xl overflow-hidden">
+              <div className="flex flex-col lg:flex-row min-h-[350px]">
+                {/* Text Content - Left Side (70% width) */}
+                <div className="lg:w-[70%] p-8 sm:p-10 md:p-12 lg:p-16 flex flex-col justify-center">
+                  <div className="space-y-4">
+                    <div className="space-y-3">
+                      <h2
+                        className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Book a Consultation or SASTpro Demo
+                      </h2>
+
+                      <p
+                        className="text-lg text-gray-600 italic font-bold"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Talk to the experts. Let's plan it right, from day one.
+                      </p>
+                    </div>
+
+                    <div className="w-[90%] h-1 bg-[#D0B970]"></div>
+
+                    <p
+                      className="text-base sm:text-lg text-gray-700 leading-relaxed"
+                      style={{ fontFamily: "var(--font-montserrat)" }}
+                    >
+                      Every great project starts with clarity. Whether it's
+                      construction, commissioning, maintenance, or safety
+                      strategy, S.A.S Transition offers direct consultation with
+                      our technical and management teams. We'll review your
+                      project, assess requirements, and show how our six core
+                      services and SASTpro digital system can deliver control,
+                      compliance, and performance on site.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Image - Right Side (30% width) */}
+                <div className="lg:w-[30%] relative min-h-[300px] lg:min-h-full flex items-center justify-center p-4">
+                  <div className="relative w-full h-[250px]">
                     <Image
                       src="/consultation/Image 1.png"
                       alt="Consultation services"
                       fill
                       className="object-contain"
                     />
-                  </div>
-                </div>
-
-                {/* Right Column - Content */}
-                <div className="space-y-6 sm:space-y-8">
-                  {/* Title with underline */}
-                  <div className="space-y-0">
-                    <h2
-                      className="text-xl sm:text-2xl md:text-1xl lg:text-1xl font-bold text-gray-900"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Book a Consultation or SASTpro Demo
-                    </h2>
-                    <p
-                      className="text-base sm:text-lg md:text-xl text-gray-600 font-medium"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Talk to the experts. Let's plan it right, from day one.
-                    </p>
-                    <div className="w-full h-1 bg-[#D0B970] mt-4"></div>
-                  </div>
-
-                  {/* Content paragraphs */}
-                  <div className="space-y-4 sm:space-y-6">
-                    <p
-                      className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Every great project starts with clarity. Whether it's construction, commissioning, maintenance, or
-safety strategy, S.A.S Transition offers direct consultation with our technical and management teams.
-We'll review your project, assess requirements, and show how our six core services and SASTpro digital
-system can deliver control, compliance, and performance on site.
-                    </p>
                   </div>
                 </div>
               </div>
@@ -186,309 +202,269 @@ system can deliver control, compliance, and performance on site.
 
       {/* Get In Touch Form Section */}
       <section className="pt-0 pb-16">
-        <div className="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className="flex justify-center w-full">
           <div className="w-full" style={{ maxWidth: "1600px" }}>
-
             {/* White Card Container */}
-            <div className="bg-white rounded-lg shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
-                {/* Left Column - Get In Touch & Contact Details */}
-                <div className="space-y-8">
-                  <div>
-                    <h2
-                      className="text-5xl sm:text-6xl font-bold text-gray-900 mb-4"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
+            <div className="bg-white shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
+              <h2
+                className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8"
+                style={{ fontFamily: "var(--font-montserrat)" }}
+              >
+                Submit Your Details
+              </h2>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Consultation Type Field */}
+                <div>
+                  <label
+                    htmlFor="enquiryType"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  >
+                    Consultation Type
+                  </label>
+                    <select
+                      id="enquiryType"
+                      name="enquiryType"
+                      value={formData.enquiryType}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors bg-white appearance-none text-black"
+                      style={{
+                        fontFamily: "var(--font-montserrat)",
+                        backgroundImage:
+                          'url(\'data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>\')',
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "right 12px center",
+                        backgroundSize: "12px",
+                      }}
                     >
-                      Get In Touch
-                    </h2>
+                    <option
+                      value=""
+                      style={{ backgroundColor: "white", color: "black" }}
+                    >
+                      Select consultation type
+                    </option>
+                    <option
+                      value="construction-installation"
+                      style={{ backgroundColor: "white", color: "black" }}
+                    >
+                      Construction & Installation
+                    </option>
+                    <option
+                      value="commissioning-testing"
+                      style={{ backgroundColor: "white", color: "black" }}
+                    >
+                      Commissioning & Testing
+                    </option>
+                    <option
+                      value="maintenance-operations"
+                      style={{ backgroundColor: "white", color: "black" }}
+                    >
+                      Maintenance & Operations
+                    </option>
+                    <option
+                      value="authorised-personnel"
+                      style={{ backgroundColor: "white", color: "black" }}
+                    >
+                      Authorised Personnel & Labour
+                    </option>
+                    <option
+                      value="safety-compliance"
+                      style={{ backgroundColor: "white", color: "black" }}
+                    >
+                      Safety & Compliance
+                    </option>
+                    <option
+                      value="engineering-design"
+                      style={{ backgroundColor: "white", color: "black" }}
+                    >
+                      Engineering & Design
+                    </option>
+                    <option
+                      value="digital-solutions-sastpro"
+                      style={{ backgroundColor: "white", color: "black" }}
+                    >
+                      Digital Solutions – SASTpro
+                    </option>
+                    <option
+                      value="training-development"
+                      style={{ backgroundColor: "white", color: "black" }}
+                    >
+                      Training & Development – SASTacademy
+                    </option>
+                  </select>
+                </div>
+
+                {/* Name Field */}
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  />
+                </div>
+
+                {/* Company Field */}
+                <div>
+                  <label
+                    htmlFor="company"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  >
+                    Company
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  />
+                </div>
+
+                {/* Email Field */}
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  />
+                </div>
+
+                {/* Phone Field */}
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  >
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  />
+                </div>
+
+                {/* Location Field */}
+                <div>
+                  <label
+                    htmlFor="location"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  >
+                    Location
+                  </label>
+                  <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  />
+                </div>
+
+                {/* Message / Scope Details Field */}
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  >
+                    Message / Scope Details
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={5}
+                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors resize-vertical"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  />
+                </div>
+
+                {/* Upload Files Section */}
+                <div>
+                  <label
+                    className="block text-sm font-medium text-gray-700 mb-3"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  >
+                    Upload Files
+                  </label>
+                  <div className="border-2 border-dashed border-black p-6 hover:border-[#D0B970] transition-colors">
+                    <input
+                      type="file"
+                      id="files"
+                      name="files"
+                      multiple
+                      className="hidden"
+                      accept=".pdf,.doc,.docx,.txt"
+                      onChange={handleFileChange}
+                    />
+                    <div className="flex justify-start">
+                      <label
+                        htmlFor="files"
+                        className="cursor-pointer inline-flex items-center px-4 py-2 bg-gray-300 text-black font-bold rounded-full hover:bg-gray-400 transition-colors"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Choose Files
+                        <ChevronRight
+                          className="ml-2 h-4 w-4"
+                          strokeWidth={3}
+                        />
+                      </label>
+                    </div>
                     <p
-                      className="text-base sm:text-lg text-gray-700 italic leading-relaxed"
+                      className="mt-3 text-sm text-gray-500 text-left"
                       style={{ fontFamily: "var(--font-montserrat)" }}
                     >
-                      Let&apos;s get your project, your systems, and your people working safely and efficiently.
+                      Upload project documents, specifications, or requirements
                     </p>
                   </div>
-
-                  <div>
-                    <h3
-                      className="text-xl font-semibold text-gray-900 mb-6"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Contact Details
-                    </h3>
-
-                    <div className="space-y-6">
-                      {/* Email */}
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0">
-                          <Mail className="w-6 h-6 text-gray-900" />
-                        </div>
-                        <div>
-                          <a
-                            href="mailto:enquiries@sastransition.com"
-                            className="text-gray-700 hover:text-[#D0B970] transition-colors italic"
-                            style={{ fontFamily: "var(--font-montserrat)" }}
-                          >
-                            enquiries@sastransition.com
-                          </a>
-                        </div>
-                      </div>
-
-                      {/* Phone */}
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0">
-                          <Phone className="w-6 h-6 text-gray-900" />
-                        </div>
-                        <div>
-                          <a
-                            href="tel:+37258864233"
-                            className="text-gray-700 hover:text-[#D0B970] transition-colors"
-                            style={{ fontFamily: "var(--font-montserrat)" }}
-                          >
-                            +372 5886 4233 (24/7 Callout)
-                          </a>
-                        </div>
-                      </div>
-
-                      {/* Location */}
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0">
-                          <MapPin className="w-6 h-6 text-gray-900" />
-                        </div>
-                        <div>
-                          <p
-                            className="text-gray-700"
-                            style={{ fontFamily: "var(--font-montserrat)" }}
-                          >
-                            Operating Across: UK | Europe | USA
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Hours */}
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0">
-                          <Clock className="w-6 h-6 text-gray-900" />
-                        </div>
-                        <div>
-                          <p
-                            className="text-gray-700"
-                            style={{ fontFamily: "var(--font-montserrat)" }}
-                          >
-                            Hours: Mon–Fri 08:00-18:00 | 24/7 Emergency Response
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Address */}
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0">
-                          <Home className="w-6 h-6 text-gray-900" />
-                        </div>
-                        <div>
-                          <p
-                            className="text-gray-700"
-                            style={{ fontFamily: "var(--font-montserrat)" }}
-                          >
-                            Tuleviku tee 10, Peetri,
-                            <br />
-                            75312
-                            <br />
-                            Harju maakond
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
-                {/* Right Column - Contact Form */}
-                <div className="space-y-6">
-                  <form onSubmit={handleSubmit} className="space-y-5">
-                    {/* Name Field */}
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D0B970] focus:border-transparent transition-all"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                        required
-                      />
-                    </div>
-
-                    {/* Company Field */}
-                    <div>
-                      <label
-                        htmlFor="company"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Company
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D0B970] focus:border-transparent transition-all"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      />
-                    </div>
-
-                    {/* Email Field */}
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D0B970] focus:border-transparent transition-all"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                        required
-                      />
-                    </div>
-
-                    {/* Phone Field */}
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Phone
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D0B970] focus:border-transparent transition-all"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      />
-                    </div>
-
-                    {/* Enquiry Type Dropdown */}
-                    <div>
-                      <label
-                        htmlFor="enquiryType"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Enquiry Type
-                      </label>
-                      <div className="relative">
-                        <select
-                          id="enquiryType"
-                          name="enquiryType"
-                          value={formData.enquiryType}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D0B970] focus:border-transparent transition-all appearance-none"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                          required
-                        >
-                          <option value="">Select enquiry type</option>
-                          <option value="general">General Enquiry</option>
-                          <option value="electrical-design">Electrical Design & Engineering</option>
-                          <option value="safety-compliance">Safety & Compliance Review</option>
-                          <option value="sastpro">SASTpro Platform</option>
-                          <option value="maintenance">Maintenance Services</option>
-                          <option value="permit-to-work">Permit to Work Systems</option>
-                          <option value="emergency">Emergency Support</option>
-                        </select>
-                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
-                      </div>
-                    </div>
-
-                    {/* Message Field */}
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Send Message
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        rows={4}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D0B970] focus:border-transparent transition-all resize-none"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                        required
-                      />
-                    </div>
-
-                    {/* Upload Files */}
-                    <div>
-                      <label
-                        htmlFor="file-upload"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Upload Files
-                      </label>
-                      <div className="flex items-center gap-4">
-                        <label
-                          htmlFor="file-upload"
-                          className="px-6 py-2.5 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition-colors cursor-pointer inline-flex items-center gap-2 font-medium"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                        >
-                          Choose File
-                          <ChevronRight className="w-4 h-4" />
-                        </label>
-                        <input
-                          id="file-upload"
-                          type="file"
-                          onChange={handleFileChange}
-                          className="hidden"
-                        />
-                        {selectedFile && (
-                          <span
-                            className="text-sm text-gray-600"
-                            style={{ fontFamily: "var(--font-montserrat)" }}
-                          >
-                            {selectedFile.name}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Submit Button */}
-                    <div className="flex justify-end pt-4">
-                      <button
-                        type="submit"
-                        className="px-8 py-3 bg-[#D0B970] text-white rounded-md hover:bg-[#C0A960] transition-colors font-semibold flex items-center gap-2 group"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Submit
-                        <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                      </button>
-                    </div>
-                  </form>
+                {/* Submit Button */}
+                <div className="pt-4 flex justify-end">
+                  <button
+                    type="submit"
+                    className="inline-flex items-center px-4 py-2 bg-[#D0B970] text-black font-bold rounded-full hover:bg-[#b8a55e] transition-colors duration-300"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  >
+                    Submit
+                    <ChevronRight className="ml-2 h-4 w-4" strokeWidth={3} />
+                  </button>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
