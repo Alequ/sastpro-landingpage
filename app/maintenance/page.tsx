@@ -172,7 +172,7 @@ export default function MaintenancePage() {
                         and SAST-trained - ready to act quickly while
                         maintaining safety and system integrity. Whether through
                         continuous site support or on-call response,
-                        SAStransition ensures reliability where it matters most.
+                        S.A.S Transition ensures reliability where it matters most.
                       </p>
                     </div>
                   </div>
@@ -299,7 +299,7 @@ export default function MaintenancePage() {
                   </div>
 
                   {/* Content */}
-                  <div className="relative z-10 p-8 sm:p-10 md:p-12 h-full flex flex-col justify-center min-h-[300px] sm:min-h-[400px]">
+                  <div className="relative z-10 p-8 sm:p-10 md:p-12 h-full flex flex-col justify-start min-h-[300px] sm:min-h-[400px]">
                     <div className="space-y-6">
                       <h3
                         className="text-white text-2xl sm:text-3xl md:text-4xl font-bold"

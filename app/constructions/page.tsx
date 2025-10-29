@@ -172,7 +172,7 @@ export default function ConstructionsPage() {
                         Through our digital platform, SASTpro, we manage
                         documentation, permits, and progress tracking in real
                         time - ensuring the same consistency and quality across
-                        every site. From design to delivery, SAStransition
+                        every site. From design to delivery, S.A.S Transition
                         provides the knowledge, structure, and reliability
                         needed to build safely in today's demanding
                         environments.

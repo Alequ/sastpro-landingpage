@@ -140,97 +140,102 @@ export default function WhoWeArePage() {
               </div>
 
               {/* White Card Container */}
-        <div className="bg-white shadow-xl p-6 sm:p-8 md:p-12 w-full">
-    {/* Title with underline */}
-    <div className="space-y-3 mb-8 sm:mb-10">
-      <h2
-        className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900"
-        style={{ fontFamily: "var(--font-montserrat)" }}
-      >
-        Our story
-      </h2>
-      <div className="w-24 h-1 bg-[#D0B970]"></div>
-    </div>
+              <div className="bg-white shadow-xl p-6 sm:p-8 md:p-12 w-full">
+                {/* Title with underline */}
+                <div className="space-y-3 mb-8 sm:mb-10">
+                  <h2
+                    className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  >
+                    Our story
+                  </h2>
+                  <div className="w-24 h-1 bg-[#D0B970]"></div>
+                </div>
 
-    {/* First Row: Video + Story Text */}
-    <div className="flex flex-col 2xl:flex-row 2xl:items-start gap-6 2xl:gap-12 mb-2">
-      {/* Video */}
-      <div className="w-full 2xl:w-[55%]">
-        <video
-          className="w-full h-auto shadow-md rounded-sm"
-          controls
-          src="/videos/Post.mp4"
-        >
-          Your browser does not support the video tag.
-        </video>
-      </div>
+                {/* First Row: Video + Story Text */}
+                <div className="flex flex-col xl:flex-row xl:items-start gap-6 xl:gap-12 mb-2">
+                  {/* Video */}
+                  <div className="w-full xl:w-[55%]">
+                    <video
+                      className="w-full h-auto shadow-md rounded-sm"
+                      controls
+                      src="/videos/Post.mp4"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
 
-      {/* Story Text */}
-      <div className="w-full 2xl:w-[45%] flex items-center">
-        <p
-          className="text-base sm:text-lg text-gray-700 leading-relaxed"
-          style={{ fontFamily: "var(--font-montserrat)" }}
-        >
-          S.A.S Transition was founded by Allyn Coady, an engineer who got tired
-          of watching the industry trip over its own shoelaces — the wrong
-          people in the wrong jobs, good engineers undervalued, and safety
-          treated like paperwork instead of protection. After years in offshore
-          oil & gas, data centres, and renewable energy, Allyn saw the same
-          thing everywhere: talent wasted, standards slipping, and projects
-          surviving on luck instead of leadership. So he built S.A.S Transition
-          to flip the script — to bring together the best engineers, give them
-          the tools and respect they deserve, and raise the bar across every
-          site, system, and sector.
-        </p>
-      </div>
-    </div>
+                  {/* Story Text */}
+                  <div className="w-full xl:w-[45%] flex items-center pr-0 xl:pr-16">
+                    <p
+                      className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
+                      style={{ fontFamily: "var(--font-montserrat)" }}
+                    >
+                      S.A.S Transition was founded by Allyn Coady, an engineer
+                      who got tired of watching the industry trip over its own
+                      shoelaces — the wrong people in the wrong jobs, good
+                      engineers undervalued, and safety treated like paperwork
+                      instead of protection. After years in offshore oil & gas,
+                      data centres, and renewable energy, Allyn saw the same
+                      thing everywhere: talent wasted, standards slipping, and
+                      projects surviving on luck instead of leadership. So he
+                      built S.A.S Transition to flip the script — to bring
+                      together the best engineers, give them the tools and
+                      respect they deserve, and raise the bar across every site,
+                      system, and sector.
+                    </p>
+                  </div>
+                </div>
 
-    {/* Second Row: Text + Image */}
-    <div className="flex flex-col 2xl:flex-row 2xl:items-center gap-6 2xl:gap-12">
-      {/* Text Section */}
-      <div className="w-full 2xl:w-[55%] space-y-6">
-        <p
-          className="text-base sm:text-lg text-gray-700 leading-relaxed"
-          style={{ fontFamily: "var(--font-montserrat)" }}
-        >
-          We're a team of engineers who actually engineer — people who take
-          pride in doing it right the first time, safely, and with purpose. From
-          design and commissioning to maintenance and digital control, we
-          deliver electrical and mechanical turnkey solutions that are as sharp
-          as they are safe.
-        </p>
+                {/* Second Row: Text + Image */}
+                <div className="flex flex-col xl:flex-row xl:items-center gap-6 xl:gap-12">
+                  {/* Text Section */}
+                  <div className="w-full xl:w-[55%] space-y-6">
+                    <p
+                      className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
+                      style={{ fontFamily: "var(--font-montserrat)" }}
+                    >
+                      We're a team of engineers who actually engineer — people
+                      who take pride in doing it right the first time, safely,
+                      and with purpose. From design and commissioning to
+                      maintenance and digital control, we deliver electrical and
+                      mechanical turnkey solutions that are as sharp as they are
+                      safe.
+                    </p>
 
-        <p
-          className="text-base sm:text-lg text-gray-700 leading-relaxed"
-          style={{ fontFamily: "var(--font-montserrat)" }}
-        >
-          Our digital platform, SASTpro, developed by S.A.S Transition, turns
-          all that talk about "digital transformation" into real control — live
-          permits, tracked isolations, verified competence, and zero guesswork.
-        </p>
+                    <p
+                      className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
+                      style={{ fontFamily: "var(--font-montserrat)" }}
+                    >
+                      Our digital platform, SASTpro, developed by S.A.S
+                      Transition, turns all that talk about "digital
+                      transformation" into real control — live permits, tracked
+                      isolations, verified competence, and zero guesswork.
+                    </p>
 
-        <p
-          className="text-base sm:text-lg text-gray-700 leading-relaxed"
-          style={{ fontFamily: "var(--font-montserrat)" }}
-        >
-          We're not here to tick boxes or pad CVs. We're here to build smarter,
-          work safer, and give real engineers a place to thrive — while setting
-          a gold standard that the rest will have to catch up to.
-        </p>
-      </div>
+                    <p
+                      className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
+                      style={{ fontFamily: "var(--font-montserrat)" }}
+                    >
+                      We're not here to tick boxes or pad CVs. We're here to
+                      build smarter, work safer, and give real engineers a place
+                      to thrive — while setting a gold standard that the rest
+                      will have to catch up to.
+                    </p>
+                  </div>
 
-      {/* Image */}
-      <div className="w-full 2xl:w-[45%] flex justify-center 2xl:justify-end">
-        <Image
-          src="/who-we-are/WhoWeAreOurStoryMonitor.png"
-          alt="Digital solutions SASTpro"
-          width={500}
-          height={350}
-          className="object-contain w-full max-w-md h-auto drop-shadow-lg"
-        />
-      </div>
-    </div>
-  </div>
+                  {/* Image */}
+                  <div className="w-full xl:w-[45%] flex justify-center xl:justify-end">
+                    <Image
+                      src="/who-we-are/WhoWeAreOurStoryMonitor.png"
+                      alt="Digital solutions SASTpro"
+                      width={500}
+                      height={350}
+                      className="object-contain w-full max-w-md h-auto drop-shadow-lg"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -241,7 +246,7 @@ export default function WhoWeArePage() {
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Our Ethos Card */}
-                <div className="group relative overflow-hidden shadow-xl min-h-[350px] cursor-pointer transition-all duration-300">
+                <div className="group relative overflow-hidden shadow-xl min-h-[250px] sm:min-h-[300px] lg:min-h-[350px] cursor-pointer transition-all duration-300">
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
@@ -298,7 +303,7 @@ export default function WhoWeArePage() {
                 </div>
 
                 {/* Our Mission Card */}
-                <div className="group relative overflow-hidden shadow-xl min-h-[350px] cursor-pointer transition-all duration-300">
+                <div className="group relative overflow-hidden shadow-xl min-h-[250px] sm:min-h-[300px] lg:min-h-[350px] cursor-pointer transition-all duration-300">
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
@@ -331,7 +336,7 @@ export default function WhoWeArePage() {
                         the industry operates through structure, discipline and
                         digital control. We're building systems and processes
                         that others will follow, setting a new benchmark for
-                        safety, quality and accountability. SASTpro is at the
+                        safety, quality and accountability. Our custom built software SASTpro is at the
                         centre of this change, providing a digital platform that
                         connects people, permits and performance. Alongside it,
                         SASTacademy equips professionals with the knowledge and
@@ -369,7 +374,7 @@ export default function WhoWeArePage() {
                     {/* Main Content */}
                     <div className="space-y-4">
                       <p
-                        className="text-base sm:text-lg md:text-xl text-gray-700 leading-loose text-left"
+                        className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed text-left"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         Safety is more than a standard; it's the culture that
@@ -385,7 +390,7 @@ export default function WhoWeArePage() {
                       </p>
 
                       <p
-                        className="text-base sm:text-lg md:text-xl text-gray-700 leading-loose text-left"
+                        className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed text-left"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         SASTpro provides the control, and SASTacademy builds the

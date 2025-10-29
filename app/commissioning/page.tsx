@@ -139,7 +139,7 @@ export default function CommissioningPage() {
                       >
                         Commissioning is the critical handover between
                         construction and operation - where systems are proven,
-                        tested, and brought safely online. SAStransition’s teams
+                        tested, and brought safely online. S.A.S Transition’s teams
                         are specialists in electrical, mechanical, and control
                         system commissioning, ensuring every installation
                         performs exactly as designed.

@@ -49,7 +49,7 @@ export default function HeaderNavigation() {
         { label: "Authorised and Competent Personnel", href: "/our-services#authorised-personnel" },
         { label: "Safety, Compliance and Management Systems", href: "/our-services#safety-compliance" },
         { label: "Digital Solutions - SASTPro", href: "/our-services#digital-solutions" },
-        { label: "Training and Development - SastAcademy", href: "/our-services#training-development" },
+        { label: "Training and Development - Sastacademy", href: "/our-services#training-development" },
         { label: "Callout, Fault Response and Technical Support", href: "/our-services#callout-support" },
       ],
     },
