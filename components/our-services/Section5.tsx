@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Section5() {
   return (
-    <section className="pt-0 mb-15">
+    <section className="pt-12 ">
       <div className="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="w-full" style={{ maxWidth: "1600px" }}>
          

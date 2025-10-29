@@ -48,7 +48,7 @@ export default function Section2() {
   ];
 
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-12 sm:py-20">
       <div className="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="w-full" style={{ maxWidth: "1600px" }}>
           {/* 3 Column Grid */}

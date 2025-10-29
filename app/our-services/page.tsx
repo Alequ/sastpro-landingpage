@@ -21,17 +21,64 @@ export default function OurServicesPage() {
       <HeaderNavigation />
       <main className="min-h-screen" style={{ backgroundColor: "#c4c4c4" }}>
         <Header />
-        <Section1 />
+        <div id="engineering-design">
+          <Section1 />
+        </div>
         <Section2 />
-        <Section3 />
+         <section style={{paddingBottom: "20px" }}>
+          <div className="flex justify-center w-full">
+            <div className="w-9/12">
+              <hr className="border-t-2 border-black" />
+            </div>
+          </div>
+        </section>
+        <div id="authorised-personnel">
+          <Section3 />
+        </div>
         <Section4 />
-        <Section5 />
+          <section style={{ paddingBottom: "20px" }}>
+          <div className="flex justify-center w-full">
+            <div className="w-9/12">
+              <hr className="border-t-2 border-black" />
+            </div>
+          </div>
+        </section>
+        <div id="safety-compliance">
+          <Section5 />
+        </div>
         <Section6 />
-        <Section7 />
+          <section style={{ paddingBottom: "20px" }}>
+          <div className="flex justify-center w-full">
+            <div className="w-9/12">
+              <hr className="border-t-2 border-black" />
+            </div>
+          </div>
+        </section>
+        <div id="digital-solutions">
+          <Section7 />
+        </div>
         <Section8 />
-        <Section9 />
+          <section style={{ paddingBottom: "20px" }}>
+          <div className="flex justify-center w-full">
+            <div className="w-9/12">
+              <hr className="border-t-2 border-black" />
+            </div>
+          </div>
+        </section>
+        <div id="training-development">
+          <Section9 />
+        </div>
         <Section10 />
-        <Section11 />
+          <section style={{ paddingBottom: "20px" }}>
+          <div className="flex justify-center w-full">
+            <div className="w-9/12">
+              <hr className="border-t-2 border-black" />
+            </div>
+          </div>
+        </section>
+        <div id="callout-support">
+          <Section11 />
+        </div>
         <Section12 />
       </main>
     </>

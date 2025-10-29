@@ -9,31 +9,31 @@ const services = [
     title: "Who are we",
     image: "/home/AboutUS.png",
     span: "col-span-1 md:col-span-1 lg:col-span-3 row-span-1",
-    link: "#about"
+    link: "/who-we-are"
   },
   {
     title: "Our services",
     image: "/home/OurServices.png",
     span: "col-span-1 md:col-span-1 lg:col-span-3 row-span-1",
-    link: "#services"
+    link: "/our-services"
   },
   {
     title: "Construction",
     image: "/home/Construction.png",
     span: "col-span-1 md:col-span-1 lg:col-span-2 row-span-1",
-    link: "#construction"
+    link: "/constructions"
   },
   {
     title: "Commissioning",
     image: "/home/Commissioning.png",
     span: "col-span-1 md:col-span-1 lg:col-span-2 row-span-1",
-    link: "#commissioning"
+    link: "/commissioning"
   },
   {
     title: "Maintenance",
     image: "/home/Maintenance.png",
     span: "col-span-1 md:col-span-1 lg:col-span-2 row-span-1",
-    link: "#maintenance"
+    link: "/maintenance"
   }
 ];
 

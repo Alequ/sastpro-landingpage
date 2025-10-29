@@ -1,11 +1,13 @@
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function LatestNews() {
   return (
     <section className="py-12 px-8 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="relative h-[420px] overflow-hidden rounded-lg cursor-pointer group">
+        <Link href="/latest-news" className="block">
+          <div className="relative h-[420px] overflow-hidden rounded-lg cursor-pointer group">
       {/* Background Image */}
       <Image
         src="/home/LatestNews.png"
@@ -33,6 +35,7 @@ export default function LatestNews() {
         />
       </div>
         </div>
+        </Link>
       </div>
     </section>
   );
