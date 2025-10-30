@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Section1() {
   return (
-    <section className="pt-0 ">
+    <section className="pt-0 pb-6 sm:pb-8">
       <div className="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="w-full" style={{ maxWidth: "1600px" }}>
           {/* Decorative Border Element */}
@@ -20,11 +20,11 @@ export default function Section1() {
           </div>
 
           {/* White Card Container */}
-          <div className="bg-white rounded-lg shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
+          <div className="bg-white shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
               {/* Left Column - Image */}
               <div className="relative">
-                <div className="relative h-[300px]  rounded-lg overflow-hidden shadow-xl">
+                <div className="relative h-[300px] overflow-hidden shadow-xl">
                   <Image
                     src="/our-services/ed.png"
                     alt="Construction site with workers and cranes"

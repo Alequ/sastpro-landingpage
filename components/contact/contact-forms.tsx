@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Clock, Home, ChevronDown } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Home, ChevronDown, ChevronRight } from "lucide-react";
 
 export default function ContactForms() {
   const [formData, setFormData] = useState({
@@ -32,9 +32,9 @@ export default function ContactForms() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Header Section */}
-      <section className="relative min-h-250 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -116,8 +116,8 @@ Our dedicated team ensures every system performs safely and efficiently.
       </section>
 
       {/* Info Section (Similar to Section1) */}
-      <section className="pt-0">
-        <div className="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+      <section className="pt-0 mb-15">
+        <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
           <div className="w-full" style={{ maxWidth: "1600px" }}>
             {/* Decorative Border Element */}
             <div className="flex justify-center w-full mb-15">
@@ -132,11 +132,11 @@ Our dedicated team ensures every system performs safely and efficiently.
             </div>
 
             {/* White Card Container */}
-            <div className="bg-white rounded-lg shadow-xl p-8 sm:p-10 md:p-12 lg:p-16 mb-16">
+            <div className="bg-white shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
                 {/* Left Column - Image */}
                 <div className="relative">
-                  <div className="relative h-[300px] rounded-lg overflow-hidden shadow-xl">
+                  <div className="relative h-[300px] overflow-hidden shadow-xl">
                     <Image
                       src="/contact/ContactUsImage 1.png"
                       alt="Contact our team"
@@ -185,12 +185,12 @@ urgency.
       </section>
 
       {/* Contact Form Section */}
-      <section className="pt-0">
-        <div className="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+      <section className="pb-16">
+        <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
           <div className="w-full" style={{ maxWidth: "1600px" }}>
 
             {/* White Card Container */}
-            <div className="bg-white rounded-lg shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
+            <div className="bg-white shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
                 {/* Left Column - Contact Details */}
                 <div className="space-y-8">
@@ -287,12 +287,18 @@ urgency.
                         </div>
                       </div>
 
-                      {/* Address */}
+                      {/* Address - Estonia */}
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0">
                           <Home className="w-6 h-6 text-gray-900" />
                         </div>
                         <div>
+                          <p
+                            className="text-gray-700 font-semibold"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Estonia
+                          </p>
                           <p
                             className="text-gray-700"
                             style={{ fontFamily: "var(--font-montserrat)" }}
@@ -303,13 +309,83 @@ urgency.
                             className="text-gray-700"
                             style={{ fontFamily: "var(--font-montserrat)" }}
                           >
-                            75312
+                            75312 Harju maakond
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Address - UK */}
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0">
+                          <Home className="w-6 h-6 text-gray-900" />
+                        </div>
+                        <div>
+                          <p
+                            className="text-gray-700 font-semibold"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            United Kingdom
                           </p>
                           <p
                             className="text-gray-700"
                             style={{ fontFamily: "var(--font-montserrat)" }}
                           >
-                            Harju maakond
+                            1 Marischal Square, Aberdeen,
+                          </p>
+                          <p
+                            className="text-gray-700"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            AB10 1BL
+                          </p>
+                          <p
+                            className="text-gray-700"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            <a
+                              href="tel:+441224034200"
+                              className="hover:text-[#D0B970] transition-colors"
+                            >
+                              +44 1224 034200
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Address - Netherlands */}
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0">
+                          <Home className="w-6 h-6 text-gray-900" />
+                        </div>
+                        <div>
+                          <p
+                            className="text-gray-700 font-semibold"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Netherlands
+                          </p>
+                          <p
+                            className="text-gray-700"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Rhijnspoorplein 10-38, Amsterdam,
+                          </p>
+                          <p
+                            className="text-gray-700"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            1018 TX
+                          </p>
+                          <p
+                            className="text-gray-700"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            <a
+                              href="tel:+31202991400"
+                              className="hover:text-[#D0B970] transition-colors"
+                            >
+                              +31 20 2991400
+                            </a>
                           </p>
                         </div>
                       </div>
@@ -335,7 +411,7 @@ urgency.
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D0B970] focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                         required
                       />
@@ -356,7 +432,7 @@ urgency.
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D0B970] focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       />
                     </div>
@@ -376,7 +452,7 @@ urgency.
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D0B970] focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                         required
                       />
@@ -397,7 +473,7 @@ urgency.
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D0B970] focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       />
                     </div>
@@ -411,25 +487,29 @@ urgency.
                       >
                         Enquiry Type
                       </label>
-                      <div className="relative">
-                        <select
-                          id="enquiryType"
-                          name="enquiryType"
-                          value={formData.enquiryType}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D0B970] focus:border-transparent transition-all appearance-none"
-                          style={{ fontFamily: "var(--font-montserrat)" }}
-                          required
-                        >
-                          <option value="">Select an enquiry type</option>
-                          <option value="general">General Enquiry</option>
-                          <option value="quote">Request a Quote</option>
-                          <option value="support">Technical Support</option>
-                          <option value="emergency">Emergency Callout</option>
-                          <option value="partnership">Partnership Enquiry</option>
-                        </select>
-                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
-                      </div>
+                      <select
+                        id="enquiryType"
+                        name="enquiryType"
+                        value={formData.enquiryType}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors bg-white appearance-none text-black"
+                        style={{
+                          fontFamily: "var(--font-montserrat)",
+                          backgroundImage:
+                            'url(\'data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>\')',
+                          backgroundRepeat: "no-repeat",
+                          backgroundPosition: "right 12px center",
+                          backgroundSize: "12px",
+                        }}
+                        required
+                      >
+                        <option value="" style={{ backgroundColor: "white", color: "black" }}>Select an enquiry type</option>
+                        <option value="general" style={{ backgroundColor: "white", color: "black" }}>General Enquiry</option>
+                        <option value="quote" style={{ backgroundColor: "white", color: "black" }}>Request a Quote</option>
+                        <option value="support" style={{ backgroundColor: "white", color: "black" }}>Technical Support</option>
+                        <option value="emergency" style={{ backgroundColor: "white", color: "black" }}>Emergency Callout</option>
+                        <option value="partnership" style={{ backgroundColor: "white", color: "black" }}>Partnership Enquiry</option>
+                      </select>
                     </div>
 
                     {/* Message Field */}
@@ -447,7 +527,7 @@ urgency.
                         value={formData.message}
                         onChange={handleChange}
                         rows={5}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#D0B970] focus:border-transparent transition-all resize-none"
+                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors resize-vertical"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                         required
                       />
@@ -456,38 +536,48 @@ urgency.
                     {/* Upload Files */}
                     <div>
                       <label
-                        htmlFor="file"
-                        className="block text-sm font-medium text-gray-700 mb-2"
+                        className="block text-sm font-medium text-gray-700 mb-3"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         Upload Files
                       </label>
-                      <button
-                        type="button"
-                        className="px-6 py-3 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition-colors font-medium flex items-center gap-2"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Choose File
-                        <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
-                      </button>
-                      <input
-                        type="file"
-                        id="file"
-                        name="file"
-                        className="hidden"
-                        multiple
-                      />
+                      <div className="border-2 border-dashed border-black p-6 hover:border-[#D0B970] transition-colors">
+                        <input
+                          type="file"
+                          id="file"
+                          name="file"
+                          multiple
+                          className="hidden"
+                          accept=".pdf,.doc,.docx,.txt"
+                        />
+                        <div className="flex justify-start">
+                          <label
+                            htmlFor="file"
+                            className="cursor-pointer inline-flex items-center px-4 py-2 bg-gray-300 text-black font-bold rounded-full hover:bg-gray-400 transition-colors"
+                            style={{ fontFamily: "var(--font-montserrat)" }}
+                          >
+                            Choose Files
+                            <ChevronRight className="ml-2 h-4 w-4" strokeWidth={3} />
+                          </label>
+                        </div>
+                        <p
+                          className="mt-3 text-sm text-gray-500 text-left"
+                          style={{ fontFamily: "var(--font-montserrat)" }}
+                        >
+                          Upload project documents, specifications, or requirements
+                        </p>
+                      </div>
                     </div>
 
                     {/* Submit Button */}
-                    <div className="flex justify-end pt-4">
+                    <div className="pt-4 flex justify-end">
                       <button
                         type="submit"
-                        className="px-8 py-3 bg-[#D0B970] text-white rounded-md hover:bg-[#C0A960] transition-colors font-semibold flex items-center gap-2 group"
+                        className="inline-flex items-center px-4 py-2 bg-[#D0B970] text-black font-bold rounded-full hover:bg-[#b8a55e] transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         Submit
-                        <ChevronDown className="w-5 h-5 rotate-[-90deg] group-hover:translate-x-1 transition-transform" />
+                        <ChevronRight className="ml-2 h-4 w-4" strokeWidth={3} />
                       </button>
                     </div>
                   </form>

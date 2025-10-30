@@ -21,9 +21,13 @@ export default function ContactPage() {
   return (
     <>
       <HeaderNavigation />
-      <main className="theme-electrical min-h-screen">
+      <main
+        className="min-h-screen px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32"
+        style={{ backgroundColor: "#c4c4c4" }}
+      >
         <ContactForms />
       </main>
+      <div className="h-3 bg-[#D0B970]"></div>
       <Footer />
     </>
   );

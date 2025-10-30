@@ -46,7 +46,7 @@ export default function Section12() {
   ];
 
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-6 sm:py-8">
       <div className="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="w-full" style={{ maxWidth: "1600px" }}>
           {/* 3 Column Grid */}
@@ -54,42 +54,42 @@ export default function Section12() {
             {cards.map((card, index) => (
               <div
                 key={index}
-                className="relative rounded-lg shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300 min-h-[500px] md:min-h-[600px] lg:min-h-[400px]"
+                className="relative shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300 min-h-[500px] md:min-h-[600px] lg:min-h-[400px] cursor-pointer"
               >
-                {/* Background Image - Full Card */}
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-
-                {/* Dark Overlay */}
-
+                {/* Background Image Container */}
+                <div className="absolute inset-0">
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    className="object-cover"
+                  />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-[#D0B970] opacity-0 group-hover:opacity-80 transition-opacity duration-300" />
+                </div>
 
                 {/* Content on Top of Background */}
                 <div className="relative z-10 h-full flex flex-col p-6 sm:p-8">
                   {/* Header */}
                   <div className="mb-6">
                     <h3
-                      className="text-xl sm:text-2xl md:text-2xl font-bold"
-                      style={{ fontFamily: "var(--font-montserrat)", color: "#D0B970" }}
+                      className="text-2xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-[#D0B970] group-hover:text-black transition-colors duration-300"
+                      style={{ fontFamily: "var(--font-montserrat)" }}
                     >
                       {card.title}
                     </h3>
-
                   </div>
 
                   {/* List Items */}
-                  <ul className="space-y-1.5 sm:space-y-2 pb-4">
+                  <ul className="space-y-2 sm:space-y-2 pb-4">
                     {card.items.map((item, itemIndex) => (
                       <li
                         key={itemIndex}
-                        className="flex items-start gap-3 text-white"
+                        className="flex items-start gap-3 text-white group-hover:text-black transition-colors duration-300"
                       >
-                        <span className="flex-shrink-0 w-2 h-2 bg-[#D0B970] rounded-full mt-2"></span>
+                        <span className="flex-shrink-0 w-2 h-2 bg-[#D0B970] group-hover:bg-black rounded-full mt-2 transition-colors duration-300"></span>
                         <span
-                          className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed"
+                          className="text-sm sm:text-base md:text-base lg:text-lg leading-relaxed"
                           style={{ fontFamily: "var(--font-montserrat)" }}
                         >
                           {item}

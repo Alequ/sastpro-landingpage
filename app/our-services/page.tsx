@@ -1,6 +1,7 @@
 "use client";
 
 import HeaderNavigation from "@/components/shared/header-navigation";
+import Footer from "@/components/shared/footer";
 import Header from "@/components/our-services/Header";
 import Section1 from "@/components/our-services/Section1";
 import Section2 from "@/components/our-services/Section2";
@@ -25,9 +26,9 @@ export default function OurServicesPage() {
           <Section1 />
         </div>
         <Section2 />
-         <section style={{paddingBottom: "20px" }}>
+         <section style={{paddingTop: "20px", paddingBottom: "20px" }}>
           <div className="flex justify-center w-full">
-            <div className="w-9/12">
+            <div style={{ width: "90%" }}>
               <hr className="border-t-2 border-black" />
             </div>
           </div>
@@ -36,9 +37,9 @@ export default function OurServicesPage() {
           <Section3 />
         </div>
         <Section4 />
-          <section style={{ paddingBottom: "20px" }}>
+          <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
           <div className="flex justify-center w-full">
-            <div className="w-9/12">
+            <div style={{ width: "90%" }}>
               <hr className="border-t-2 border-black" />
             </div>
           </div>
@@ -47,9 +48,9 @@ export default function OurServicesPage() {
           <Section5 />
         </div>
         <Section6 />
-          <section style={{ paddingBottom: "20px" }}>
+          <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
           <div className="flex justify-center w-full">
-            <div className="w-9/12">
+            <div style={{ width: "90%" }}>
               <hr className="border-t-2 border-black" />
             </div>
           </div>
@@ -58,9 +59,9 @@ export default function OurServicesPage() {
           <Section7 />
         </div>
         <Section8 />
-          <section style={{ paddingBottom: "20px" }}>
+          <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
           <div className="flex justify-center w-full">
-            <div className="w-9/12">
+            <div style={{ width: "90%" }}>
               <hr className="border-t-2 border-black" />
             </div>
           </div>
@@ -69,9 +70,9 @@ export default function OurServicesPage() {
           <Section9 />
         </div>
         <Section10 />
-          <section style={{ paddingBottom: "20px" }}>
+          <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
           <div className="flex justify-center w-full">
-            <div className="w-9/12">
+            <div style={{ width: "90%" }}>
               <hr className="border-t-2 border-black" />
             </div>
           </div>
@@ -81,6 +82,8 @@ export default function OurServicesPage() {
         </div>
         <Section12 />
       </main>
+      <div className="h-3 bg-[#D0B970]"></div>
+      <Footer />
     </>
   );
 }

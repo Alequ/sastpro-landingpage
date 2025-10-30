@@ -66,6 +66,7 @@ export default function HeaderNavigation() {
       dropdown: [
         { label: "General Enquiries", href: "/contact" },
         { label: "Book A Consultation", href: "/consultation" },
+        { label: "Careers", href: "/careers" },
         //{ label: "Office Locations", href: "#locations" },
       ],
     },

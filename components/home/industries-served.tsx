@@ -77,7 +77,7 @@ export default function IndustriesServed() {
   };
 
   return (
-    <section ref={targetRef} className="relative overflow-hidden py-16">
+    <section ref={targetRef} className="relative overflow-hidden py-4">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Carousel Container with Navigation */}
         <div className="relative">

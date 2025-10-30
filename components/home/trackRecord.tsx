@@ -1,6 +1,6 @@
 "use client";
 
-import { User, FileEdit, Hammer, CheckCircle2, ArrowRight, Workflow } from "lucide-react";
+import { User, FileEdit, Hammer, CheckCircle2, Workflow } from "lucide-react";
 import { useState } from "react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
@@ -115,10 +115,11 @@ and safety services delivery
           <p className="text-sm text-gray-400 mb-6 uppercase tracking-wider font-semibold">
             Ready to get started?
           </p>
-          <button className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#E5C158] text-black font-bold shadow-[0_0_40px_rgba(212,175,55,0.3)] hover:shadow-[0_0_60px_rgba(212,175,55,0.5)] hover:scale-105 transition-all duration-300 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#E5C158] to-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <span className="relative z-10">Discuss Your Project</span>
-            <ArrowRight className="relative z-10 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+          <button
+            className="px-8 py-4 bg-transparent border-2 border-[#D0B970] text-white font-bold text-lg hover:bg-[#D0B970] hover:text-black transition-all duration-300 rounded-full"
+            style={{ fontFamily: "var(--font-montserrat)" }}
+          >
+            Discuss Your Project
           </button>
         </div>
       </div>
