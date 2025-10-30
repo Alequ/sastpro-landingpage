@@ -1,8 +1,8 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import Image from "next/image";
 
 const services = [
   {
@@ -43,11 +43,11 @@ export default function ServicesOverview() {
   });
 
   return (
-    <section ref={targetRef} className="relative  pt-16 overflow-hidden">
+    <section ref={targetRef} className="relative pt-16 pb-4 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Grid */}
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 auto-rows-[280px] transition-all duration-1000 ${
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 auto-rows-[280px] transition-all duration-1000 ${
             isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -107,35 +107,26 @@ function ServiceCard({ service, index, isVisible }: ServiceCardProps) {
       />
 
       {/* Content */}
-      <div className="relative h-full flex flex-col justify-between p-6">
+      <div className="relative h-full flex items-start justify-between p-6">
         {/* Title */}
         <h3
-          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-tight max-w-[80%] transition-all duration-500 group-hover:translate-x-1"
+          className="text-3xl font-bold transition-colors duration-500"
           style={{
-            color: isHovered ? '#000000' : '#ffffff'
+            color: isHovered ? '#000000' : '#ffffff',
+            fontFamily: "var(--font-montserrat)"
           }}
         >
           {title}
         </h3>
 
         {/* Arrow Icon */}
-        <div className="flex justify-end">
-          <div
-            className="flex items-center justify-center w-12 h-12 rounded-full backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:rotate-[-5deg]"
-            style={{
-              backgroundColor: isHovered ? 'rgba(0, 0, 0, 0.2)' : 'rgba(255, 255, 255, 0.1)',
-              borderWidth: '1px',
-              borderColor: isHovered ? 'rgba(0, 0, 0, 0.3)' : 'rgba(255, 255, 255, 0.2)'
-            }}
-          >
-            <ArrowRight
-              className="w-6 h-6 transition-all duration-500 group-hover:translate-x-1"
-              style={{
-                color: isHovered ? '#000000' : '#ffffff'
-              }}
-              strokeWidth={2.5}
-            />
-          </div>
+        <div className="relative w-7 h-7 sm:w-8 sm:h-8 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0">
+          <Image
+            src="/maintenance/ButtonGoldav.png"
+            alt="Arrow"
+            fill
+            className="object-contain"
+          />
         </div>
       </div>
 

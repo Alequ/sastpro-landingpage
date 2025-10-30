@@ -254,7 +254,7 @@ export default function MaintenancePage() {
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Left Card - Areas of expertise */}
-                <div className="overflow-hidden shadow-xl relative group cursor-pointer">
+                <div className="overflow-hidden shadow-xl relative group cursor-pointer transition-all duration-300">
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
@@ -263,13 +263,15 @@ export default function MaintenancePage() {
                       fill
                       className="object-cover"
                     />
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-[#D0B970] opacity-0 group-hover:opacity-80 transition-opacity duration-300" />
                   </div>
 
                   {/* Content */}
                   <div className="relative z-10 p-8 sm:p-10 md:p-12 h-full flex flex-col justify-start min-h-[300px] sm:min-h-[400px]">
                     <div className="flex items-center justify-between">
                       <h3
-                        className="text-white text-2xl sm:text-3xl md:text-4xl font-bold"
+                        className="text-white group-hover:text-black text-2xl sm:text-3xl md:text-4xl font-bold transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         Areas of expertise
@@ -287,7 +289,7 @@ export default function MaintenancePage() {
                 </div>
 
                 {/* Right Card - Global experience */}
-                <div className="overflow-hidden shadow-xl relative">
+                <div className="overflow-hidden shadow-xl relative group cursor-pointer transition-all duration-300">
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
@@ -296,13 +298,15 @@ export default function MaintenancePage() {
                       fill
                       className="object-cover"
                     />
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-[#D0B970] opacity-0 group-hover:opacity-80 transition-opacity duration-300" />
                   </div>
 
                   {/* Content */}
                   <div className="relative z-10 p-8 sm:p-10 md:p-12 h-full flex flex-col justify-start min-h-[300px] sm:min-h-[400px]">
                     <div className="space-y-6">
                       <h3
-                        className="text-white text-2xl sm:text-3xl md:text-4xl font-bold"
+                        className="text-white group-hover:text-black text-2xl sm:text-3xl md:text-4xl font-bold transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         Global experience
@@ -310,7 +314,7 @@ export default function MaintenancePage() {
 
                       <div className="space-y-4">
                         <p
-                          className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed italic font-semibold"
+                          className="text-white/90 group-hover:text-black text-sm sm:text-base md:text-lg leading-relaxed italic font-semibold transition-colors duration-300"
                           style={{ fontFamily: "var(--font-montserrat)" }}
                         >
                           We support clients across multiple sectors and regions
@@ -319,7 +323,7 @@ export default function MaintenancePage() {
                         </p>
 
                         <p
-                          className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed italic font-semibold"
+                          className="text-white/90 group-hover:text-black text-sm sm:text-base md:text-lg leading-relaxed italic font-semibold transition-colors duration-300"
                           style={{ fontFamily: "var(--font-montserrat)" }}
                         >
                           Our approach combines experience, digital oversight,

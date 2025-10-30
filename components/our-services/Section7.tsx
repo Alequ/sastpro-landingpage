@@ -4,13 +4,13 @@ import Image from "next/image";
 
 export default function Section7() {
   return (
-    <section className="pt-12">
+    <section className="py-6 sm:py-8">
       <div className="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="w-full" style={{ maxWidth: "1600px" }}>
 
 
           {/* White Card Container */}
-          <div className="bg-white rounded-lg shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
+          <div className="bg-white shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
               {/* Left Column - Content */}
               <div className="space-y-6 sm:space-y-8 lg:col-span-2 ">
@@ -52,7 +52,7 @@ with real-time control and visibility.
                     src="/our-services/Digital solutions - SASTpro.png"
                     alt="Professional training and development"
                     fill
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
               </div>

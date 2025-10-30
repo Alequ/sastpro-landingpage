@@ -149,7 +149,7 @@ export default function WhoWeArePage() {
                   >
                     Our story
                   </h2>
-                  <div className="w-24 h-1 bg-[#D0B970]"></div>
+                  <div className="w-full h-1 bg-[#D0B970]"></div>
                 </div>
 
                 {/* First Row: Video + Story Text */}
@@ -225,7 +225,7 @@ export default function WhoWeArePage() {
                   </div>
 
                   {/* Image */}
-                  <div className="w-full xl:w-[45%] flex justify-center xl:justify-end">
+                  <div className="w-full xl:w-[45%] flex items-center justify-center">
                     <Image
                       src="/who-we-are/WhoWeAreOurStoryMonitor.png"
                       alt="Digital solutions SASTpro"
@@ -428,9 +428,9 @@ export default function WhoWeArePage() {
               className="shadow-xl p-8 sm:p-10 md:p-12 lg:p-16"
               style={{ backgroundColor: "#222323" }}
             >
-              <div className="text-center space-y-12">
+              <div className="text-center">
                 {/* Title with Squares */}
-                <div className="flex items-center justify-center gap-6 lg:gap-8">
+                <div className="flex items-center justify-center gap-6 lg:gap-8 mb-4">
                   {/* Left Squares */}
                   <div className="hidden lg:flex flex-row gap-2 items-center">
                     <div className="w-5 h-5 border-2 border-[#D0B970]"></div>
@@ -457,7 +457,7 @@ export default function WhoWeArePage() {
                 </div>
 
                 {/* Mobile Squares - Shown on smaller screens */}
-                <div className="flex lg:hidden justify-center gap-2">
+                <div className="flex lg:hidden justify-center gap-2 mb-6">
                   <div className="w-5 h-5 border-2 border-[#D0B970]"></div>
                   <div className="w-5 h-5 border-2 border-[#D0B970]"></div>
                   <div className="w-5 h-5 border-2 border-[#D0B970]"></div>
@@ -478,8 +478,8 @@ export default function WhoWeArePage() {
                 </div>
 
                 {/* Team Members - First Row (4 members) */}
-                <div className="flex justify-center gap-x-25 mb-8 lg:mb-12">
-                  <div className="text-center">
+                <div className="grid grid-cols-4 gap-8 lg:gap-12 max-w-6xl mx-auto mb-8 lg:mb-12">
+                  <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Allyn.png"
@@ -488,21 +488,23 @@ export default function WhoWeArePage() {
                         className="object-cover rounded-full"
                       />
                     </div>
-                    <h3
-                      className="text-white font-bold text-lg mb-1"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Allyn <span className="text-[#D0B970]">Coady</span>
-                    </h3>
-                    <p
-                      className="text-gray-300 text-sm"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Company Director
-                    </p>
+                    <div className="min-h-[4rem] flex flex-col justify-start">
+                      <h3
+                        className="text-white font-bold text-lg mb-1"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Allyn <span className="text-[#D0B970]">Coady</span>
+                      </h3>
+                      <p
+                        className="text-gray-300 text-sm"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Company Director
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="text-center">
+                  <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Simon.png"
@@ -511,21 +513,23 @@ export default function WhoWeArePage() {
                         className="object-cover rounded-full"
                       />
                     </div>
-                    <h3
-                      className="text-white font-bold text-lg mb-1"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Simon <span className="text-[#D0B970]">Frew</span>
-                    </h3>
-                    <p
-                      className="text-gray-300 text-sm"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Chief Technical Authority
-                    </p>
+                    <div className="min-h-[4rem] flex flex-col justify-start">
+                      <h3
+                        className="text-white font-bold text-lg mb-1"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Simon <span className="text-[#D0B970]">Frew</span>
+                      </h3>
+                      <p
+                        className="text-gray-300 text-sm"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Chief Technical Authority
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="text-center">
+                  <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Bryson.png"
@@ -534,21 +538,23 @@ export default function WhoWeArePage() {
                         className="object-cover rounded-full"
                       />
                     </div>
-                    <h3
-                      className="text-white font-bold text-lg mb-1"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Stephen <span className="text-[#D0B970]">Bryson</span>
-                    </h3>
-                    <p
-                      className="text-gray-300 text-sm"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Operations Manager
-                    </p>
+                    <div className="min-h-[4rem] flex flex-col justify-start">
+                      <h3
+                        className="text-white font-bold text-lg mb-1"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Stephen <span className="text-[#D0B970]">Bryson</span>
+                      </h3>
+                      <p
+                        className="text-gray-300 text-sm"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Operations Manager
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="text-center">
+                  <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Brian.png"
@@ -557,24 +563,26 @@ export default function WhoWeArePage() {
                         className="object-cover rounded-full"
                       />
                     </div>
-                    <h3
-                      className="text-white font-bold text-lg mb-1"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Brian <span className="text-[#D0B970]">Wishart</span>
-                    </h3>
-                    <p
-                      className="text-gray-300 text-sm"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      HSEQ Manager
-                    </p>
+                    <div className="min-h-[4rem] flex flex-col justify-start">
+                      <h3
+                        className="text-white font-bold text-lg mb-1"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Brian <span className="text-[#D0B970]">Wishart</span>
+                      </h3>
+                      <p
+                        className="text-gray-300 text-sm"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        HSEQ Manager
+                      </p>
+                    </div>
                   </div>
                 </div>
 
                 {/* Team Members - Second Row (4 members) */}
-                <div className="flex justify-center gap-x-25 mb-8 lg:mb-12">
-                  <div className="text-center">
+                <div className="grid grid-cols-4 gap-8 lg:gap-12 max-w-6xl mx-auto mb-8 lg:mb-12">
+                  <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Matthew.png"
@@ -583,21 +591,23 @@ export default function WhoWeArePage() {
                         className="object-cover rounded-full"
                       />
                     </div>
-                    <h3
-                      className="text-white font-bold text-lg mb-1"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Matthew <span className="text-[#D0B970]">Sellars</span>
-                    </h3>
-                    <p
-                      className="text-gray-300 text-sm"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      HR / Business Manager
-                    </p>
+                    <div className="min-h-[4rem] flex flex-col justify-start">
+                      <h3
+                        className="text-white font-bold text-lg mb-1"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Matthew <span className="text-[#D0B970]">Sellars</span>
+                      </h3>
+                      <p
+                        className="text-gray-300 text-sm"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        HR / Business Manager
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="text-center">
+                  <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Laurence.png"
@@ -606,21 +616,23 @@ export default function WhoWeArePage() {
                         className="object-cover rounded-full"
                       />
                     </div>
-                    <h3
-                      className="text-white font-bold text-lg mb-1"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Laurence <span className="text-[#D0B970]">Woods</span>
-                    </h3>
-                    <p
-                      className="text-gray-300 text-sm"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Media Development Manager
-                    </p>
+                    <div className="min-h-[4rem] flex flex-col justify-start">
+                      <h3
+                        className="text-white font-bold text-lg mb-1"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Laurence <span className="text-[#D0B970]">Woods</span>
+                      </h3>
+                      <p
+                        className="text-gray-300 text-sm"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Media Development Manager
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="text-center">
+                  <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Lizzo.png"
@@ -629,21 +641,23 @@ export default function WhoWeArePage() {
                         className="object-cover rounded-full"
                       />
                     </div>
-                    <h3
-                      className="text-white font-bold text-lg mb-1"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Marilis <span className="text-[#D0B970]">Kulamaa</span>
-                    </h3>
-                    <p
-                      className="text-gray-300 text-sm"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      People & Culture Manager
-                    </p>
+                    <div className="min-h-[4rem] flex flex-col justify-start">
+                      <h3
+                        className="text-white font-bold text-lg mb-1"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Marilis <span className="text-[#D0B970]">Kulamaa</span>
+                      </h3>
+                      <p
+                        className="text-gray-300 text-sm"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        People & Culture Manager
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="text-center">
+                  <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Lewis.png"
@@ -652,24 +666,26 @@ export default function WhoWeArePage() {
                         className="object-cover rounded-full"
                       />
                     </div>
-                    <h3
-                      className="text-white font-bold text-lg mb-1"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Lewis <span className="text-[#D0B970]">Sellars</span>
-                    </h3>
-                    <p
-                      className="text-gray-300 text-sm"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Marketing Manager
-                    </p>
+                    <div className="min-h-[4rem] flex flex-col justify-start">
+                      <h3
+                        className="text-white font-bold text-lg mb-1"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Lewis <span className="text-[#D0B970]">Sellars</span>
+                      </h3>
+                      <p
+                        className="text-gray-300 text-sm"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Marketing Manager
+                      </p>
+                    </div>
                   </div>
                 </div>
 
                 {/* Third Row - Two members centered */}
-                <div className="flex justify-center gap-x-25">
-                  <div className="text-center">
+                <div className="grid grid-cols-2 gap-8 lg:gap-12 max-w-lg mx-auto">
+                  <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Felix.png"
@@ -678,21 +694,23 @@ export default function WhoWeArePage() {
                         className="object-cover rounded-full"
                       />
                     </div>
-                    <h3
-                      className="text-white font-bold text-lg mb-1"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Andries <span className="text-[#D0B970]">Felix</span>
-                    </h3>
-                    <p
-                      className="text-gray-300 text-sm"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Lead Software Engineer
-                    </p>
+                    <div className="min-h-[4rem] flex flex-col justify-start">
+                      <h3
+                        className="text-white font-bold text-lg mb-1"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Andries <span className="text-[#D0B970]">Felix</span>
+                      </h3>
+                      <p
+                        className="text-gray-300 text-sm"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Lead Software Engineer
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="text-center">
+                  <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are/Alex.png"
@@ -701,18 +719,20 @@ export default function WhoWeArePage() {
                         className="object-cover rounded-full"
                       />
                     </div>
-                    <h3
-                      className="text-white font-bold text-lg mb-1"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Alex <span className="text-[#D0B970]">Turcu</span>
-                    </h3>
-                    <p
-                      className="text-gray-300 text-sm"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Systems & Software Manager
-                    </p>
+                    <div className="min-h-[4rem] flex flex-col justify-start">
+                      <h3
+                        className="text-white font-bold text-lg mb-1"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Alex <span className="text-[#D0B970]">Turcu</span>
+                      </h3>
+                      <p
+                        className="text-gray-300 text-sm"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Systems & Software Manager
+                      </p>
+                    </div>
                   </div>
                 </div>
 

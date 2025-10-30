@@ -36,6 +36,10 @@ const footerLinks = {
       { label: "enquiries@sastransition.com", href: "mailto:enquiries@sastransition.com", icon: Mail },
       { label: "Tuleviku tee 10, Peetri, 75312 Harju maakond", href: "#", icon: MapPin },
       { label: "+372 5886 4233", href: "tel:+37258864233", icon: Phone },
+      { label: "1 Marischal Square, Aberdeen, AB10 1BL", href: "#", icon: MapPin },
+      { label: "+44 1224034200", href: "tel:+441224034200", icon: Phone },
+      { label: "Rhijnspoorplein 10-38, Amsterdam, 1018 TX, Netherlands", href: "#", icon: MapPin },
+      { label: "+31 202991400", href: "tel:+31202991400", icon: Phone },
       { label: "LinkedIn", href: "https://www.linkedin.com/company/s-a-s-transition/posts/?feedView=all", icon: Linkedin },
     ],
   },
@@ -60,7 +64,7 @@ export default function Footer() {
     <footer style={{ backgroundColor: "#223232" }} className="text-white">
       <div className="section-container">
         {/* Main Footer Content */}
-        <div className="flex flex-col md:flex-row md:justify-between gap-8 mb-12">
+        <div className="flex flex-col md:flex-row md:justify-between">
           {/* Links Columns */}
           <FooterColumn
             title={footerLinks.company.title}
@@ -80,10 +84,10 @@ export default function Footer() {
           />
         </div>
 
-        <Separator className="bg-gray-800 mb-8" />
+        {/* <Separator className="bg-gray-800 mb-2" /> */}
 
         {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pb-8">
+        <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400">
             © {currentYear} Electrical Services. All rights reserved.
           </p>

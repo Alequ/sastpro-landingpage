@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -48,22 +47,19 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Link href="/consultation">
-              <Button
-                size="lg"
-                className="bg-[#D0B970] hover:bg-[#BBA860] text-white px-8 py-6 text-lg glow-pulse rounded-full"
-              >
-                Book Consultation
-              </Button>
+            <Link
+              href="/consultation"
+              className="px-8 py-4 bg-transparent border-2 border-[#D0B970] text-white font-bold text-lg hover:bg-[#D0B970] hover:text-black transition-all duration-300 rounded-full"
+              style={{ fontFamily: "var(--font-montserrat)" }}
+            >
+              Book Consultation
             </Link>
-            <Link href="/contact">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg rounded-full"
-              >
-                Contact Us
-              </Button>
+            <Link
+              href="/contact"
+              className="px-8 py-4 bg-transparent border-2 border-[#D0B970] text-white font-bold text-lg hover:bg-[#D0B970] hover:text-black transition-all duration-300 rounded-full"
+              style={{ fontFamily: "var(--font-montserrat)" }}
+            >
+              Contact Us
             </Link>
           </div>
         </div>

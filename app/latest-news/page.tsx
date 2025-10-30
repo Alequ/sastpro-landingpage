@@ -230,7 +230,7 @@ export default function LatestNewsPage() {
                   <div className="relative z-10 space-y-4 h-full flex flex-col">
                     <div>
                       <h3
-                        className="text-xl sm:text-2xl md:text-3xl font-bold text-white"
+                        className="text-xl sm:text-2xl md:text-3xl font-bold text-white group-hover:text-black transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         The skate starter scheme
@@ -245,7 +245,7 @@ export default function LatestNewsPage() {
                     <div className="w-full h-1 bg-[#D0B970]"></div>
                     <div className="flex-1 flex items-center">
                       <p
-                        className="text-sm sm:text-base md:text-lg text-white leading-relaxed"
+                        className="text-sm sm:text-base md:text-lg text-white group-hover:text-black leading-relaxed transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         With several of our team, including our founder Ailyn
@@ -300,7 +300,7 @@ export default function LatestNewsPage() {
                     {/* Content */}
                     <div className="relative z-10 space-y-4">
                       <p
-                        className="text-sm sm:text-base md:text-lg text-white leading-relaxed text-center"
+                        className="text-sm sm:text-base md:text-lg text-white group-hover:text-black leading-relaxed text-center transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         The team also highlighted the importance of wearing
@@ -521,7 +521,7 @@ export default function LatestNewsPage() {
                   <div className="relative z-10 space-y-4 h-full flex flex-col">
                     <div>
                       <h3
-                        className="text-xl sm:text-2xl md:text-3xl font-bold text-white"
+                        className="text-xl sm:text-2xl md:text-3xl font-bold text-white group-hover:text-black transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         Discovering the latest in safety in Aberdeen
@@ -536,7 +536,7 @@ export default function LatestNewsPage() {
                     <div className="w-full h-1 bg-[#D0B970]"></div>
                     <div className="flex-1 flex items-center">
                       <p
-                        className="text-sm sm:text-base md:text-lg text-white leading-relaxed"
+                        className="text-sm sm:text-base md:text-lg text-white group-hover:text-black leading-relaxed transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         The S.A.S Transition team was thrilled to attend Safety
