@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Clock, Home, ChevronDown, ChevronRight } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Home,
+  ChevronDown,
+  ChevronRight,
+} from "lucide-react";
 
 export default function ContactForms() {
   const [formData, setFormData] = useState({
@@ -92,8 +100,9 @@ export default function ContactForms() {
                   fontFamily: "var(--font-montserrat)",
                 }}
               >
-               Delivering trusted, expert support from planning to completion.
-Our dedicated team ensures every system performs safely and efficiently.
+                Delivering trusted, expert support from planning to completion.
+                Our dedicated team ensures every system performs safely and
+                efficiently.
               </p>
               <p
                 className="text-gray-200 leading-relaxed text-base sm:text-lg md:text-xl lg:text-xl"
@@ -171,10 +180,11 @@ Our dedicated team ensures every system performs safely and efficiently.
                       className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
                       style={{ fontFamily: "var(--font-montserrat)" }}
                     >
-                      Whether you’re submitting documentation, requesting project details, or need immediate
-support — we’ll get you to the right person fast. From electrical and mechanical projects to
-SASTpro integration and training, our team handles every enquiry with precision and
-urgency.
+                      Whether you’re submitting documentation, requesting
+                      project details, or need immediate support — we’ll get you
+                      to the right person fast. From electrical and mechanical
+                      projects to SASTpro integration and training, our team
+                      handles every enquiry with precision and urgency.
                     </p>
                   </div>
                 </div>
@@ -188,7 +198,6 @@ urgency.
       <section className="pb-16">
         <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
           <div className="w-full" style={{ maxWidth: "1600px" }}>
-
             {/* White Card Container */}
             <div className="bg-white shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
@@ -282,7 +291,7 @@ urgency.
                             className="text-gray-700"
                             style={{ fontFamily: "var(--font-montserrat)" }}
                           >
-                            Hours: MonFri 08:00-18:00 | 24/7 Emergency Response
+                            Hours: Mon–Fri 08:00–18:00 | 24/7 Emergency Response
                           </p>
                         </div>
                       </div>
@@ -503,12 +512,42 @@ urgency.
                         }}
                         required
                       >
-                        <option value="" style={{ backgroundColor: "white", color: "black" }}>Select an enquiry type</option>
-                        <option value="general" style={{ backgroundColor: "white", color: "black" }}>General Enquiry</option>
-                        <option value="quote" style={{ backgroundColor: "white", color: "black" }}>Request a Quote</option>
-                        <option value="support" style={{ backgroundColor: "white", color: "black" }}>Technical Support</option>
-                        <option value="emergency" style={{ backgroundColor: "white", color: "black" }}>Emergency Callout</option>
-                        <option value="partnership" style={{ backgroundColor: "white", color: "black" }}>Partnership Enquiry</option>
+                        <option
+                          value=""
+                          style={{ backgroundColor: "white", color: "black" }}
+                        >
+                          Select an enquiry type
+                        </option>
+                        <option
+                          value="general"
+                          style={{ backgroundColor: "white", color: "black" }}
+                        >
+                          General Enquiry
+                        </option>
+                        <option
+                          value="quote"
+                          style={{ backgroundColor: "white", color: "black" }}
+                        >
+                          Request a Quote
+                        </option>
+                        <option
+                          value="support"
+                          style={{ backgroundColor: "white", color: "black" }}
+                        >
+                          Technical Support
+                        </option>
+                        <option
+                          value="emergency"
+                          style={{ backgroundColor: "white", color: "black" }}
+                        >
+                          Emergency Callout
+                        </option>
+                        <option
+                          value="partnership"
+                          style={{ backgroundColor: "white", color: "black" }}
+                        >
+                          Partnership Enquiry
+                        </option>
                       </select>
                     </div>
 
@@ -557,14 +596,18 @@ urgency.
                             style={{ fontFamily: "var(--font-montserrat)" }}
                           >
                             Choose Files
-                            <ChevronRight className="ml-2 h-4 w-4" strokeWidth={3} />
+                            <ChevronRight
+                              className="ml-2 h-4 w-4"
+                              strokeWidth={3}
+                            />
                           </label>
                         </div>
                         <p
                           className="mt-3 text-sm text-gray-500 text-left"
                           style={{ fontFamily: "var(--font-montserrat)" }}
                         >
-                          Upload project documents, specifications, or requirements
+                          Upload project documents, specifications, or
+                          requirements
                         </p>
                       </div>
                     </div>
@@ -577,7 +620,10 @@ urgency.
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         Submit
-                        <ChevronRight className="ml-2 h-4 w-4" strokeWidth={3} />
+                        <ChevronRight
+                          className="ml-2 h-4 w-4"
+                          strokeWidth={3}
+                        />
                       </button>
                     </div>
                   </form>

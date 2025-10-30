@@ -10,29 +10,29 @@ const processSteps = [
     icon: User,
     title: "Expert team members",
     description: "Number of certified engineers working for S.A.S Transition.",
-    color: "from-[#B8941E] to-[#D4AF37]"
+    color: "from-[#B8941E] to-[#D4AF37]",
   },
   {
     number: "28,500+",
     icon: CheckCircle2,
     title: "Permits",
     description: "Number of permits issues trough our SASTpro software.",
-    color: "from-[#D4AF37] to-[#E5C158]"
+    color: "from-[#D4AF37] to-[#E5C158]",
   },
   {
     number: "100%",
     icon: Workflow,
     title: "Safety Score",
     description: "Number of projects completed without safety incidents.",
-    color: "from-[#E5C158] to-[#F0D977]"
+    color: "from-[#E5C158] to-[#F0D977]",
   },
   {
     number: "28,500",
     icon: CheckCircle2,
     title: "Training courses",
-    description: "Number of training courses completed trough SASTacademy",
-    color: "from-[#F0D977] to-[#F5E5A0]"
-  }
+    description: "Number of training courses completed through SASTacademy",
+    color: "from-[#F0D977] to-[#F5E5A0]",
+  },
 ];
 
 export default function HowWeWork() {
@@ -42,7 +42,10 @@ export default function HowWeWork() {
   });
 
   return (
-    <section ref={targetRef} className="relative py-24 overflow-hidden bg-[#0A0A0A]">
+    <section
+      ref={targetRef}
+      className="relative py-24 overflow-hidden bg-[#0A0A0A]"
+    >
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.03),transparent_50%)]" />
       <div className="absolute top-0 left-1/3 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl animate-pulse" />
@@ -52,30 +55,32 @@ export default function HowWeWork() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
-          
-
           <h2 className="text-balance text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Our{" "}
             <span className="bg-gradient-to-r from-[#B8941E] via-[#D4AF37] to-[#E5C158] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(212,175,55,0.3)]">
               Track Record
             </span>
-          
           </h2>
           <p className="mt-6 text-pretty text-lg leading-relaxed text-gray-400 max-w-2xl mx-auto">
-           Numbers that speak for themselves. Our proven excellence across decades of electriocal engineering
-and safety services delivery
+            Numbers that speak for themselves. Our proven excellence across
+            decades of electrical engineering and safety services delivery
           </p>
         </div>
 
         {/* Progress Bar at Top - Desktop only */}
-        <div className="hidden lg:block relative mt-20 mb-16 mx-auto" style={{ width: '75%' }}>
+        <div
+          className="hidden lg:block relative mt-20 mb-16 mx-auto"
+          style={{ width: "75%" }}
+        >
           <div className="relative h-1">
             {/* Background line */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#B8941E]/20 via-[#D4AF37]/20 via-[#E5C158]/20 to-[#F0D977]/20 rounded-full" />
             {/* Animated progress line */}
-            <div className={`absolute inset-0 bg-gradient-to-r from-[#B8941E] via-[#D4AF37] via-[#E5C158] to-[#F0D977] rounded-full shadow-[0_0_20px_rgba(212,175,55,0.5)] transition-all duration-1500 ease-out ${
-              isIntersecting ? 'scale-x-100' : 'scale-x-0'
-            } origin-left`} />
+            <div
+              className={`absolute inset-0 bg-gradient-to-r from-[#B8941E] via-[#D4AF37] via-[#E5C158] to-[#F0D977] rounded-full shadow-[0_0_20px_rgba(212,175,55,0.5)] transition-all duration-1500 ease-out ${
+                isIntersecting ? "scale-x-100" : "scale-x-0"
+              } origin-left`}
+            />
           </div>
 
           {/* Progress Circles */}
@@ -83,8 +88,10 @@ and safety services delivery
             {processSteps.map((step, index) => (
               <div
                 key={step.number}
-                className={`w-4 h-4 rounded-full border-2 border-[#0A0A0A] bg-gradient-to-br ${step.color} shadow-[0_0_15px_rgba(212,175,55,0.6)] transition-all duration-700 ${
-                  isIntersecting ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+                className={`w-4 h-4 rounded-full border-2 border-[#0A0A0A] bg-gradient-to-br ${
+                  step.color
+                } shadow-[0_0_15px_rgba(212,175,55,0.6)] transition-all duration-700 ${
+                  isIntersecting ? "scale-100 opacity-100" : "scale-0 opacity-0"
                 }`}
                 style={{
                   transitionDelay: `${(index + 1) * 300}ms`,
@@ -128,14 +135,20 @@ and safety services delivery
 }
 
 interface ProcessStepProps {
-  step: typeof processSteps[0];
+  step: (typeof processSteps)[0];
   index: number;
   isVisible: boolean;
   hoveredIndex: number | null;
   setHoveredIndex: (index: number | null) => void;
 }
 
-function ProcessStep({ step, index, isVisible, hoveredIndex, setHoveredIndex }: ProcessStepProps) {
+function ProcessStep({
+  step,
+  index,
+  isVisible,
+  hoveredIndex,
+  setHoveredIndex,
+}: ProcessStepProps) {
   const { number, icon: Icon, title, description, color } = step;
   const isHovered = hoveredIndex === index;
 
@@ -149,16 +162,20 @@ function ProcessStep({ step, index, isVisible, hoveredIndex, setHoveredIndex }: 
       style={{ transitionDelay: `${index * 150}ms` }}
     >
       {/* Card */}
-      <div className={`group relative rounded-2xl border overflow-hidden transition-all duration-300 h-full py-12 px-8 ${
-        isHovered
-          ? 'bg-[#0A0A0A] border-gray-400 shadow-[0_8px_30px_rgba(212,175,55,0.15)] -translate-y-1'
-          : 'bg-[#0A0A0A] border-gray-600 shadow-[0_4px_20px_rgba(0,0,0,0.3)]'
-      }`}>
+      <div
+        className={`group relative rounded-2xl border overflow-hidden transition-all duration-300 h-full py-12 px-8 ${
+          isHovered
+            ? "bg-[#0A0A0A] border-gray-400 shadow-[0_8px_30px_rgba(212,175,55,0.15)] -translate-y-1"
+            : "bg-[#0A0A0A] border-gray-600 shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+        }`}
+      >
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center">
           {/* Icon */}
           <div className="mb-8">
-            <div className={`flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br ${color}`}>
+            <div
+              className={`flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br ${color}`}
+            >
               <Icon className="h-10 w-10 text-black" strokeWidth={2.5} />
             </div>
           </div>
