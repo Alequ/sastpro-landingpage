@@ -19,7 +19,7 @@ export default function Section6() {
     },
     {
       title: "Auditing, Governance & Compliance",
-      image: "/our-services/adgc.png",
+      image: "/our-services/ADGC.png",
       items: [
         "Internal and third-party audits",
         "QA/QC inspection programs",
