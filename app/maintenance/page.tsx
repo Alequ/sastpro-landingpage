@@ -3,6 +3,7 @@
 import HeaderNavigation from "@/components/shared/header-navigation";
 import Footer from "@/components/shared/footer";
 import Image from "next/image";
+import Link from "next/link";
 import ProjectCarousel from "@/components/shared/ProjectCarousel";
 import { carouselData } from "@/app/data/CarouselData";
 
@@ -107,7 +108,7 @@ export default function MaintenancePage() {
 
         {/* Construction Content Section */}
         <section className="pt-0 mb-15">
-          <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
+          <div className="flex justify-center w-full px-0 sm:px-2 md:px-6 lg:px-24 xl:px-32">
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               {/* Decorative Border Element */}
               <div className="flex justify-center w-full mb-15">
@@ -196,7 +197,7 @@ export default function MaintenancePage() {
 
         {/* CTA Section */}
         <section className="mb-15">
-          <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
+          <div className="flex justify-center w-full px-0 sm:px-2 md:px-6 lg:px-24 xl:px-32">
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               {/* White Card Container */}
               <div className="bg-white shadow-xl border-b-4 border-[#D0B970] overflow-hidden">
@@ -250,11 +251,11 @@ export default function MaintenancePage() {
 
         {/* Areas of Expertise & Global Experience Section */}
         <section className="mb-15">
-          <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
+          <div className="flex justify-center w-full px-0 sm:px-2 md:px-6 lg:px-24 xl:px-32">
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Left Card - Areas of expertise */}
-                <div className="overflow-hidden shadow-xl relative group cursor-pointer transition-all duration-300">
+                <Link href="/our-services" className="overflow-hidden shadow-xl relative group cursor-pointer transition-all duration-300">
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
@@ -286,7 +287,7 @@ export default function MaintenancePage() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
 
                 {/* Right Card - Global experience */}
                 <div className="overflow-hidden shadow-xl relative group cursor-pointer transition-all duration-300">

@@ -12,6 +12,7 @@ const footerLinks = {
       { label: "General enquiries", href: "/contact" },
       { label: "Book a consultation", href: "/consultation" },
       { label: "Contact Us", href: "/contact" },
+      { label: "Cookie Policy", href: "/cookie-policy" },
     ],
   },
   services: {
