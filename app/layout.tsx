@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Montserrat } from 'next/font/google'
+import CookieConsent from '@/components/shared/cookie-consent'
 
 import './globals.css'
 
@@ -24,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.variable} font-sans antialiased`}>
         {children}
-
+        <CookieConsent />
       </body>
     </html>
   )
