@@ -21,11 +21,57 @@ export default function ContactForms() {
     enquiryType: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Add form submission logic here
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message:
+            "Thank you for contacting us! We'll get back to you soon.",
+        });
+        // Reset form
+        setFormData({
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          enquiryType: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: data.error || "Failed to send message. Please try again.",
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "An error occurred. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -404,6 +450,20 @@ export default function ContactForms() {
 
                 {/* Right Column - Contact Form */}
                 <div className="space-y-6">
+                  {/* Status Message */}
+                  {submitStatus.type && (
+                    <div
+                      className={`p-4 rounded ${
+                        submitStatus.type === "success"
+                          ? "bg-green-100 text-green-800 border border-green-300"
+                          : "bg-red-100 text-red-800 border border-red-300"
+                      }`}
+                      style={{ fontFamily: "var(--font-montserrat)" }}
+                    >
+                      {submitStatus.message}
+                    </div>
+                  )}
+
                   <form onSubmit={handleSubmit} className="space-y-5">
                     {/* Name Field */}
                     <div>
@@ -420,9 +480,11 @@ export default function ContactForms() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
+                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
+                        style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
                         required
+                        autoComplete="name"
+                        placeholder="Enter your name"
                       />
                     </div>
 
@@ -441,8 +503,10 @@ export default function ContactForms() {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
+                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
+                        style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                        autoComplete="organization"
+                        placeholder="Enter your company name"
                       />
                     </div>
 
@@ -461,9 +525,11 @@ export default function ContactForms() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
+                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
+                        style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
                         required
+                        autoComplete="email"
+                        placeholder="Enter your email address"
                       />
                     </div>
 
@@ -482,8 +548,10 @@ export default function ContactForms() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
+                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
+                        style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                        autoComplete="tel"
+                        placeholder="Enter your phone number"
                       />
                     </div>
 
@@ -504,6 +572,8 @@ export default function ContactForms() {
                         className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors bg-white appearance-none text-black"
                         style={{
                           fontFamily: "var(--font-montserrat)",
+                          color: '#000000',
+                          backgroundColor: '#ffffff',
                           backgroundImage:
                             'url(\'data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>\')',
                           backgroundRepeat: "no-repeat",
@@ -566,14 +636,15 @@ export default function ContactForms() {
                         value={formData.message}
                         onChange={handleChange}
                         rows={5}
-                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors resize-vertical"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
+                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors resize-vertical text-black bg-white"
+                        style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
                         required
+                        placeholder="Enter your message here..."
                       />
                     </div>
 
-                    {/* Upload Files */}
-                    <div>
+                    {/* Upload Files - TEMPORARILY DISABLED */}
+                    {/* <div>
                       <label
                         className="block text-sm font-medium text-gray-700 mb-3"
                         style={{ fontFamily: "var(--font-montserrat)" }}
@@ -610,16 +681,17 @@ export default function ContactForms() {
                           requirements
                         </p>
                       </div>
-                    </div>
+                    </div> */}
 
                     {/* Submit Button */}
                     <div className="pt-4 flex justify-end">
                       <button
                         type="submit"
-                        className="inline-flex items-center px-4 py-2 bg-[#D0B970] text-black font-bold rounded-full hover:bg-[#b8a55e] transition-colors duration-300"
+                        disabled={isSubmitting}
+                        className="inline-flex items-center px-4 py-2 bg-[#D0B970] text-black font-bold rounded-full hover:bg-[#b8a55e] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Submit
+                        {isSubmitting ? "Sending..." : "Submit"}
                         <ChevronRight
                           className="ml-2 h-4 w-4"
                           strokeWidth={3}
