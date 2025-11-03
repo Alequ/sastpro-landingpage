@@ -1,11 +1,97 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import HeaderNavigation from "@/components/shared/header-navigation";
 import Footer from "@/components/shared/footer";
 
 export default function CareersPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    trade: "",
+    region: "",
+    location: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  // Auto-hide success message after 5 seconds
+  useEffect(() => {
+    if (submitStatus.type === "success") {
+      const timer = setTimeout(() => {
+        setSubmitStatus({ type: null, message: "" });
+      }, 5000); // 5 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus.type]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch("/api/careers", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message:
+            "Thank you for your application! We'll review it and get back to you soon.",
+        });
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          trade: "",
+          region: "",
+          location: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message:
+            data.error || "Failed to submit application. Please try again.",
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "An error occurred. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
   return (
     <>
       <HeaderNavigation />
@@ -377,7 +463,21 @@ export default function CareersPage() {
                   Application Form
                 </h2>
 
-                <form className="space-y-6">
+                {/* Status Message */}
+                {submitStatus.type && (
+                  <div
+                    className={`p-4 rounded mb-6 ${
+                      submitStatus.type === "success"
+                        ? "bg-green-100 text-green-800 border border-green-300"
+                        : "bg-red-100 text-red-800 border border-red-300"
+                    }`}
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  >
+                    {submitStatus.message}
+                  </div>
+                )}
+
+                <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name Field */}
                   <div>
                     <label
@@ -391,8 +491,12 @@ export default function CareersPage() {
                       type="text"
                       id="name"
                       name="name"
-                      className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
+                      style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                      required
+                      placeholder="Enter your full name"
                     />
                   </div>
 
@@ -409,8 +513,12 @@ export default function CareersPage() {
                       type="email"
                       id="email"
                       name="email"
-                      className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
+                      style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                      required
+                      placeholder="Enter your email address"
                     />
                   </div>
 
@@ -427,8 +535,11 @@ export default function CareersPage() {
                       type="tel"
                       id="phone"
                       name="phone"
-                      className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
+                      style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                      placeholder="Enter your phone number"
                     />
                   </div>
 
@@ -444,15 +555,20 @@ export default function CareersPage() {
                     <select
                       id="trade"
                       name="trade"
+                      value={formData.trade}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors bg-white appearance-none text-black"
                       style={{
                         fontFamily: "var(--font-montserrat)",
+                        color: '#000000',
+                        backgroundColor: '#ffffff',
                         backgroundImage:
                           'url(\'data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>\')',
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "right 12px center",
                         backgroundSize: "12px",
                       }}
+                      required
                     >
                       <option
                         value=""
@@ -517,15 +633,20 @@ export default function CareersPage() {
                     <select
                       id="region"
                       name="region"
+                      value={formData.region}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors bg-white appearance-none text-black"
                       style={{
                         fontFamily: "var(--font-montserrat)",
+                        color: '#000000',
+                        backgroundColor: '#ffffff',
                         backgroundImage:
                           'url(\'data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>\')',
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "right 12px center",
                         backgroundSize: "12px",
                       }}
+                      required
                     >
                       <option
                         value=""
@@ -573,31 +694,18 @@ export default function CareersPage() {
                       type="text"
                       id="location"
                       name="location"
-                      className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
+                      value={formData.location}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
+                      style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                      placeholder="Enter your preferred location"
                     />
                   </div>
 
-                  {/* Message/Availability Field */}
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      Message / Availability
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors resize-vertical"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    />
-                  </div>
 
-                  {/* Upload Files Section */}
-                  <div>
+
+                  {/* Upload Files Section - TEMPORARILY DISABLED */}
+                  {/* <div>
                     <label
                       className="block text-sm font-medium text-gray-700 mb-3"
                       style={{ fontFamily: "var(--font-montserrat)" }}
@@ -633,16 +741,17 @@ export default function CareersPage() {
                         Upload your CV, cover letter, and certifications
                       </p>
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Submit Button */}
                   <div className="pt-4 flex justify-end">
                     <button
                       type="submit"
-                      className="inline-flex items-center px-4 py-2 bg-[#D0B970] text-black font-bold rounded-full hover:bg-[#b8a55e] transition-colors duration-300"
+                      disabled={isSubmitting}
+                      className="inline-flex items-center px-4 py-2 bg-[#D0B970] text-black font-bold rounded-full hover:bg-[#b8a55e] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                       style={{ fontFamily: "var(--font-montserrat)" }}
                     >
-                      Submit
+                      {isSubmitting ? "Sending..." : "Submit"}
                       <ChevronRight className="ml-2 h-4 w-4" strokeWidth={3} />
                     </button>
                   </div>
