@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   Mail,
@@ -23,12 +23,69 @@ export default function ConsultationForm() {
     message: "",
   });
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Auto-hide success message after 5 seconds
+  useEffect(() => {
+    if (submitStatus.type === "success") {
+      const timer = setTimeout(() => {
+        setSubmitStatus({ type: null, message: "" });
+      }, 5000); // 5 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus.type]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Contact form submitted:", formData);
-    console.log("Selected file:", selectedFile);
-    // Add form submission logic here
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch("/api/consultation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message:
+            "Thank you for your consultation request! We'll get back to you soon.",
+        });
+        // Reset form
+        setFormData({
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          enquiryType: "",
+          location: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: data.error || "Failed to submit consultation request. Please try again.",
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "An error occurred. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -213,6 +270,20 @@ export default function ConsultationForm() {
                 Submit Your Details
               </h2>
 
+              {/* Status Message */}
+              {submitStatus.type && (
+                <div
+                  className={`p-4 rounded mb-6 ${
+                    submitStatus.type === "success"
+                      ? "bg-green-100 text-green-800 border border-green-300"
+                      : "bg-red-100 text-red-800 border border-red-300"
+                  }`}
+                  style={{ fontFamily: "var(--font-montserrat)" }}
+                >
+                  {submitStatus.message}
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Consultation Type Field */}
                 <div>
@@ -231,6 +302,8 @@ export default function ConsultationForm() {
                       className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors bg-white appearance-none text-black"
                       style={{
                         fontFamily: "var(--font-montserrat)",
+                        color: '#000000',
+                        backgroundColor: '#ffffff',
                         backgroundImage:
                           'url(\'data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>\')',
                         backgroundRepeat: "no-repeat",
@@ -310,8 +383,9 @@ export default function ConsultationForm() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
-                    style={{ fontFamily: "var(--font-montserrat)" }}
+                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
+                    style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                    placeholder="Enter your full name"
                   />
                 </div>
 
@@ -330,8 +404,9 @@ export default function ConsultationForm() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
-                    style={{ fontFamily: "var(--font-montserrat)" }}
+                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
+                    style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                    placeholder="Enter your company name"
                   />
                 </div>
 
@@ -350,8 +425,9 @@ export default function ConsultationForm() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
-                    style={{ fontFamily: "var(--font-montserrat)" }}
+                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
+                    style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                    placeholder="Enter your email address"
                   />
                 </div>
 
@@ -370,8 +446,9 @@ export default function ConsultationForm() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
-                    style={{ fontFamily: "var(--font-montserrat)" }}
+                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
+                    style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                    placeholder="Enter your phone number"
                   />
                 </div>
 
@@ -388,8 +465,11 @@ export default function ConsultationForm() {
                     type="text"
                     id="location"
                     name="location"
-                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors"
-                    style={{ fontFamily: "var(--font-montserrat)" }}
+                    value={formData.location}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
+                    style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                    placeholder="Enter project location"
                   />
                 </div>
 
@@ -408,13 +488,14 @@ export default function ConsultationForm() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors resize-vertical"
-                    style={{ fontFamily: "var(--font-montserrat)" }}
+                    className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors resize-vertical text-black bg-white"
+                    style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                    placeholder="Describe your project scope, requirements, or questions..."
                   />
                 </div>
 
-                {/* Upload Files Section */}
-                <div>
+                {/* Upload Files Section - TEMPORARILY DISABLED */}
+                {/* <div>
                   <label
                     className="block text-sm font-medium text-gray-700 mb-3"
                     style={{ fontFamily: "var(--font-montserrat)" }}
@@ -451,16 +532,17 @@ export default function ConsultationForm() {
                       Upload project documents, specifications, or requirements
                     </p>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Submit Button */}
                 <div className="pt-4 flex justify-end">
                   <button
                     type="submit"
-                    className="inline-flex items-center px-4 py-2 bg-[#D0B970] text-black font-bold rounded-full hover:bg-[#b8a55e] transition-colors duration-300"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center px-4 py-2 bg-[#D0B970] text-black font-bold rounded-full hover:bg-[#b8a55e] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ fontFamily: "var(--font-montserrat)" }}
                   >
-                    Submit
+                    {isSubmitting ? "Sending..." : "Submit"}
                     <ChevronRight className="ml-2 h-4 w-4" strokeWidth={3} />
                   </button>
                 </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   Mail,
@@ -26,6 +26,17 @@ export default function ContactForms() {
     type: "success" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
+
+  // Auto-hide success message after 5 seconds
+  useEffect(() => {
+    if (submitStatus.type === "success") {
+      const timer = setTimeout(() => {
+        setSubmitStatus({ type: null, message: "" });
+      }, 5000); // 5 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus.type]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
