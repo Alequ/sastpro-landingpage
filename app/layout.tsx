@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Montserrat } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import CookieConsent from '@/components/shared/cookie-consent'
 
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
 const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: '--font-montserrat'
+  variable: '--font-montserrat',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {

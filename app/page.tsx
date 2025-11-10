@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import HeroSection from "@/components/home/hero-section"
 import ServicesOverview from "@/components/home/services-overview";
 import IndustriesServed from "@/components/home/industries-served";
@@ -19,9 +20,18 @@ export default function HomePage() {
     <main className="min-h-screen theme-electrical">
       <HeaderNavigation />
       <HeroSection />
-      <div className="relative bg-[url('/home_2/Background2.png')] bg-cover bg-center bg-fixed">
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 "></div>
+      <div className="relative">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/home_2/Background2.webp"
+            alt="Background"
+            fill
+            sizes="100vw"
+            quality={75}
+            className="object-cover"
+          />
+        </div>
 
         {/* Content wrapper */}
         <div className="relative z-10">
