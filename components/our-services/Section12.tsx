@@ -6,7 +6,7 @@ export default function Section12() {
   const cards = [
     {
       title: "Fault Response & Diagnostics",
-      image: "/our-services/Fault Response &�Diagnostics�.png",
+      image: "/our-services_2/Fault Response &_Diagnostics_.webp",
       items: [
         "24/7 emergency callout and remote technical support",
         "HV/LV fault finding and diagnostics",
@@ -19,7 +19,7 @@ export default function Section12() {
     },
     {
       title: "On-Site Technical Support",
-      image: "/our-services/On-Site Technical�Support�.png",
+      image: "/our-services_2/On-Site Technical_Support_.webp",
       items: [
         "Short-term and project-based engineering support",
         "Site supervision and permit coordination",
@@ -32,7 +32,7 @@ export default function Section12() {
     },
     {
       title: "Preventative & Advisory Services",
-      image: "/our-services/Preventative & Advisory Services�.png",
+      image: "/our-services_2/Preventative & Advisory Services_.webp",
       items: [
         "Root cause analysis and reliability improvement",
         "Equipment health checks and condition monitoring",

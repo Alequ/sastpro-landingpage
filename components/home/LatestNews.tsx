@@ -18,9 +18,10 @@ export default function LatestNews() {
           >
             {/* Background Image */}
             <Image
-              src="/home/LatestNews.png"
+              src="/home_2/LatestNews.webp"
               alt="Latest News"
               fill
+              sizes="(max-width: 1024px) 100vw, 1280px"
               className="object-cover"
               priority
             />
@@ -51,9 +52,10 @@ export default function LatestNews() {
               {/* Right: Arrow Icon */}
               <div className="relative w-8 h-8 sm:w-9 sm:h-9 group-hover:translate-x-1 transition-transform duration-300">
                 <Image
-                  src="/maintenance/ButtonGoldav.png"
+                  src="/shared/ButtonGoldav.png"
                   alt="Arrow"
                   fill
+                  sizes="36px"
                   className="object-contain"
                 />
               </div>

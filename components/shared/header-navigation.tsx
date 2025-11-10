@@ -96,7 +96,7 @@ export default function HeaderNavigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
-              src="/home/Logo.svg"
+              src="/home_2/Logo.svg"
               alt="SAST Logo"
               className="h-8 sm:h-10 w-auto"
             />

@@ -7,31 +7,31 @@ import Image from "next/image";
 const services = [
   {
     title: "Who are we",
-    image: "/home/AboutUS.png",
+    image: "/home_2/AboutUS.webp",
     span: "col-span-1 md:col-span-1 lg:col-span-3 row-span-1",
     link: "/who-we-are"
   },
   {
     title: "Our services",
-    image: "/home/OurServices.png",
+    image: "/home_2/OurServices.webp",
     span: "col-span-1 md:col-span-1 lg:col-span-3 row-span-1",
     link: "/our-services"
   },
   {
     title: "Construction",
-    image: "/home/Construction.png",
+    image: "/home_2/Construction.webp",
     span: "col-span-1 md:col-span-1 lg:col-span-2 row-span-1",
     link: "/constructions"
   },
   {
     title: "Commissioning",
-    image: "/home/Commissioning.png",
+    image: "/home_2/Commissioning.webp",
     span: "col-span-1 md:col-span-1 lg:col-span-2 row-span-1",
     link: "/commissioning"
   },
   {
     title: "Maintenance",
-    image: "/home/Maintenance.png",
+    image: "/home_2/Maintenance.webp",
     span: "col-span-1 md:col-span-1 lg:col-span-2 row-span-1",
     link: "/maintenance"
   }
@@ -122,9 +122,10 @@ function ServiceCard({ service, index, isVisible }: ServiceCardProps) {
         {/* Arrow Icon */}
         <div className="relative w-7 h-7 sm:w-8 sm:h-8 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0">
           <Image
-            src="/maintenance/ButtonGoldav.png"
+            src="/shared/ButtonGoldav.png"
             alt="Arrow"
             fill
+            sizes="32px"
             className="object-contain"
           />
         </div>

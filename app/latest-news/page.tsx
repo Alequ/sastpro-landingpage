@@ -13,11 +13,11 @@ export default function LatestNewsPage() {
         style={{ backgroundColor: "#c4c4c4" }}
       >
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
+        <section className="relative h-[70vh] flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/constructions/ConstructionHeader.png"
+              src="/latest-news_2/LatestNewsHeader.webp"
               alt="Latest news"
               fill
               priority
@@ -158,7 +158,7 @@ export default function LatestNewsPage() {
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0 pointer-events-none">
                       <Image
-                        src="/latest-news/LatestNewsHeader.png"
+                        src="/latest-news_2/LatestNewsHeader.webp"
                         alt="Background"
                         fill
                         className="object-cover"
@@ -184,7 +184,7 @@ export default function LatestNewsPage() {
                 <div className="relative order-first lg:order-last">
                   <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-full min-h-[300px] sm:min-h-[350px] md:min-h-[400px] shadow-xl overflow-hidden">
                     <Image
-                      src="/latest-news/ContractorOfTheMonthImage1.png"
+                      src="/latest-news_2/ContractorOfTheMonthImage1.webp"
                       alt="Contractor of the month"
                       fill
                       className="object-cover"
@@ -218,7 +218,7 @@ export default function LatestNewsPage() {
                   {/* Background Image */}
                   <div className="absolute inset-0 z-0 pointer-events-none">
                     <Image
-                      src="/latest-news/CattleSkateImage1.png"
+                      src="/latest-news_2/CattleSkateImage1.webp"
                       alt="Skateboarding background"
                       fill
                       className="object-cover"
@@ -273,7 +273,7 @@ export default function LatestNewsPage() {
                   <div className="relative">
                     <div className="relative h-[250px] sm:h-[280px] md:h-[300px] shadow-xl overflow-hidden">
                       <Image
-                        src="/latest-news/CattleSkateImage2.png"
+                        src="/latest-news_2/CattleSkateImage2.webp"
                         alt="Young person wearing skateboarding helmet"
                         fill
                         className="object-cover"
@@ -289,7 +289,7 @@ export default function LatestNewsPage() {
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0 pointer-events-none">
                       <Image
-                        src="/latest-news/CattleSkateImage3.png"
+                        src="/latest-news_2/CattleSkateImage3.webp"
                         alt="Background"
                         fill
                         className="object-cover"
@@ -430,7 +430,7 @@ export default function LatestNewsPage() {
                 <div className="relative">
                   <div className="relative h-full shadow-xl overflow-hidden">
                     <Image
-                      src="/latest-news/CalorieCrusherImage1.png"
+                      src="/latest-news_2/CalorieCrusherImage1.webp"
                       alt="Calorie crusher champion award ceremony"
                       fill
                       className="object-cover"
@@ -509,7 +509,7 @@ export default function LatestNewsPage() {
                   {/* Background Image */}
                   <div className="absolute inset-0 z-0 pointer-events-none">
                     <Image
-                      src="/latest-news/SafetyInAberdeenImage1.png"
+                      src="/latest-news_2/SafetyInAberdeenImage1.webp"
                       alt="Safety in Aberdeen background"
                       fill
                       className="object-cover"
@@ -563,7 +563,7 @@ export default function LatestNewsPage() {
                   <div className="relative">
                     <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] shadow-xl overflow-hidden">
                       <Image
-                        src="/latest-news/SafetyInAberdeenImage2.png"
+                        src="/latest-news_2/SafetyInAberdeenImage2.webp"
                         alt="Safety in Aberdeen event"
                         fill
                         className="object-cover"
@@ -575,7 +575,7 @@ export default function LatestNewsPage() {
                   <div className="relative">
                     <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] shadow-xl overflow-hidden">
                       <Image
-                        src="/latest-news/SafetyInAberdeenImage3.png"
+                        src="/latest-news_2/SafetyInAberdeenImage3.webp"
                         alt="Safety in Aberdeen networking"
                         fill
                         className="object-cover"
@@ -656,7 +656,7 @@ export default function LatestNewsPage() {
                   {/* Background Image */}
                   <div className="absolute inset-0 z-0 pointer-events-none">
                     <Image
-                      src="/latest-news/HiringBeyondTechnicalSkillsImage1.png"
+                      src="/latest-news_2/HiringBeyondTechnicalSkillsImage1.webp"
                       alt="Technical skills and teamwork"
                       fill
                       className="object-cover"
@@ -740,7 +740,7 @@ export default function LatestNewsPage() {
                   <div className="relative">
                     <div className="relative h-[250px] sm:h-[280px] md:h-[300px] shadow-xl overflow-hidden">
                       <Image
-                        src="/latest-news/DCDConnectImage1.png"
+                        src="/latest-news_2/DCDConnectImage1.webp"
                         alt="DCD Connect networking event"
                         fill
                         className="object-cover"
@@ -752,7 +752,7 @@ export default function LatestNewsPage() {
                   <div className="relative">
                     <div className="relative h-[300px] shadow-xl overflow-hidden">
                       <Image
-                        src="/latest-news/DCDConnectImage2.png"
+                        src="/latest-news_2/DCDConnectImage2.webp"
                         alt="DCD Connect conference presentation"
                         fill
                         className="object-cover"
@@ -764,7 +764,7 @@ export default function LatestNewsPage() {
                   <div className="relative">
                     <div className="relative h-[300px] shadow-xl overflow-hidden">
                       <Image
-                        src="/latest-news/DCDConnectImage3.png"
+                        src="/latest-news_2/DCDConnectImage3.webp"
                         alt="DCD Connect team meeting"
                         fill
                         className="object-cover"
@@ -849,7 +849,7 @@ export default function LatestNewsPage() {
                 <div className="relative">
                   <div className="relative h-full shadow-xl overflow-hidden">
                     <Image
-                      src="/latest-news/ExpandingOurServicesImage1.png"
+                      src="/latest-news_2/ExpandingOurServicesImage1.webp"
                       alt="Engineer working on site with safety equipment"
                       fill
                       className="object-cover"

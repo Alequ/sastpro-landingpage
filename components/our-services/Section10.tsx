@@ -6,7 +6,7 @@ export default function Section10() {
   const cards = [
     {
       title: "Electrical & Mechanical Training",
-      image: "/our-services/Electrical & Mechanical Training�.png",
+      image: "/our-services_2/Electrical & Mechanical Training_.webp",
       items: [
         "HV/LV switching authorisation courses",
         "COHE & LOTO practical training",
@@ -19,7 +19,7 @@ export default function Section10() {
     },
     {
       title: "Safety & Leadership Development",
-      image: "/our-services/Safety & Leadership�Development�.png",
+      image: "/our-services_2/Safety & Leadership_Development_.webp",
       items: [
         "Safe System of Work implementation",
         "Permit office and control of work training",
@@ -32,7 +32,7 @@ export default function Section10() {
     },
     {
       title: "Competency & Assessment",
-      image: "/our-services/Competency &�Assessment�.png",
+      image: "/our-services_2/Competency &_Assessment_.webp",
       items: [
         "Authorisation and competence verification",
         "Ongoing refresher and re-certification training",

@@ -34,14 +34,34 @@ const footerLinks = {
   contact: {
     title: "Connect with us",
     items: [
-      { label: "enquiries@sastransition.com", href: "mailto:enquiries@sastransition.com", icon: Mail },
-      { label: "Tuleviku tee 10, Peetri, 75312 Harju maakond", href: "#", icon: MapPin },
+      {
+        label: "Info@sastransition.com",
+        href: "mailto:Info@sastransition.com",
+        icon: Mail,
+      },
+      {
+        label: "Tuleviku tee 10, Peetri, 75312 Harju maakond",
+        href: "#",
+        icon: MapPin,
+      },
       { label: "+372 5886 4233", href: "tel:+37258864233", icon: Phone },
-      { label: "1 Marischal Square, Aberdeen, AB10 1BL", href: "#", icon: MapPin },
+      {
+        label: "1 Marischal Square, Aberdeen, AB10 1BL",
+        href: "#",
+        icon: MapPin,
+      },
       { label: "+44 1224034200", href: "tel:+441224034200", icon: Phone },
-      { label: "Rhijnspoorplein 10-38, Amsterdam, 1018 TX, Netherlands", href: "#", icon: MapPin },
+      {
+        label: "Rhijnspoorplein 10-38, Amsterdam, 1018 TX, Netherlands",
+        href: "#",
+        icon: MapPin,
+      },
       { label: "+31 202991400", href: "tel:+31202991400", icon: Phone },
-      { label: "LinkedIn", href: "https://www.linkedin.com/company/s-a-s-transition/posts/?feedView=all", icon: Linkedin },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/company/s-a-s-transition/posts/?feedView=all",
+        icon: Linkedin,
+      },
     ],
   },
 };
@@ -118,7 +138,9 @@ interface FooterColumnProps {
 function FooterColumn({ title, links }: FooterColumnProps) {
   return (
     <div className="space-y-4">
-      <h4 className="font-bold whitespace-nowrap" style={{ color: "#D0B970" }}>{title}</h4>
+      <h4 className="font-bold whitespace-nowrap" style={{ color: "#D0B970" }}>
+        {title}
+      </h4>
       <ul className="space-y-3">
         {links.map((link) => (
           <li key={link.label}>
@@ -137,9 +159,9 @@ function FooterColumn({ title, links }: FooterColumnProps) {
 
 interface FooterContactColumnProps {
   title: string;
-  items: Array<{ 
-    label: string; 
-    href: string; 
+  items: Array<{
+    label: string;
+    href: string;
     icon: React.ComponentType<any>;
   }>;
 }
@@ -147,7 +169,9 @@ interface FooterContactColumnProps {
 function FooterContactColumn({ title, items }: FooterContactColumnProps) {
   return (
     <div className="space-y-4">
-      <h4 className="font-bold whitespace-nowrap" style={{ color: "#D0B970" }}>{title}</h4>
+      <h4 className="font-bold whitespace-nowrap" style={{ color: "#D0B970" }}>
+        {title}
+      </h4>
       <ul className="space-y-3">
         {items.map((item) => {
           const IconComponent = item.icon;
@@ -160,7 +184,11 @@ function FooterContactColumn({ title, items }: FooterContactColumnProps) {
                 target={isLinkedIn ? "_blank" : undefined}
                 rel={isLinkedIn ? "noopener noreferrer" : undefined}
               >
-                <IconComponent size={16} className="flex-shrink-0" style={{ color: "#D0B970" }} />
+                <IconComponent
+                  size={16}
+                  className="flex-shrink-0"
+                  style={{ color: "#D0B970" }}
+                />
                 <span>{item.label}</span>
               </Link>
             </li>

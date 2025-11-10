@@ -50,7 +50,7 @@ needed to energise systems safely and efficiently.
               <div className="relative">
                 <div className="relative h-[300px] overflow-hidden shadow-xl">
                   <Image
-                    src="/our-services/Hero.png"
+                    src="/our-services_2/Authorised & competent personnel.webp"
                     alt="Professional safety documentation"
                     fill
                     className="object-cover"

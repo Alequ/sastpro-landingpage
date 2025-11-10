@@ -49,7 +49,7 @@ with real-time control and visibility.
               <div className="relative">
                 <div className="relative h-[300px] overflow-hidden">
                   <Image
-                    src="/our-services/Digital solutions - SASTpro.png"
+                    src="/our-services_2/Digital solutions - SASTpro.webp"
                     alt="Professional training and development"
                     fill
                     className="object-contain"

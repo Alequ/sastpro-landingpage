@@ -168,10 +168,10 @@ export default function CookiePolicyPage() {
                   <p className="mt-2">
                     Email:{" "}
                     <a
-                      href="mailto:enquiries@sastransition.com"
+                      href="mailto:Info@sastransition.com"
                       className="text-[#D0B970] hover:underline"
                     >
-                      enquiries@sastransition.com
+                      Info@sastransition.com
                     </a>
                   </p>
                   <p className="mt-1">
