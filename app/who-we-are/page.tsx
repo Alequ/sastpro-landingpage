@@ -48,11 +48,11 @@ export default function WhoWeArePage() {
         style={{ backgroundColor: "#c4c4c4" }}
       >
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
+        <section className="relative h-[70vh] flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/who-we-are/WhoWeAreHeader.png"
+              src="/who-we-are_2/WhoWeAreHeader.webp"
               alt="Who we are"
               fill
               priority
@@ -227,7 +227,7 @@ export default function WhoWeArePage() {
                   {/* Image */}
                   <div className="w-full xl:w-[45%] flex items-center justify-center">
                     <Image
-                      src="/who-we-are/WhoWeAreOurStoryMonitor.png"
+                      src="/who-we-are_2/WhoWeAreOurStoryMonitor.webp"
                       alt="Digital solutions SASTpro"
                       width={500}
                       height={350}
@@ -250,7 +250,7 @@ export default function WhoWeArePage() {
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/who-we-are/WhoWeAreOurMission.png"
+                      src="/who-we-are_2/WhoWeAreOurMission.webp"
                       alt="Our Ethos background"
                       fill
                       className="object-cover"
@@ -307,7 +307,7 @@ export default function WhoWeArePage() {
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/who-we-are/WhoWeAreOurEthos.png"
+                      src="/who-we-are_2/WhoWeAreOurEthos.webp"
                       alt="Our Mission background"
                       fill
                       className="object-cover"
@@ -405,7 +405,7 @@ export default function WhoWeArePage() {
                   {/* Right Column - Image */}
                   <div className="relative w-full aspect-video lg:aspect-auto lg:h-[550px] max-w-2xl mx-auto">
                     <Image
-                      src="/who-we-are/WhoWeAreEnergyHazardRecognition2.jpg"
+                      src="/who-we-are_2/WhoWeAreEnergyHazardRecognition.webp"
                       alt="Energy Hazard Recognition"
                       fill
                       className="object-contain rounded-lg"

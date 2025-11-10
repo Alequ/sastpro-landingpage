@@ -26,7 +26,7 @@ export default function Section1() {
               <div className="relative">
                 <div className="relative h-[300px] overflow-hidden shadow-xl">
                   <Image
-                    src="/our-services/ed.png"
+                    src="/our-services_2/Engineering & design solutions.webp"
                     alt="Construction site with workers and cranes"
                     fill
                     className="object-cover"

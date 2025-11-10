@@ -6,7 +6,7 @@ export default function Section4() {
   const cards = [
     {
       title: "Electrical Authorised personnel",
-      image: "/our-services/eap.png",
+      image: "/our-services_2/Electrical Authorised_Personnel_.webp",
       items: [
         "HV & LV Authorised and Competent Persons",
         "Switching, isolation, and energisation operations",
@@ -19,7 +19,7 @@ export default function Section4() {
     },
     {
       title: "Mechanical & Technical Staff",
-      image: "/our-services/mts.png",
+      image: "/our-services_2/Mechanical & Technical Staff_  .webp",
       items: [
         "Mechanical fitters, supervisors, and technicians",
         "Pipework, pumps, and HVAC operations",
@@ -32,7 +32,7 @@ export default function Section4() {
     },
     {
       title: "Site Leadership & Support",
-      image: "/our-services/sls.png",
+      image: "/our-services_2/Safety Leadership &_Assurance_.webp",
       items: [
         "Construction managers and supervisors",
         "Commissioning and maintenance leads",

@@ -24,11 +24,11 @@ export default function MaintenancePage() {
         style={{ backgroundColor: "#c4c4c4" }}
       >
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
+        <section className="relative h-[70vh] flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/maintenance/MaintenanceHeader.png"
+              src="/maintenance_2/MaintenanceHeader.webp"
               alt="Maintenance site"
               fill
               priority
@@ -182,7 +182,7 @@ export default function MaintenancePage() {
                   <div className="relative order-first lg:order-last">
                     <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
                       <Image
-                        src="/maintenance/MaintenanceImage1.png"
+                        src="/maintenance_2/MaintenanceImage1.webp"
                         alt="Construction site with workers and cranes"
                         fill
                         className="object-contain"
@@ -237,7 +237,7 @@ export default function MaintenancePage() {
                   {/* Right Column - Image */}
                   <div className="relative h-[300px] lg:h-auto min-h-[400px]">
                     <Image
-                      src="/maintenance/MaintenanceContactimage2.png"
+                      src="/maintenance_2/MaintenanceContactimage2.webp"
                       alt="Modern construction buildings with cranes"
                       fill
                       className="object-cover"
@@ -259,7 +259,7 @@ export default function MaintenancePage() {
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/maintenance/MaintenanceAreasOfExpertise.png"
+                      src="/maintenance_2/MaintenanceAreasOfExpertise.webp"
                       alt="Construction workers with plans"
                       fill
                       className="object-cover"
@@ -294,7 +294,7 @@ export default function MaintenancePage() {
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/maintenance/MaintenanceGlobalExperience.png"
+                      src="/maintenance_2/MaintenanceGlobalExperience.webp"
                       alt="Global construction site"
                       fill
                       className="object-cover"

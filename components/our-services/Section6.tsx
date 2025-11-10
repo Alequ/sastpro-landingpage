@@ -6,7 +6,7 @@ export default function Section6() {
   const cards = [
     {
       title: "Safe Systems & Permit Management",
-      image: "/our-services/sspm.png",
+      image: "/our-services_2/Safe Systems & Permit Management_.webp",
       items: [
         "Safe System of Work (SSoW) implementation",
         "COHE and LOTO programs",
@@ -19,7 +19,7 @@ export default function Section6() {
     },
     {
       title: "Auditing, Governance & Compliance",
-      image: "/our-services/ADGC.png",
+      image: "/our-services_2/Auditing, Governance & Compliance_.webp",
       items: [
         "Internal and third-party audits",
         "QA/QC inspection programs",
@@ -32,7 +32,7 @@ export default function Section6() {
     },
     {
       title: "Safety Leadership & Assurance",
-      image: "/our-services/Safety Leadership &�Assurance�.png",
+      image: "/our-services_2/Safety Leadership &_Assurance_.webp",
       items: [
         "Safety rule creation and revision",
         "Toolbox talks and behavioural safety programs",

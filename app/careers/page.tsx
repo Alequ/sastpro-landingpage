@@ -100,11 +100,11 @@ export default function CareersPage() {
         style={{ backgroundColor: "#c4c4c4" }}
       >
         {/* Hero Section */}
-        <section className="relative min-h-[500px] flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
+        <section className="relative h-[70vh] flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/careers/JoinOurTeamHeader.png"
+              src="/careers_2/JoinOurTeamHeader.webp"
               alt="Careers at S.A.S Transition"
               fill
               priority
@@ -232,7 +232,7 @@ export default function CareersPage() {
                   {/* Image - Right Side (30% width) */}
                   <div className="lg:w-[30%] relative min-h-[400px] lg:min-h-full">
                     <Image
-                      src="/careers/Team.png"
+                      src="/careers_2/We're Looking For.webp"
                       alt="S.A.S Transition Team"
                       fill
                       className="object-cover"
@@ -252,7 +252,7 @@ export default function CareersPage() {
                 {/* Background Image */}
                 <div className="absolute inset-0">
                   <Image
-                    src="/careers/This_isnt_just_a_Job.png"
+                    src="/careers_2/This isnt just a Job.webp"
                     alt="This isn't just a job"
                     fill
                     className="object-cover"
@@ -292,7 +292,7 @@ export default function CareersPage() {
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/careers/LookingFor.png"
+                      src="/careers_2/We're Looking For.webp"
                       alt="We're Looking For background"
                       fill
                       className="object-cover"
@@ -385,7 +385,7 @@ export default function CareersPage() {
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/careers/WhatYoullNeed.png"
+                      src="/careers_2/WhatYoullNeed.webp"
                       alt="Our Mission background"
                       fill
                       className="object-cover"

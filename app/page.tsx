@@ -19,7 +19,7 @@ export default function HomePage() {
     <main className="min-h-screen theme-electrical">
       <HeaderNavigation />
       <HeroSection />
-      <div className="relative bg-[url('/home/Background2.png')] bg-cover bg-center bg-fixed">
+      <div className="relative bg-[url('/home_2/Background2.png')] bg-cover bg-center bg-fixed">
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 "></div>
 

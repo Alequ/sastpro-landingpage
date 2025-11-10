@@ -4,11 +4,11 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <section className="relative min-h-250 flex items-center justify-center overflow-hidden">
+    <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/our-services/OurServicesHeader.png"
+          src="/our-services_2/OurServicesHeader.webp"
           alt="Construction site"
           fill
           priority

@@ -50,7 +50,7 @@ through SASTpro, ensuring every action is controlled and traceable.
               <div className="relative">
                 <div className="relative h-[300px] overflow-hidden shadow-xl">
                   <Image
-                    src="/our-services/Callout, fault response & technical support.png"
+                    src="/our-services_2/Callout, fault response & technical support.webp"
                     alt="Compliance and documentation management"
                     fill
                     className="object-cover"

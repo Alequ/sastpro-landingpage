@@ -24,11 +24,11 @@ export default function CommissioningPage() {
         style={{ backgroundColor: "#c4c4c4" }}
       >
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
+        <section className="relative h-[70vh] flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/commissioning/CommissioningHeader.png"
+              src="/commissioning_2/CommissioningHeader.webp"
               alt="Commissioning site"
               fill
               priority
@@ -179,7 +179,7 @@ export default function CommissioningPage() {
                   <div className="relative order-first lg:order-last">
                     <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
                       <Image
-                        src="/commissioning/CommissioningImage1.png"
+                        src="/commissioning_2/CommissioningImage1.webp"
                         alt="Construction site with workers and cranes"
                         fill
                         className="object-contain"
@@ -234,7 +234,7 @@ export default function CommissioningPage() {
                   {/* Right Column - Image */}
                   <div className="relative h-[300px] lg:h-auto min-h-[400px]">
                     <Image
-                      src="/commissioning/CommissioningContactimage2.png"
+                      src="/commissioning_2/CommissioningContactimage2.webp"
                       alt="Modern construction buildings with cranes"
                       fill
                       className="object-cover"
@@ -256,7 +256,7 @@ export default function CommissioningPage() {
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/commissioning/CommissioningAreasOfExpertise.png"
+                      src="/commissioning_2/CommissioningAreasOfExpertise.webp"
                       alt="Construction workers with plans"
                       fill
                       className="object-cover"
@@ -291,7 +291,7 @@ export default function CommissioningPage() {
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/commissioning/CommissioningGlobalExperience.png"
+                      src="/commissioning_2/CommissioningGlobalExperience.webp"
                       alt="Global construction site"
                       fill
                       className="object-cover"

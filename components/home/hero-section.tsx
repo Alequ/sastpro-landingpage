@@ -9,9 +9,10 @@ export default function HeroSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/home/Background1.png"
+          src="/home_2/Background1.webp"
           alt="Modern construction site with electrical equipment"
           fill
+          sizes="100vw"
           priority
           className="object-cover"
         />

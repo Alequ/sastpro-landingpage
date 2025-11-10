@@ -10,7 +10,7 @@ const industries = [
     name: "Oil & Gas",
     subtitle: "",
     description: "Safe, compliant, and efficient solutions for onshore and offshore facilities. Our teams deliver electrical, mechanical, and digital services that keep critical energy assets operating at peak performance.",
-    image: "/home/OilAndGas.png",
+    image: "/home_2/OilAndGas.webp",
     applications: [
       "Platform systems",
       "Hazardous area compliance",
@@ -22,7 +22,7 @@ const industries = [
     name: "Nuclear",
     subtitle: "",
     description: "Trusted engineering support for nuclear generation and decommissioning projects. We provide safe systems of work, authorised personnel, and digital asset control to ensure safety and compliance at every level.",
-    image: "/home/Nuclearav.png",
+    image: "/home_2/Nuclearav.webp",
     applications: [
       "Authorised personnel",
       "SSOW setup",
@@ -34,7 +34,7 @@ const industries = [
     name: "Renewables",
     subtitle: "",
     description: "Delivering electrical and mechanical expertise for wind, solar, and battery energy storage systems (BESS), including EV infrastructure. We help clients design, connect, and maintain assets that power a cleaner future.",
-    image: "/home/DataCentresav.png",
+    image: "/home_2/DataCentresav.webp",
     applications: [
       "Grid connection",
       "HV substations",
@@ -46,7 +46,7 @@ const industries = [
     name: "Data Center",
     subtitle: "",
     description: "Turnkey electrical and mechanical solutions for hyperscale and enterprise data centres. From design and installation to commissioning and maintenance, we ensure uptime, efficiency, and safety at every stage.",
-    image: "/home/GridAndInfastructure.png",
+    image: "/home_2/GridAndInfastructure.webp",
     applications: [
       "HV installations",
       "Cooling & containment",

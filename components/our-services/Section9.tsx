@@ -16,7 +16,7 @@ export default function Section9() {
               <div className="relative">
                 <div className="relative h-[300px] overflow-hidden">
                   <Image
-                    src="/our-services/Training & development - SASTAcademy.png"
+                    src="/our-services_2/Training & development - SASTAcademy.webp"
                     alt="Professional training and development"
                     fill
                     className="object-contain"

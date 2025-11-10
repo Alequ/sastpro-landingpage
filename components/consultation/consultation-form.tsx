@@ -111,11 +111,11 @@ export default function ConsultationForm() {
       style={{ backgroundColor: "#c4c4c4" }}
     >
       {/* Header Section */}
-      <section className="relative min-h-250 flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/consultation/ConsultationHeader.png"
+            src="/consultation_2/ConsultationHeader.webp"
             alt="Book a consultation"
             fill
             priority
@@ -244,7 +244,7 @@ export default function ConsultationForm() {
                 <div className="lg:w-[30%] relative min-h-[300px] lg:min-h-full flex items-center justify-center p-4">
                   <div className="relative w-full h-[250px]">
                     <Image
-                      src="/consultation/Image 1.png"
+                      src="/consultation_2/Image 1.webp"
                       alt="Consultation services"
                       fill
                       className="object-contain"

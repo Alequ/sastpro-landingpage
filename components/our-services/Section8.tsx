@@ -6,7 +6,7 @@ export default function Section8() {
   const cards = [
     {
       title: "Permit & Isolation Management",
-      image: "our-services/Permit & Isolation�Management�.png",
+      image: "/our-services_2/Permit & Isolation_Management_.webp",
       items: [
         "Isolation tagging and control of hazardous energy (COHE)",
         "Lock-out / tag-out tracking and verification",
@@ -19,7 +19,7 @@ export default function Section8() {
     },
     {
       title: "Asset & Document Management",
-      image: "our-services/Asset & Document�Management�.png",
+      image: "/our-services_2/Asset & Document_Management_.webp",
       items: [
         "Asset registers and equipment history tracking",
         "Planned maintenance scheduling and logging",
@@ -32,7 +32,7 @@ export default function Section8() {
     },
     {
       title: "Training, Competency & Analytics",
-      image: "/our-services/Training, Competency & Analytics.png",
+      image: "/our-services_2/Training, Competency & Analytics.webp",
       items: [
         "Competency and authorisation records",
         "Digital training matrix and certificate tracking",

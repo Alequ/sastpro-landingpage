@@ -7,7 +7,6 @@ export default function Section5() {
     <section className="py-6 sm:py-8">
       <div className="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="w-full" style={{ maxWidth: "1600px" }}>
-         
           {/* White Card Container */}
           <div className="bg-white shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
@@ -15,7 +14,7 @@ export default function Section5() {
               <div className="relative">
                 <div className="relative h-[300px] overflow-hidden shadow-xl">
                   <Image
-                    src="/our-services/scms.png"
+                    src="/our-services_2/Safe Systems & Permit Management_.webp"
                     alt="Professional services and consulting"
                     fill
                     className="object-cover"
@@ -48,10 +47,11 @@ export default function Section5() {
                     className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
                     style={{ fontFamily: "var(--font-montserrat)" }}
                   >
-                    S.A.S Transition design, implement, and manage complete safety and
-compliance frameworks across electrical and mechanical operations.
-Our approach blends disciplined procedures, competent personnel,
-and digital control to maintain zero-harm operations
+                    S.A.S Transition design, implement, and manage complete
+                    safety and compliance frameworks across electrical and
+                    mechanical operations. Our approach blends disciplined
+                    procedures, competent personnel, and digital control to
+                    maintain zero-harm operations
                   </p>
                 </div>
               </div>

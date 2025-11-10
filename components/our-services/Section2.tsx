@@ -6,7 +6,7 @@ export default function Section2() {
   const cards = [
     {
       title: "Electrical & Mechanical Design",
-      image: "/our-services/EMDESIGN.png",
+      image: "/our-services_2/Electrical & Mechanical Design.webp",
       items: [
         "HV/LV network and load studies",
         "Cable sizing, fault level, and discrimination analysis",
@@ -19,7 +19,7 @@ export default function Section2() {
     },
     {
       title: "Technical & Engineering Studies",
-      image: "/our-services/TESTUDIES.png",
+      image: "/our-services_2/Technical & Engineering Studies_.webp",
       items: [
         "Protection coordination and grading studies",
         "Power quality and harmonic analysis",
@@ -32,7 +32,7 @@ export default function Section2() {
     },
     {
       title: "Project Support & Documentation",
-      image: "/our-services/psdocumentation.png",
+      image: "/our-services_2/Project Support &_Documentation_z.webp",
       items: [
         "Engineering packages and work packs",
         "Interface and design coordination with clients and vendors",

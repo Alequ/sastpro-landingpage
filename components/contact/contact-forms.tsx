@@ -99,11 +99,11 @@ export default function ContactForms() {
   return (
     <div className="min-h-screen">
       {/* Header Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/contact/ContactUsHeader.png"
+            src="/contact_2/ContactUsHeader.webp"
             alt="Contact us"
             fill
             priority
@@ -204,7 +204,7 @@ export default function ContactForms() {
                 <div className="relative">
                   <div className="relative h-[300px] overflow-hidden shadow-xl">
                     <Image
-                      src="/contact/ContactUsImage 1.png"
+                      src="/contact_2/ContactUsImage 1.webp"
                       alt="Contact our team"
                       fill
                       className="object-cover"
@@ -292,11 +292,11 @@ export default function ContactForms() {
                         </div>
                         <div>
                           <a
-                            href="mailto:enquiries@sastransition.com"
+                            href="mailto:Info@sastransition.com"
                             className="text-gray-700 hover:text-[#D0B970] transition-colors italic"
                             style={{ fontFamily: "var(--font-montserrat)" }}
                           >
-                            enquiries@sastransition.com
+                            Info@sastransition.com
                           </a>
                         </div>
                       </div>
