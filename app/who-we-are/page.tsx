@@ -482,9 +482,10 @@ export default function WhoWeArePage() {
                   <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
-                        src="/who-we-are/Allyn.png"
+                        src="/who-we-are_2/TEAM/Allyn.webp"
                         alt="Allyn Coady"
                         fill
+                        sizes="160px"
                         className="object-cover rounded-full"
                       />
                     </div>
@@ -507,9 +508,10 @@ export default function WhoWeArePage() {
                   <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
-                        src="/who-we-are/Simon.png"
+                        src="/who-we-are_2/TEAM/Simon.webp"
                         alt="Simon Frew"
                         fill
+                        sizes="160px"
                         className="object-cover rounded-full"
                       />
                     </div>
@@ -532,9 +534,10 @@ export default function WhoWeArePage() {
                   <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
-                        src="/who-we-are/Bryson.png"
+                        src="/who-we-are_2/TEAM/Bryson.webp"
                         alt="Stephen Bryson"
                         fill
+                        sizes="160px"
                         className="object-cover rounded-full"
                       />
                     </div>
@@ -557,9 +560,10 @@ export default function WhoWeArePage() {
                   <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
-                        src="/who-we-are/Brian.png"
+                        src="/who-we-are_2/TEAM/Brian.webp"
                         alt="Brian Wishart"
                         fill
+                        sizes="160px"
                         className="object-cover rounded-full"
                       />
                     </div>
@@ -585,9 +589,10 @@ export default function WhoWeArePage() {
                   <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
-                        src="/who-we-are/Matthew.png"
+                        src="/who-we-are_2/TEAM/Matthew.webp"
                         alt="Matthew Sellars"
                         fill
+                        sizes="160px"
                         className="object-cover rounded-full"
                       />
                     </div>
@@ -610,9 +615,10 @@ export default function WhoWeArePage() {
                   <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
-                        src="/who-we-are/Laurence.png"
+                        src="/who-we-are_2/TEAM/Laurence.webp"
                         alt="Laurence Woods"
                         fill
+                        sizes="160px"
                         className="object-cover rounded-full"
                       />
                     </div>
@@ -635,9 +641,10 @@ export default function WhoWeArePage() {
                   <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
-                        src="/who-we-are/Lizzo.png"
+                        src="/who-we-are_2/TEAM/Lizzo.webp"
                         alt="Marilis Kulamaa"
                         fill
+                        sizes="160px"
                         className="object-cover rounded-full"
                       />
                     </div>
@@ -660,9 +667,10 @@ export default function WhoWeArePage() {
                   <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
-                        src="/who-we-are/Lewis.png"
+                        src="/who-we-are_2/TEAM/Lewis.webp"
                         alt="Lewis Sellars"
                         fill
+                        sizes="160px"
                         className="object-cover rounded-full"
                       />
                     </div>
@@ -688,9 +696,10 @@ export default function WhoWeArePage() {
                   <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
-                        src="/who-we-are/Felix.png"
+                        src="/who-we-are_2/TEAM/Felix.webp"
                         alt="Andries Felix"
                         fill
+                        sizes="160px"
                         className="object-cover rounded-full"
                       />
                     </div>
@@ -713,9 +722,10 @@ export default function WhoWeArePage() {
                   <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
-                        src="/who-we-are/Alex.png"
+                        src="/who-we-are_2/TEAM/Alex.webp"
                         alt="Alex Turcu"
                         fill
+                        sizes="160px"
                         className="object-cover rounded-full"
                       />
                     </div>
