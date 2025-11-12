@@ -147,7 +147,7 @@ export default function WhoWeArePage() {
                     className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900"
                     style={{ fontFamily: "var(--font-montserrat)" }}
                   >
-                    Our story
+                    Our Story
                   </h2>
                   <div className="w-full h-1 bg-[#D0B970]"></div>
                 </div>
@@ -336,15 +336,15 @@ export default function WhoWeArePage() {
                         the industry operates through structure, discipline and
                         digital control. We're building systems and processes
                         that others will follow, setting a new benchmark for
-                        safety, quality and accountability. Our custom built software SASTpro is at the
-                        centre of this change, providing a digital platform that
-                        connects people, permits and performance. Alongside it,
-                        SASTacademy equips professionals with the knowledge and
-                        competence to maintain those standards in every
-                        environment. As we expand across Europe, the United
-                        States and beyond, our goal is clear: to see our systems
-                        and training set the global benchmark for safe and
-                        efficient engineering.
+                        safety, quality and accountability. Our custom built
+                        software SASTpro is at the centre of this change,
+                        providing a digital platform that connects people,
+                        permits and performance. Alongside it, SASTacademy
+                        equips professionals with the knowledge and competence
+                        to maintain those standards in every environment. As we
+                        expand across Europe, the United States and beyond, our
+                        goal is clear: to see our systems and training set the
+                        global benchmark for safe and efficient engineering.
                       </p>
                     </div>
                   </div>
@@ -420,7 +420,7 @@ export default function WhoWeArePage() {
         {/* Our Team Section */}
         <section
           id="team"
-          className="pb-16 sm:pb-20 md:pb-24 lg:pb-32 -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32"
+          className="-mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 xl:-mx-32"
         >
           <div className="w-full">
             {/* Black Card Container - Full Width */}
@@ -753,7 +753,7 @@ export default function WhoWeArePage() {
                     className="px-8 py-4 bg-transparent border-2 border-[#D0B970] text-white font-bold text-lg hover:bg-[#D0B970] hover:text-black transition-all duration-300 rounded-full inline-block"
                   >
                     <span style={{ fontFamily: "var(--font-montserrat)" }}>
-                      Join our team
+                      Join Our Team
                     </span>
                   </Link>
                 </div>

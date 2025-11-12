@@ -201,7 +201,7 @@ export default function CareersPage() {
                           className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight"
                           style={{ fontFamily: "var(--font-montserrat)" }}
                         >
-                          Have you got what it takes? Join the elite.
+                          Have You Got What It Takes? Join the Elite.
                         </h2>
 
                         <p
@@ -266,7 +266,7 @@ export default function CareersPage() {
                       className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#D0B970] mb-6 leading-tight"
                       style={{ fontFamily: "var(--font-montserrat)" }}
                     >
-                      This isn't just a job.
+                      This Isn't Just a Job.
                     </h2>
                     <p
                       className="text-xl sm:text-2xl lg:text-3xl text-white leading-relaxed"
@@ -494,7 +494,11 @@ export default function CareersPage() {
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
-                      style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                      style={{
+                        fontFamily: "var(--font-montserrat)",
+                        color: "#000000",
+                        backgroundColor: "#ffffff",
+                      }}
                       required
                       placeholder="Enter your full name"
                     />
@@ -516,7 +520,11 @@ export default function CareersPage() {
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
-                      style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                      style={{
+                        fontFamily: "var(--font-montserrat)",
+                        color: "#000000",
+                        backgroundColor: "#ffffff",
+                      }}
                       required
                       placeholder="Enter your email address"
                     />
@@ -538,7 +546,11 @@ export default function CareersPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
-                      style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                      style={{
+                        fontFamily: "var(--font-montserrat)",
+                        color: "#000000",
+                        backgroundColor: "#ffffff",
+                      }}
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -560,8 +572,8 @@ export default function CareersPage() {
                       className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors bg-white appearance-none text-black"
                       style={{
                         fontFamily: "var(--font-montserrat)",
-                        color: '#000000',
-                        backgroundColor: '#ffffff',
+                        color: "#000000",
+                        backgroundColor: "#ffffff",
                         backgroundImage:
                           'url(\'data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>\')',
                         backgroundRepeat: "no-repeat",
@@ -638,8 +650,8 @@ export default function CareersPage() {
                       className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors bg-white appearance-none text-black"
                       style={{
                         fontFamily: "var(--font-montserrat)",
-                        color: '#000000',
-                        backgroundColor: '#ffffff',
+                        color: "#000000",
+                        backgroundColor: "#ffffff",
                         backgroundImage:
                           'url(\'data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>\')',
                         backgroundRepeat: "no-repeat",
@@ -697,12 +709,14 @@ export default function CareersPage() {
                       value={formData.location}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
-                      style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                      style={{
+                        fontFamily: "var(--font-montserrat)",
+                        color: "#000000",
+                        backgroundColor: "#ffffff",
+                      }}
                       placeholder="Enter your preferred location"
                     />
                   </div>
-
-
 
                   {/* Upload Files Section - TEMPORARILY DISABLED */}
                   {/* <div>

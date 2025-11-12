@@ -9,13 +9,15 @@ import { carouselData } from "@/app/data/CarouselData";
 
 export default function CommissioningPage() {
   // Display all projects from CarouselData
-  const commissioningProjects = carouselData.carouselCards.map((project, idx) => ({
-    id: `commissioning-${idx + 1}`,
-    title: project.category,
-    client: project.client,
-    location: project.location,
-    description: project.description
-  }));
+  const commissioningProjects = carouselData.carouselCards.map(
+    (project, idx) => ({
+      id: `commissioning-${idx + 1}`,
+      title: project.category,
+      client: project.client,
+      location: project.location,
+      description: project.description,
+    })
+  );
   return (
     <>
       <HeaderNavigation />
@@ -140,10 +142,10 @@ export default function CommissioningPage() {
                       >
                         Commissioning is the critical handover between
                         construction and operation - where systems are proven,
-                        tested, and brought safely online. S.A.S Transition’s teams
-                        are specialists in electrical, mechanical, and control
-                        system commissioning, ensuring every installation
-                        performs exactly as designed.
+                        tested, and brought safely online. S.A.S Transition’s
+                        teams are specialists in electrical, mechanical, and
+                        control system commissioning, ensuring every
+                        installation performs exactly as designed.
                       </p>
 
                       <p
@@ -252,7 +254,10 @@ export default function CommissioningPage() {
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Left Card - Areas of expertise */}
-                <Link href="/our-services" className="overflow-hidden shadow-xl relative group cursor-pointer transition-all duration-300">
+                <Link
+                  href="/our-services"
+                  className="overflow-hidden shadow-xl relative group cursor-pointer transition-all duration-300"
+                >
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
@@ -272,7 +277,7 @@ export default function CommissioningPage() {
                         className="text-white group-hover:text-black text-2xl sm:text-3xl md:text-4xl font-bold transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Areas of expertise
+                        Areas of Expertise
                       </h3>
                       <div className="relative w-8 h-8 sm:w-9 sm:h-9 group-hover:translate-x-1 transition-transform duration-300">
                         <Image
@@ -307,7 +312,7 @@ export default function CommissioningPage() {
                         className="text-white group-hover:text-black text-2xl sm:text-3xl md:text-4xl font-bold transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Global experience
+                        Global Experience
                       </h3>
 
                       <div className="space-y-4">

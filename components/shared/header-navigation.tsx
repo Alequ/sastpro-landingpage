@@ -35,7 +35,7 @@ export default function HeaderNavigation() {
     {
       label: "WHO WE ARE",
       dropdown: [
-        { label: "Who we are", href: "/who-we-are" },
+        { label: "Who We Are", href: "/who-we-are" },
         { label: "Our Team", href: "/who-we-are#team" },
         { label: "Latest News", href: "/latest-news" },
 

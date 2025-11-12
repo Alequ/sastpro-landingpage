@@ -210,7 +210,7 @@ export default function MaintenancePage() {
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         READY TO START YOUR NEXT MAINTENANCE <br />
-                        PROJECT
+                        PROJECT ?
                       </h2>
 
                       {/* Contact Button */}
@@ -223,7 +223,7 @@ export default function MaintenancePage() {
                           </span>
                           <div className="relative w-6 h-6 group-hover:translate-x-1 transition-transform duration-300">
                             <Image
-                              src="/maintenance/ButtonGoldav.png"
+                              src="/shared/ButtonGoldav.png"
                               alt="Arrow"
                               fill
                               className="object-contain"
@@ -275,11 +275,11 @@ export default function MaintenancePage() {
                         className="text-white group-hover:text-black text-2xl sm:text-3xl md:text-4xl font-bold transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Areas of expertise
+                        Areas of Expertise
                       </h3>
                       <div className="relative w-8 h-8 sm:w-9 sm:h-9 group-hover:translate-x-1 transition-transform duration-300">
                         <Image
-                          src="/maintenance/ButtonGoldav.png"
+                          src="/shared/ButtonGoldav.png"
                           alt="Arrow"
                           fill
                           className="object-contain"
@@ -310,7 +310,7 @@ export default function MaintenancePage() {
                         className="text-white group-hover:text-black text-2xl sm:text-3xl md:text-4xl font-bold transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Global experience
+                        Global Experience
                       </h3>
 
                       <div className="space-y-4">
@@ -343,7 +343,7 @@ export default function MaintenancePage() {
         {/* Project Examples Section */}
         <ProjectCarousel
           projects={maintenanceProjects}
-          buttonImagePath="/maintenance/ButtonBlack.png"
+          buttonImagePath="/shared/ButtonBlack.png"
         />
       </main>
       <div className="h-3 bg-[#D0B970]"></div>

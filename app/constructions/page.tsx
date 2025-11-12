@@ -212,8 +212,8 @@ export default function ConstructionsPage() {
                         className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 leading-tight"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        READY TO START YOUR NEXT CONSTRUCTION <br />
-                        PROJECT
+                        READY TO START YOUR NEXT CONSTRUCTION<br />
+                        PROJECT ?
                       </h2>
 
                       {/* Contact Button */}
@@ -226,7 +226,7 @@ export default function ConstructionsPage() {
                           </span>
                           <div className="relative w-6 h-6 group-hover:translate-x-1 transition-transform duration-300">
                             <Image
-                              src="/constructions/ButtonGoldav.png"
+                              src="/shared/ButtonGoldav.png"
                               alt="Arrow"
                               fill
                               className="object-contain"
@@ -278,11 +278,11 @@ export default function ConstructionsPage() {
                         className="text-white group-hover:text-black text-2xl sm:text-3xl md:text-4xl font-bold transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Areas of expertise
+                        Areas of Expertise
                       </h3>
                       <div className="relative w-8 h-8 sm:w-9 sm:h-9 group-hover:translate-x-1 transition-transform duration-300">
                         <Image
-                          src="/constructions/ButtonGoldav.png"
+                          src="/shared/ButtonGoldav.png"
                           alt="Arrow"
                           fill
                           className="object-contain"
@@ -313,7 +313,7 @@ export default function ConstructionsPage() {
                         className="text-white group-hover:text-black text-2xl sm:text-3xl md:text-4xl font-bold transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Global experience
+                        Global Experience
                       </h3>
 
                       <div className="space-y-4">
@@ -322,7 +322,7 @@ export default function ConstructionsPage() {
                           style={{ fontFamily: "var(--font-montserrat)" }}
                         >
                           With a proven track record across Europe and
-                          internationally, SAStransition has delivered complex
+                          internationally, S.A.S Transition has delivered complex
                           electrical and mechanical construction across data
                           centres, energy, and industrial sectors.
                         </p>
@@ -347,7 +347,7 @@ export default function ConstructionsPage() {
         {/* Project Examples Section */}
         <ProjectCarousel
           projects={constructionProjects}
-          buttonImagePath="/constructions/ButtonBlack.png"
+          buttonImagePath="/shared/ButtonBlack.png"
         />
       </main>
       <div className="h-3 bg-[#D0B970]"></div>

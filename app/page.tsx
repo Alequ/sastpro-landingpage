@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import HeroSection from "@/components/home/hero-section"
+import HeroSection from "@/components/home/hero-section";
 import ServicesOverview from "@/components/home/services-overview";
 import IndustriesServed from "@/components/home/industries-served";
 import HowWeWork from "@/components/home/trackRecord";
@@ -11,8 +11,10 @@ import LatestNews from "@/components/home/LatestNews";
 
 export const metadata: Metadata = {
   title: "Electrical Engineering & Safety Services - Expert Solutions",
-  description: "Expert electrical engineering, maintenance, and safety services for onshore and offshore installations. Certified professionals delivering safe and compliant solutions.",
-  keywords: "electrical engineering, maintenance services, permit to work, safety procedures, offshore installations, onshore installations, COHE procedures, authorized energy engineers",
+  description:
+    "Expert electrical engineering, maintenance, and safety services for onshore and offshore installations. Certified professionals delivering safe and compliant solutions.",
+  keywords:
+    "electrical engineering, maintenance services, permit to work, safety procedures, offshore installations, onshore installations, COHE procedures, authorized energy engineers",
 };
 
 export default function HomePage() {
