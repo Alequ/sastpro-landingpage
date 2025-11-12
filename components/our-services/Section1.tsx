@@ -35,14 +35,14 @@ export default function Section1() {
               </div>
 
               {/* Right Column - Content */}
-              <div className="space-y-6 sm:space-y-8">
+              <div className="space-y-4">
                 {/* Title with underline */}
                 <div className="space-y-0">
                   <h2
                     className="text-xl sm:text-2xl md:text-1xl lg:text-1xl font-bold text-gray-900"
                     style={{ fontFamily: "var(--font-montserrat)" }}
                   >
-                    Engineering & design solutions
+                    Engineering & Design Solutions
                   </h2>
                        <p
                     className="text-base sm:text-lg md:text-xl text-gray-600 font-medium"
@@ -51,11 +51,11 @@ export default function Section1() {
                     Precision from concept to completion.
                   </p>
                   <div className="w-full h-1 bg-[#D0B970] mt-4"></div>
-               
+
                 </div>
 
                 {/* Content paragraphs */}
-                <div className="space-y-4 sm:space-y-6">
+                <div className="space-y-4">
                   <p
                     className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
                     style={{ fontFamily: "var(--font-montserrat)" }}

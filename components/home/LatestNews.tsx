@@ -8,7 +8,7 @@ export default function LatestNews() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <section className="py-4">
+    <section className="pt-16 pb-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <Link href="/latest-news" className="block">
           <div
@@ -56,7 +56,10 @@ export default function LatestNews() {
                   alt="Arrow"
                   fill
                   sizes="36px"
-                  className="object-contain"
+                  className="object-contain transition-all duration-500"
+                  style={{
+                    filter: isHovered ? "brightness(0)" : "none",
+                  }}
                 />
               </div>
             </div>

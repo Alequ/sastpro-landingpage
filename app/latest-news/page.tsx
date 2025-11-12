@@ -125,7 +125,7 @@ export default function LatestNewsPage() {
                           className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900"
                           style={{ fontFamily: "var(--font-montserrat)" }}
                         >
-                          Contractor of the month
+                          Contractor of the Month
                         </h3>
                         <p
                           className="text-sm sm:text-base italic text-gray-600 mt-2"
@@ -233,7 +233,7 @@ export default function LatestNewsPage() {
                         className="text-xl sm:text-2xl md:text-3xl font-bold text-white group-hover:text-black transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        The skate starter scheme
+                        The Skate Starter Scheme
                       </h3>
                       <p
                         className="text-sm sm:text-base italic text-white group-hover:text-black mt-2 transition-colors duration-300"
@@ -242,7 +242,7 @@ export default function LatestNewsPage() {
                         Partners & Clients / Monday 25th August
                       </p>
                     </div>
-                    <div className="w-full h-1 bg-[#D0B970]"></div>
+                    <div className="w-full h-1 bg-[#D0B970] group-hover:bg-black transition-colors duration-300"></div>
                     <div className="flex-1 flex items-center">
                       <p
                         className="text-sm sm:text-base md:text-lg text-white group-hover:text-black leading-relaxed transition-colors duration-300"
@@ -343,7 +343,7 @@ export default function LatestNewsPage() {
                           className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900"
                           style={{ fontFamily: "var(--font-montserrat)" }}
                         >
-                          Meet our founder: Allyn Coady
+                          Meet Our Founder: Allyn Coady
                         </h2>
                         <p
                           className="text-sm sm:text-base italic text-gray-600"
@@ -446,7 +446,7 @@ export default function LatestNewsPage() {
                         className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Celebrating our calorie crusher champion
+                        Celebrating Our Calorie Crusher Champion
                       </h3>
                       <p
                         className="text-sm sm:text-base italic text-gray-600 mt-2"
@@ -524,7 +524,7 @@ export default function LatestNewsPage() {
                         className="text-xl sm:text-2xl md:text-3xl font-bold text-white group-hover:text-black transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Discovering the latest in safety in Aberdeen
+                        Discovering the Latest in Safety in Aberdeen
                       </h3>
                       <p
                         className="text-sm sm:text-base italic text-white group-hover:text-black mt-2 transition-colors duration-300"
@@ -533,7 +533,7 @@ export default function LatestNewsPage() {
                         Events & Conferences / Wednesday 15th October
                       </p>
                     </div>
-                    <div className="w-full h-1 bg-[#D0B970]"></div>
+                    <div className="w-full h-1 bg-[#D0B970] group-hover:bg-black transition-colors duration-300"></div>
                     <div className="flex-1 flex items-center">
                       <p
                         className="text-sm sm:text-base md:text-lg text-white group-hover:text-black leading-relaxed transition-colors duration-300"
@@ -613,7 +613,8 @@ export default function LatestNewsPage() {
                         className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Hiring beyond technical skills
+                        Hiring Beyond Technical Skills
+                        
                       </h3>
                       <p
                         className="text-sm sm:text-base italic text-gray-600 mt-2"
@@ -805,13 +806,13 @@ export default function LatestNewsPage() {
                         className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Expanding our services: Call-outs now available
+                        Expanding Our Services: Call-outs Now Available
                       </h3>
                       <p
                         className="text-sm sm:text-base italic text-gray-600 mt-2"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Our services / Friday 10th October
+                        Our Services / Friday 10th October
                       </p>
                     </div>
                     <div className="w-full h-1 bg-[#D0B970]"></div>

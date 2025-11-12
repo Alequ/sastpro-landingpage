@@ -14,7 +14,7 @@ export default function Section5() {
               <div className="relative">
                 <div className="relative h-[300px] overflow-hidden shadow-xl">
                   <Image
-                    src="/our-services_2/Safe Systems & Permit Management_.webp"
+                    src="/our-services_2/Safety_compliance_management_systems.webp"
                     alt="Professional services and consulting"
                     fill
                     className="object-cover"
@@ -23,14 +23,14 @@ export default function Section5() {
               </div>
 
               {/* Right Column - Content */}
-              <div className="space-y-6 sm:space-y-8">
+              <div className="space-y-4">
                 {/* Title with underline */}
                 <div className="space-y-0">
                   <h2
                     className="text-xl sm:text-2xl md:text-1xl lg:text-1xl font-bold text-gray-900"
                     style={{ fontFamily: "var(--font-montserrat)" }}
                   >
-                    Safety, compliance & management systems
+                    Safety, Compliance & Management Systems
                   </h2>
                   <p
                     className="text-base sm:text-lg md:text-xl text-gray-600 font-medium"
@@ -42,7 +42,7 @@ export default function Section5() {
                 </div>
 
                 {/* Content paragraphs */}
-                <div className="space-y-4 sm:space-y-6">
+                <div className="space-y-4">
                   <p
                     className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
                     style={{ fontFamily: "var(--font-montserrat)" }}
@@ -51,7 +51,7 @@ export default function Section5() {
                     safety and compliance frameworks across electrical and
                     mechanical operations. Our approach blends disciplined
                     procedures, competent personnel, and digital control to
-                    maintain zero-harm operations
+                    maintain zero-harm operations.
                   </p>
                 </div>
               </div>

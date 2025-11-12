@@ -4,56 +4,61 @@ import { ArrowRight, Target, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef } from "react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import Link from "next/link";
+import Image from "next/image";
 
 const industries = [
   {
     name: "Oil & Gas",
     subtitle: "",
-    description: "Safe, compliant, and efficient solutions for onshore and offshore facilities. Our teams deliver electrical, mechanical, and digital services that keep critical energy assets operating at peak performance.",
+    description:
+      "Safe, compliant, and efficient solutions for onshore and offshore facilities. Our teams deliver electrical, mechanical, and digital services that keep critical energy assets operating at peak performance.",
     image: "/home_2/OilAndGas.webp",
     applications: [
       "Platform systems",
       "Hazardous area compliance",
       "COHE/LOTO",
-      "Commissioning support"
-    ]
+      "Commissioning support",
+    ],
   },
   {
     name: "Nuclear",
     subtitle: "",
-    description: "Trusted engineering support for nuclear generation and decommissioning projects. We provide safe systems of work, authorised personnel, and digital asset control to ensure safety and compliance at every level.",
+    description:
+      "Trusted engineering support for nuclear generation and decommissioning projects. We provide safe systems of work, authorised personnel, and digital asset control to ensure safety and compliance at every level.",
     image: "/home_2/Nuclearav.webp",
     applications: [
       "Authorised personnel",
       "SSOW setup",
       "COHE/LOTO",
-      "Testing & maintenance"
-    ]
+      "Testing & maintenance",
+    ],
   },
   {
     name: "Renewables",
     subtitle: "",
-    description: "Delivering electrical and mechanical expertise for wind, solar, and battery energy storage systems (BESS), including EV infrastructure. We help clients design, connect, and maintain assets that power a cleaner future.",
+    description:
+      "Delivering electrical and mechanical expertise for wind, solar, and battery energy storage systems (BESS), including EV infrastructure. We help clients design, connect, and maintain assets that power a cleaner future.",
     image: "/home_2/DataCentresav.webp",
     applications: [
       "Grid connection",
       "HV substations",
       "BESS integration",
-      "Renewable maintenance"
-    ]
+      "Renewable maintenance",
+    ],
   },
   {
     name: "Data Center",
     subtitle: "",
-    description: "Turnkey electrical and mechanical solutions for hyperscale and enterprise data centres. From design and installation to commissioning and maintenance, we ensure uptime, efficiency, and safety at every stage.",
+    description:
+      "Turnkey electrical and mechanical solutions for hyperscale and enterprise data centres. From design and installation to commissioning and maintenance, we ensure uptime, efficiency, and safety at every stage.",
     image: "/home_2/GridAndInfastructure.webp",
     applications: [
       "HV installations",
       "Cooling & containment",
       "IST & maintenance",
-      "SASTpro integration"
-    ]
-  }
+      "SASTpro integration",
+    ],
+  },
 ];
 
 export default function IndustriesServed() {
@@ -63,15 +68,18 @@ export default function IndustriesServed() {
     threshold: 0.1,
   });
 
-  const scroll = (direction: 'left' | 'right') => {
+  const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
       // Get card width dynamically for responsive scrolling
-      const cardWidth = scrollContainerRef.current.querySelector('div')?.offsetWidth || 280;
+      const cardWidth =
+        scrollContainerRef.current.querySelector("div")?.offsetWidth || 280;
       const scrollAmount = cardWidth * 1; // Scroll by 1 card at a time
-      const newScrollPosition = scrollContainerRef.current.scrollLeft + (direction === 'right' ? scrollAmount : -scrollAmount);
+      const newScrollPosition =
+        scrollContainerRef.current.scrollLeft +
+        (direction === "right" ? scrollAmount : -scrollAmount);
       scrollContainerRef.current.scrollTo({
         left: newScrollPosition,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
@@ -103,7 +111,7 @@ export default function IndustriesServed() {
           <div
             ref={scrollContainerRef}
             className="flex overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {industries.map((industry, index) => (
               <IndustryCard
@@ -123,14 +131,20 @@ export default function IndustriesServed() {
 }
 
 interface IndustryCardProps {
-  industry: typeof industries[0];
+  industry: (typeof industries)[0];
   index: number;
   isVisible: boolean;
   hoveredIndex: number | null;
   setHoveredIndex: (index: number | null) => void;
 }
 
-function IndustryCard({ industry, index, isVisible, hoveredIndex, setHoveredIndex }: IndustryCardProps) {
+function IndustryCard({
+  industry,
+  index,
+  isVisible,
+  hoveredIndex,
+  setHoveredIndex,
+}: IndustryCardProps) {
   const { name, subtitle, description, image, applications } = industry;
   const isHovered = hoveredIndex === index;
 
@@ -138,13 +152,12 @@ function IndustryCard({ industry, index, isVisible, hoveredIndex, setHoveredInde
     <div
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
-      className={`group relative overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl flex-shrink-0 snap-start
+      className={`group relative overflow-hidden transition-all duration-700 hover:scale-[1.02] hover:shadow-2xl flex-shrink-0 snap-start
         h-[550px]
         w-full sm:w-1/2 md:w-1/3 lg:w-1/4
-        ${isVisible ? `animate-in fade-in slide-in-from-bottom-6 duration-700` : 'opacity-0'
-      }`}
+        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
       style={{
-        animationDelay: `${index * 150}ms`,
+        transitionDelay: `${index * 150}ms`,
       }}
     >
       {/* Background Image */}
@@ -165,10 +178,12 @@ function IndustryCard({ industry, index, isVisible, hoveredIndex, setHoveredInde
         <div className="flex justify-between items-start mb-4">
           <div className="flex-1">
             {/* Title */}
-            <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#E5C158] transition-colors duration-300 drop-shadow-lg">
+            <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#d7be6a] transition-colors duration-300 drop-shadow-lg">
               {name}
             </h3>
-            <p className="text-sm font-medium text-[#D4AF37] drop-shadow-lg">{subtitle}</p>
+            <p className="text-sm font-medium text-[#d7be6a] drop-shadow-lg">
+              {subtitle}
+            </p>
           </div>
 
           {/* Arrow appears on hover */}
@@ -191,22 +206,34 @@ function IndustryCard({ industry, index, isVisible, hoveredIndex, setHoveredInde
               key={idx}
               className={`flex items-start gap-3 transition-all duration-300`}
               style={{
-                transitionDelay: isHovered ? `${idx * 50}ms` : '0ms'
+                transitionDelay: isHovered ? `${idx * 50}ms` : "0ms",
               }}
             >
-              <div className={`w-2 h-2 rounded-full bg-[#D4AF37] mt-1.5 flex-shrink-0 shadow-lg shadow-[#D4AF37]/50 ${
-                isHovered ? 'scale-125' : 'scale-100'
-              } transition-transform duration-300`} />
-              <span className="text-sm text-white/90 leading-tight font-medium drop-shadow-lg">{app}</span>
+              <div
+                className={`w-2 h-2 rounded-full bg-[#d7be6a] mt-1.5 flex-shrink-0 shadow-lg shadow-[#d7be6a]/50 ${
+                  isHovered ? "scale-125" : "scale-100"
+                } transition-transform duration-300`}
+              />
+              <span className="text-sm text-white/90 leading-tight font-medium drop-shadow-lg">
+                {app}
+              </span>
             </div>
           ))}
         </div>
 
         {/* Contact us button */}
         <Link href="/contact">
-          <button className="mt-6 w-full rounded-full border-2 border-[#D4AF37] bg-transparent hover:bg-[#D4AF37] text-white hover:text-black font-semibold py-3 px-6 transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg hover:shadow-xl hover:shadow-[#D4AF37]/30">
-            <span>Contact us</span>
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+          <button className="mt-6 w-full rounded-full border-2 border-[#d7be6a] bg-transparent hover:bg-[#d7be6a] text-white hover:text-black font-semibold py-3 px-6 transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg hover:shadow-xl hover:shadow-[#d7be6a]/30">
+            <span>Contact Us</span>
+            <div className="relative w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1">
+              <Image
+                src="/shared/ButtonGoldav.png"
+                alt="Arrow"
+                fill
+                sizes="16px"
+                className="object-contain transition-all duration-300 group-hover/btn:brightness-0"
+              />
+            </div>
           </button>
         </Link>
 

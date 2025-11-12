@@ -19,20 +19,20 @@ export default function Section9() {
                     src="/our-services_2/Training & development - SASTAcademy.webp"
                     alt="Professional training and development"
                     fill
-                    className="object-contain"
+                    className="object-contain scale-110"
                   />
                 </div>
               </div>
 
               {/* Right Column - Content */}
-              <div className="space-y-6 sm:space-y-8 lg:col-span-2 ">
+              <div className="space-y-4 lg:col-span-2 ">
                 {/* Title with underline */}
                 <div className="space-y-0">
                   <h2
                     className="text-xl sm:text-2xl md:text-1xl lg:text-1xl font-bold text-gray-900"
                     style={{ fontFamily: "var(--font-montserrat)" }}
                   >
-                    Training & development - SASTAcademy
+                    Training & Development - SASTAcademy
                   </h2>
                   <p
                     className="text-base sm:text-lg md:text-xl text-gray-600 font-medium"
@@ -44,7 +44,7 @@ export default function Section9() {
                 </div>
 
                 {/* Content paragraphs */}
-                <div className="space-y-4 sm:space-y-6">
+                <div className="space-y-4">
                   <p
                     className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
                     style={{ fontFamily: "var(--font-montserrat)" }}
