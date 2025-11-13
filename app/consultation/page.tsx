@@ -17,6 +17,7 @@ export default function ConsultationPage() {
 
         <ConsultationForm />
 
+      <div className="h-3 bg-[#D0B970]"></div>
       <Footer />
 
       <BackToTop />

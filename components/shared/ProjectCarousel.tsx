@@ -16,7 +16,10 @@ interface ProjectCarouselProps {
   buttonImagePath: string;
 }
 
-export default function ProjectCarousel({ projects, buttonImagePath }: ProjectCarouselProps) {
+export default function ProjectCarousel({
+  projects,
+  buttonImagePath,
+}: ProjectCarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Calculate number of slides (3 projects per slide)
@@ -34,7 +37,9 @@ export default function ProjectCarousel({ projects, buttonImagePath }: ProjectCa
   // Group projects into slides
   const slides = [];
   for (let i = 0; i < totalSlides; i++) {
-    slides.push(projects.slice(i * projectsPerSlide, (i + 1) * projectsPerSlide));
+    slides.push(
+      projects.slice(i * projectsPerSlide, (i + 1) * projectsPerSlide)
+    );
   }
 
   return (

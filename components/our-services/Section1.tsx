@@ -44,14 +44,13 @@ export default function Section1() {
                   >
                     Engineering & Design Solutions
                   </h2>
-                       <p
+                  <p
                     className="text-base sm:text-lg md:text-xl text-gray-600 font-medium"
                     style={{ fontFamily: "var(--font-montserrat)" }}
                   >
                     Precision from concept to completion.
                   </p>
                   <div className="w-full h-1 bg-[#D0B970] mt-4"></div>
-
                 </div>
 
                 {/* Content paragraphs */}
@@ -60,11 +59,12 @@ export default function Section1() {
                     className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
                     style={{ fontFamily: "var(--font-montserrat)" }}
                   >
-                    S.A.S Transition provides full electrical and mechanical engineering
-design support - from initial feasibility to detailed construction
-documentation. Our multi-discipline engineers deliver practical,
-compliant, and buildable solutions that integrate safety, performance,
-and maintainability from day one.
+                    S.A.S Transition provides full electrical and mechanical
+                    engineering design support - from initial feasibility to
+                    detailed construction documentation. Our multi-discipline
+                    engineers deliver practical, compliant, and buildable
+                    solutions that integrate safety, performance, and
+                    maintainability from day one.
                   </p>
                 </div>
               </div>

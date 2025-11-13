@@ -9,13 +9,15 @@ import { carouselData } from "@/app/data/CarouselData";
 
 export default function ConstructionsPage() {
   // Display all projects from CarouselData
-  const constructionProjects = carouselData.carouselCards.map((project, idx) => ({
-    id: `construction-${idx + 1}`,
-    title: project.category,
-    client: project.client,
-    location: project.location,
-    description: project.description
-  }));
+  const constructionProjects = carouselData.carouselCards.map(
+    (project, idx) => ({
+      id: `construction-${idx + 1}`,
+      title: project.category,
+      client: project.client,
+      location: project.location,
+      description: project.description,
+    })
+  );
   return (
     <>
       <HeaderNavigation />
@@ -212,7 +214,8 @@ export default function ConstructionsPage() {
                         className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 leading-tight"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        READY TO START YOUR NEXT CONSTRUCTION<br />
+                        READY TO START YOUR NEXT CONSTRUCTION
+                        <br />
                         PROJECT ?
                       </h2>
 
@@ -258,7 +261,10 @@ export default function ConstructionsPage() {
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Left Card - Areas of expertise */}
-                <Link href="/our-services" className="overflow-hidden shadow-xl relative group cursor-pointer transition-all duration-300">
+                <Link
+                  href="/our-services"
+                  className="overflow-hidden shadow-xl relative group cursor-pointer transition-all duration-300"
+                >
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
@@ -322,9 +328,9 @@ export default function ConstructionsPage() {
                           style={{ fontFamily: "var(--font-montserrat)" }}
                         >
                           With a proven track record across Europe and
-                          internationally, S.A.S Transition has delivered complex
-                          electrical and mechanical construction across data
-                          centres, energy, and industrial sectors.
+                          internationally, S.A.S Transition has delivered
+                          complex electrical and mechanical construction across
+                          data centres, energy, and industrial sectors.
                         </p>
 
                         <p

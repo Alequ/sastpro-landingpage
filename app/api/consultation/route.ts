@@ -7,7 +7,8 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, company, email, phone, enquiryType, location, message } = body;
+    const { name, company, email, phone, enquiryType, location, message } =
+      body;
 
     // Validate required fields
     if (!name || !email || !enquiryType) {
@@ -32,7 +33,7 @@ export async function POST(request: NextRequest) {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: "SAS Transition Consultation Form <onboarding@resend.dev>", // Replace with your verified domain
-      to: ["efix66@gmail.com"], // Email address to receive consultation form submissions
+      to: ["consultation@sastransition.com"], // Email address to receive consultation form submissions
       subject: `New Consultation Request: ${
         enquiryTypeLabels[enquiryType] || enquiryType
       }`,

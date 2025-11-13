@@ -1,29 +1,38 @@
-'use client'
+"use client";
 
-import { FileText, Users, Zap, Shield, Search, BarChart3, Sparkles, CheckCircle2 } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
+import {
+  FileText,
+  Users,
+  Zap,
+  Shield,
+  Search,
+  BarChart3,
+  Sparkles,
+  CheckCircle2,
+} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 export function KeyFeatures() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-  const sectionRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
       { threshold: 0.1 }
-    )
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   const features = [
     {
@@ -34,7 +43,7 @@ export function KeyFeatures() {
       color: "from-blue-500 to-cyan-500",
       bgGlow: "bg-blue-500/20",
       iconBg: "bg-blue-500/10",
-      highlights: ["Version Control", "Quick Search", "Instant Retrieval"]
+      highlights: ["Version Control", "Quick Search", "Instant Retrieval"],
     },
     {
       icon: Users,
@@ -44,7 +53,7 @@ export function KeyFeatures() {
       color: "from-purple-500 to-pink-500",
       bgGlow: "bg-purple-500/20",
       iconBg: "bg-purple-500/10",
-      highlights: ["Customer Logs", "Site Visits", "Timeline View"]
+      highlights: ["Customer Logs", "Site Visits", "Timeline View"],
     },
     {
       icon: Zap,
@@ -54,7 +63,7 @@ export function KeyFeatures() {
       color: "from-yellow-500 to-orange-500",
       bgGlow: "bg-yellow-500/20",
       iconBg: "bg-yellow-500/10",
-      highlights: ["Real-time Monitoring", "Safety Protocols", "Maintenance"]
+      highlights: ["Real-time Monitoring", "Safety Protocols", "Maintenance"],
     },
     {
       icon: Shield,
@@ -64,7 +73,7 @@ export function KeyFeatures() {
       color: "from-green-500 to-emerald-500",
       bgGlow: "bg-green-500/20",
       iconBg: "bg-green-500/10",
-      highlights: ["Auto Checks", "Reminders", "Audit Ready"]
+      highlights: ["Auto Checks", "Reminders", "Audit Ready"],
     },
     {
       icon: Search,
@@ -74,7 +83,7 @@ export function KeyFeatures() {
       color: "from-indigo-500 to-blue-500",
       bgGlow: "bg-indigo-500/20",
       iconBg: "bg-indigo-500/10",
-      highlights: ["AI-Powered", "Instant Results", "Full-Text Search"]
+      highlights: ["AI-Powered", "Instant Results", "Full-Text Search"],
     },
     {
       icon: BarChart3,
@@ -84,12 +93,15 @@ export function KeyFeatures() {
       color: "from-red-500 to-pink-500",
       bgGlow: "bg-red-500/20",
       iconBg: "bg-red-500/10",
-      highlights: ["Activity Logs", "Change History", "Full Transparency"]
+      highlights: ["Activity Logs", "Change History", "Full Transparency"],
     },
-  ]
+  ];
 
   return (
-    <section ref={sectionRef} className="relative py-24 overflow-hidden bg-gradient-to-b from-background to-secondary/20">
+    <section
+      ref={sectionRef}
+      className="relative py-24 overflow-hidden bg-gradient-to-b from-background to-secondary/20"
+    >
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
@@ -110,7 +122,8 @@ export function KeyFeatures() {
             </span>
           </h2>
           <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground max-w-xl mx-auto">
-            Powerful features designed specifically for construction safety and electrical engineering management.
+            Powerful features designed specifically for construction safety and
+            electrical engineering management.
           </p>
         </div>
 
@@ -122,21 +135,30 @@ export function KeyFeatures() {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               className={`group relative rounded-2xl border border-border/50 bg-card p-6 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:border-primary/30 ${
-                isVisible ? `animate-in fade-in slide-in-from-bottom-4 duration-700` : 'opacity-0'
+                isVisible
+                  ? `animate-in fade-in slide-in-from-bottom-4 duration-700`
+                  : "opacity-0"
               }`}
               style={{
-                animationDelay: `${index * 100}ms`
+                animationDelay: `${index * 100}ms`,
               }}
             >
               {/* Glow effect on hover */}
-              <div className={`absolute inset-0 rounded-2xl ${feature.bgGlow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl -z-10`} />
+              <div
+                className={`absolute inset-0 rounded-2xl ${feature.bgGlow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl -z-10`}
+              />
 
               {/* Content */}
               <div className="relative">
                 {/* Icon with gradient background */}
                 <div className="relative mb-5">
-                  <div className={`flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${feature.color} shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
-                    <feature.icon className="h-7 w-7 text-white" strokeWidth={2.5} />
+                  <div
+                    className={`flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${feature.color} shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}
+                  >
+                    <feature.icon
+                      className="h-7 w-7 text-white"
+                      strokeWidth={2.5}
+                    />
                   </div>
 
                   {/* Floating badge on hover */}
@@ -155,9 +177,13 @@ export function KeyFeatures() {
                 </p>
 
                 {/* Highlight tags - show on hover */}
-                <div className={`mt-4 flex flex-wrap gap-1.5 transition-all duration-300 ${
-                  hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-                }`}>
+                <div
+                  className={`mt-4 flex flex-wrap gap-1.5 transition-all duration-300 ${
+                    hoveredIndex === index
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-2"
+                  }`}
+                >
                   {feature.highlights.map((highlight) => (
                     <span
                       key={highlight}
@@ -170,7 +196,9 @@ export function KeyFeatures() {
                 </div>
 
                 {/* Bottom accent line */}
-                <div className={`mt-5 h-1 rounded-full bg-gradient-to-r ${feature.color} opacity-0 group-hover:opacity-100 transition-all duration-500 transform origin-left scale-x-0 group-hover:scale-x-100`} />
+                <div
+                  className={`mt-5 h-1 rounded-full bg-gradient-to-r ${feature.color} opacity-0 group-hover:opacity-100 transition-all duration-500 transform origin-left scale-x-0 group-hover:scale-x-100`}
+                />
               </div>
             </div>
           ))}
@@ -184,5 +212,5 @@ export function KeyFeatures() {
         </div>
       </div>
     </section>
-  )
+  );
 }
