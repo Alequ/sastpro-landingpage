@@ -1,41 +1,51 @@
-'use client'
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Calendar, Rocket, CheckCircle2, Gift, Clock, Shield, Zap, Sparkles } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
+import { Button } from "@/components/ui/button";
+import {
+  ArrowRight,
+  Calendar,
+  Rocket,
+  CheckCircle2,
+  Gift,
+  Clock,
+  Shield,
+  Zap,
+  Sparkles,
+} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 export function FinalCTA() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
       { threshold: 0.1 }
-    )
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   const benefits = [
     { icon: CheckCircle2, text: "No credit card required" },
     { icon: Clock, text: "14-day free trial" },
     { icon: Shield, text: "Cancel anytime" },
-  ]
+  ];
 
   const bonuses = [
     { icon: Gift, text: "Free onboarding session" },
     { icon: Zap, text: "Priority support included" },
     { icon: Sparkles, text: "Full team training" },
-  ]
+  ];
 
   return (
     <section
@@ -47,23 +57,39 @@ export function FinalCTA() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-primary/20 via-accent/20 to-purple-500/20 rounded-full blur-3xl animate-pulse" />
 
       {/* Floating elements */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-primary/10 rounded-full blur-2xl animate-bounce" style={{ animationDuration: '3s' }} />
-      <div className="absolute bottom-10 right-10 w-32 h-32 bg-accent/10 rounded-full blur-2xl animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }} />
+      <div
+        className="absolute top-10 left-10 w-20 h-20 bg-primary/10 rounded-full blur-2xl animate-bounce"
+        style={{ animationDuration: "3s" }}
+      />
+      <div
+        className="absolute bottom-10 right-10 w-32 h-32 bg-accent/10 rounded-full blur-2xl animate-bounce"
+        style={{ animationDuration: "4s", animationDelay: "1s" }}
+      />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           {/* Badge */}
           <div className="text-center mb-8">
-            <div className={`inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/20 via-accent/20 to-purple-500/20 px-4 py-1.5 text-sm font-medium text-primary border border-primary/30 ${
-              isVisible ? 'animate-in fade-in zoom-in duration-500' : 'opacity-0'
-            }`}>
+            <div
+              className={`inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/20 via-accent/20 to-purple-500/20 px-4 py-1.5 text-sm font-medium text-primary border border-primary/30 ${
+                isVisible
+                  ? "animate-in fade-in zoom-in duration-500"
+                  : "opacity-0"
+              }`}
+            >
               <Rocket className="h-4 w-4" />
               <span>Ready to Get Started?</span>
             </div>
           </div>
 
           {/* Main heading */}
-          <div className={`text-center ${isVisible ? 'animate-in fade-in slide-in-from-bottom duration-700 delay-100' : 'opacity-0'}`}>
+          <div
+            className={`text-center ${
+              isVisible
+                ? "animate-in fade-in slide-in-from-bottom duration-700 delay-100"
+                : "opacity-0"
+            }`}
+          >
             <h2 className="text-balance text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
               Ready to{" "}
               <span className="relative inline-block">
@@ -76,15 +102,20 @@ export function FinalCTA() {
               Your Safety Operations?
             </h2>
             <p className="mt-6 text-pretty text-xl leading-relaxed text-muted-foreground max-w-2xl mx-auto">
-              Join hundreds of construction companies that have modernized their document management and compliance
-              tracking. Get started today with a free demo.
+              Join hundreds of construction companies that have modernized their
+              document management and compliance tracking. Get started today
+              with a free demo.
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className={`mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row ${
-            isVisible ? 'animate-in fade-in slide-in-from-bottom duration-700 delay-300' : 'opacity-0'
-          }`}>
+          <div
+            className={`mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row ${
+              isVisible
+                ? "animate-in fade-in slide-in-from-bottom duration-700 delay-300"
+                : "opacity-0"
+            }`}
+          >
             <Button
               size="lg"
               className="group relative w-full text-base sm:w-auto bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] hover:bg-right transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-primary/50 hover:scale-105"
@@ -104,22 +135,34 @@ export function FinalCTA() {
           </div>
 
           {/* Benefits badges */}
-          <div className={`mt-8 flex flex-wrap items-center justify-center gap-4 ${
-            isVisible ? 'animate-in fade-in slide-in-from-bottom duration-700 delay-500' : 'opacity-0'
-          }`}>
+          <div
+            className={`mt-8 flex flex-wrap items-center justify-center gap-4 ${
+              isVisible
+                ? "animate-in fade-in slide-in-from-bottom duration-700 delay-500"
+                : "opacity-0"
+            }`}
+          >
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.text}
                 className="inline-flex items-center gap-2 rounded-full bg-background/80 border border-border/50 px-4 py-2 backdrop-blur-sm hover:scale-105 transition-transform duration-300"
               >
                 <benefit.icon className="h-4 w-4 text-green-500" />
-                <span className="text-sm font-medium text-foreground">{benefit.text}</span>
+                <span className="text-sm font-medium text-foreground">
+                  {benefit.text}
+                </span>
               </div>
             ))}
           </div>
 
           {/* Limited Time Offer Card */}
-          <div className={`mt-16 relative ${isVisible ? 'animate-in fade-in slide-in-from-bottom duration-700 delay-700' : 'opacity-0'}`}>
+          <div
+            className={`mt-16 relative ${
+              isVisible
+                ? "animate-in fade-in slide-in-from-bottom duration-700 delay-700"
+                : "opacity-0"
+            }`}
+          >
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-red-500/20 to-pink-500/20 rounded-2xl blur-xl" />
             <div className="relative rounded-2xl border-2 border-orange-500/30 bg-gradient-to-br from-orange-500/10 via-red-500/10 to-pink-500/10 p-8 backdrop-blur-sm overflow-hidden">
               {/* Animated corner accent */}
@@ -140,7 +183,8 @@ export function FinalCTA() {
                       </span>
                     </h3>
                     <p className="text-muted-foreground">
-                      Get 20% off your first year when you sign up before the end of the month.
+                      Get 20% off your first year when you sign up before the
+                      end of the month.
                     </p>
                   </div>
                 </div>
@@ -155,7 +199,9 @@ export function FinalCTA() {
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex-shrink-0">
                         <bonus.icon className="h-5 w-5 text-primary" />
                       </div>
-                      <span className="text-sm font-medium text-foreground">{bonus.text}</span>
+                      <span className="text-sm font-medium text-foreground">
+                        {bonus.text}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -170,29 +216,41 @@ export function FinalCTA() {
           </div>
 
           {/* Trust indicators */}
-          <div className={`mt-12 text-center ${isVisible ? 'animate-in fade-in zoom-in duration-700 delay-1000' : 'opacity-0'}`}>
+          <div
+            className={`mt-12 text-center ${
+              isVisible
+                ? "animate-in fade-in zoom-in duration-700 delay-1000"
+                : "opacity-0"
+            }`}
+          >
             <p className="text-sm text-muted-foreground mb-4">
               Trusted by 500+ construction companies worldwide
             </p>
             <div className="flex items-center justify-center gap-6 flex-wrap">
               <div className="flex items-center gap-2">
                 <Shield className="h-5 w-5 text-green-500" />
-                <span className="text-sm font-medium text-foreground">SOC 2 Certified</span>
+                <span className="text-sm font-medium text-foreground">
+                  SOC 2 Certified
+                </span>
               </div>
               <div className="h-4 w-px bg-border" />
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-5 w-5 text-green-500" />
-                <span className="text-sm font-medium text-foreground">99.9% Uptime</span>
+                <span className="text-sm font-medium text-foreground">
+                  99.9% Uptime
+                </span>
               </div>
               <div className="h-4 w-px bg-border" />
               <div className="flex items-center gap-2">
                 <Sparkles className="h-5 w-5 text-yellow-500" />
-                <span className="text-sm font-medium text-foreground">4.9/5 Rating</span>
+                <span className="text-sm font-medium text-foreground">
+                  4.9/5 Rating
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

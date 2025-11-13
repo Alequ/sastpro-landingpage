@@ -1,29 +1,36 @@
-'use client'
+"use client";
 
-import { Upload, FolderTree, Activity, Workflow, ArrowRight, Check } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
+import {
+  Upload,
+  FolderTree,
+  Activity,
+  Workflow,
+  ArrowRight,
+  Check,
+} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 export function HowItWorks() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [activeStep, setActiveStep] = useState<number | null>(null)
-  const sectionRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const [activeStep, setActiveStep] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
       { threshold: 0.1 }
-    )
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   const steps = [
     {
@@ -34,27 +41,29 @@ export function HowItWorks() {
         "Easily upload existing documents or import from your current systems. Supports all major file formats.",
       color: "from-blue-500 to-cyan-500",
       bgGlow: "bg-blue-500/20",
-      features: ["Drag & Drop", "Bulk Upload", "All Formats"]
+      features: ["Drag & Drop", "Bulk Upload", "All Formats"],
     },
     {
       number: "02",
       icon: FolderTree,
       title: "Organize & Tag",
-      description: "Automatically categorize documents with smart tagging. Create custom folders and access controls.",
+      description:
+        "Automatically categorize documents with smart tagging. Create custom folders and access controls.",
       color: "from-purple-500 to-pink-500",
       bgGlow: "bg-purple-500/20",
-      features: ["Auto-Tagging", "Custom Folders", "Access Control"]
+      features: ["Auto-Tagging", "Custom Folders", "Access Control"],
     },
     {
       number: "03",
       icon: Activity,
       title: "Track & Monitor",
-      description: "Real-time monitoring of all assets and documents. Get alerts for compliance deadlines and updates.",
+      description:
+        "Real-time monitoring of all assets and documents. Get alerts for compliance deadlines and updates.",
       color: "from-green-500 to-emerald-500",
       bgGlow: "bg-green-500/20",
-      features: ["Real-time Alerts", "Dashboards", "Compliance Tracking"]
+      features: ["Real-time Alerts", "Dashboards", "Compliance Tracking"],
     },
-  ]
+  ];
 
   return (
     <section
@@ -83,7 +92,8 @@ export function HowItWorks() {
             </span>
           </h2>
           <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground max-w-xl mx-auto">
-            Our intuitive platform makes it simple to transition from chaos to complete control.
+            Our intuitive platform makes it simple to transition from chaos to
+            complete control.
           </p>
         </div>
 
@@ -106,10 +116,12 @@ export function HowItWorks() {
                 onMouseEnter={() => setActiveStep(index)}
                 onMouseLeave={() => setActiveStep(null)}
                 className={`group relative ${
-                  isVisible ? `animate-in fade-in slide-in-from-bottom-8 duration-700` : 'opacity-0'
+                  isVisible
+                    ? `animate-in fade-in slide-in-from-bottom-8 duration-700`
+                    : "opacity-0"
                 }`}
                 style={{
-                  animationDelay: `${index * 200}ms`
+                  animationDelay: `${index * 200}ms`,
                 }}
               >
                 {/* Card */}
@@ -117,11 +129,18 @@ export function HowItWorks() {
                   {/* Icon Container */}
                   <div className="relative z-10 mb-6">
                     {/* Glow effect */}
-                    <div className={`absolute inset-0 ${step.bgGlow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl scale-150`} />
+                    <div
+                      className={`absolute inset-0 ${step.bgGlow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl scale-150`}
+                    />
 
                     {/* Icon circle */}
-                    <div className={`relative flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br ${step.color} shadow-xl group-hover:scale-110 transition-all duration-500 group-hover:rotate-6`}>
-                      <step.icon className="h-10 w-10 text-white" strokeWidth={2.5} />
+                    <div
+                      className={`relative flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br ${step.color} shadow-xl group-hover:scale-110 transition-all duration-500 group-hover:rotate-6`}
+                    >
+                      <step.icon
+                        className="h-10 w-10 text-white"
+                        strokeWidth={2.5}
+                      />
 
                       {/* Number badge */}
                       <div className="absolute -bottom-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-background border-2 border-primary shadow-lg">
@@ -147,9 +166,11 @@ export function HowItWorks() {
                   )}
 
                   {/* Content Card */}
-                  <div className={`rounded-2xl border border-border/50 bg-card p-6 transition-all duration-500 group-hover:border-primary/30 group-hover:shadow-2xl ${
-                    activeStep === index ? 'scale-105' : ''
-                  }`}>
+                  <div
+                    className={`rounded-2xl border border-border/50 bg-card p-6 transition-all duration-500 group-hover:border-primary/30 group-hover:shadow-2xl ${
+                      activeStep === index ? "scale-105" : ""
+                    }`}
+                  >
                     <h3 className="text-xl font-bold text-foreground group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all">
                       {step.title}
                     </h3>
@@ -158,19 +179,30 @@ export function HowItWorks() {
                     </p>
 
                     {/* Feature list - show on hover */}
-                    <div className={`mt-4 space-y-2 transition-all duration-300 ${
-                      activeStep === index ? 'opacity-100 max-h-32' : 'opacity-0 max-h-0 overflow-hidden'
-                    }`}>
+                    <div
+                      className={`mt-4 space-y-2 transition-all duration-300 ${
+                        activeStep === index
+                          ? "opacity-100 max-h-32"
+                          : "opacity-0 max-h-0 overflow-hidden"
+                      }`}
+                    >
                       {step.features.map((feature) => (
-                        <div key={feature} className="flex items-center gap-2 text-xs text-muted-foreground">
-                          <div className={`h-1.5 w-1.5 rounded-full bg-gradient-to-r ${step.color}`} />
+                        <div
+                          key={feature}
+                          className="flex items-center gap-2 text-xs text-muted-foreground"
+                        >
+                          <div
+                            className={`h-1.5 w-1.5 rounded-full bg-gradient-to-r ${step.color}`}
+                          />
                           <span>{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Bottom accent */}
-                    <div className={`mt-4 h-1 rounded-full bg-gradient-to-r ${step.color} opacity-0 group-hover:opacity-100 transition-all duration-500`} />
+                    <div
+                      className={`mt-4 h-1 rounded-full bg-gradient-to-r ${step.color} opacity-0 group-hover:opacity-100 transition-all duration-500`}
+                    />
                   </div>
                 </div>
               </div>
@@ -189,5 +221,5 @@ export function HowItWorks() {
         </div>
       </div>
     </section>
-  )
+  );
 }

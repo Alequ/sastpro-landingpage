@@ -26,7 +26,7 @@ export default function OurServicesPage() {
           <Section1 />
         </div>
         <Section2 />
-         <section style={{paddingTop: "20px", paddingBottom: "20px" }}>
+        <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
           <div className="flex justify-center w-full">
             <div style={{ width: "90%" }}>
               <hr className="border-t-2 border-black" />
@@ -37,7 +37,7 @@ export default function OurServicesPage() {
           <Section3 />
         </div>
         <Section4 />
-          <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
+        <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
           <div className="flex justify-center w-full">
             <div style={{ width: "90%" }}>
               <hr className="border-t-2 border-black" />
@@ -48,7 +48,7 @@ export default function OurServicesPage() {
           <Section5 />
         </div>
         <Section6 />
-          <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
+        <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
           <div className="flex justify-center w-full">
             <div style={{ width: "90%" }}>
               <hr className="border-t-2 border-black" />
@@ -59,7 +59,7 @@ export default function OurServicesPage() {
           <Section7 />
         </div>
         <Section8 />
-          <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
+        <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
           <div className="flex justify-center w-full">
             <div style={{ width: "90%" }}>
               <hr className="border-t-2 border-black" />
@@ -70,7 +70,7 @@ export default function OurServicesPage() {
           <Section9 />
         </div>
         <Section10 />
-          <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
+        <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
           <div className="flex justify-center w-full">
             <div style={{ width: "90%" }}>
               <hr className="border-t-2 border-black" />

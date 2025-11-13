@@ -125,7 +125,7 @@ export default function WhoWeArePage() {
 
         {/* Main Content Section */}
         <section className="pt-0 mb-15">
-          <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
+          <div className="flex justify-center w-full">
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               {/* Decorative Border Element */}
               <div className="flex justify-center w-full mb-15">
@@ -159,7 +159,7 @@ export default function WhoWeArePage() {
                     <video
                       className="w-full h-auto shadow-md rounded-sm"
                       controls
-                      src="/videos/Post.mp4"
+                      src="/videos/Post_2.mp4"
                     >
                       Your browser does not support the video tag.
                     </video>
@@ -242,7 +242,7 @@ export default function WhoWeArePage() {
 
         {/* Our Ethos & Mission Section */}
         <section className="mb-15">
-          <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
+          <div className="flex justify-center w-full">
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Our Ethos Card */}
@@ -356,7 +356,7 @@ export default function WhoWeArePage() {
 
         {/* Safety First Section */}
         <section className="mb-15">
-          <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
+          <div className="flex justify-center w-full">
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               {/* White Card Container */}
               <div className="bg-white shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
@@ -478,7 +478,7 @@ export default function WhoWeArePage() {
                 </div>
 
                 {/* Team Members - First Row (4 members) */}
-                <div className="grid grid-cols-4 gap-8 lg:gap-12 max-w-6xl mx-auto mb-8 lg:mb-12">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 max-w-6xl mx-auto mb-8 lg:mb-12">
                   <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
@@ -585,7 +585,7 @@ export default function WhoWeArePage() {
                 </div>
 
                 {/* Team Members - Second Row (4 members) */}
-                <div className="grid grid-cols-4 gap-8 lg:gap-12 max-w-6xl mx-auto mb-8 lg:mb-12">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 max-w-6xl mx-auto mb-8 lg:mb-12">
                   <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image

@@ -96,7 +96,7 @@ export default function LatestNewsPage() {
 
         {/* News Content Section */}
         <section className="pt-0 mb-8 sm:mb-12 md:mb-15">
-          <div className="flex justify-center w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32">
+          <div className="flex justify-center w-full">
             <div className="w-full" style={{ maxWidth: "1400px" }}>
               {/* Decorative Border Element */}
               <div className="flex justify-center w-full mb-8 sm:mb-12 md:mb-15">
@@ -182,7 +182,7 @@ export default function LatestNewsPage() {
 
                 {/* Right Column - Image */}
                 <div className="relative order-first lg:order-last">
-                  <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-full min-h-[300px] sm:min-h-[350px] md:min-h-[400px] shadow-xl overflow-hidden">
+                  <div className="relative h-[600px] lg:h-full min-h-[600px] lg:min-h-[400px] shadow-xl overflow-hidden">
                     <Image
                       src="/latest-news_2/ContractorOfTheMonthImage1.webp"
                       alt="Contractor of the month"
@@ -207,7 +207,7 @@ export default function LatestNewsPage() {
 
         {/* Skate Starter Scheme Section */}
         <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
-          <div className="flex justify-center w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32">
+          <div className="flex justify-center w-full">
             <div className="w-full" style={{ maxWidth: "1400px" }}>
               <div className="space-y-4 sm:space-y-6 md:space-y-8">
                 {/* Top Card - Main Content (Full Width) */}
@@ -329,7 +329,7 @@ export default function LatestNewsPage() {
 
         {/* Meet our founder Section */}
         <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
-          <div className="flex justify-center w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32">
+          <div className="flex justify-center w-full">
             <div className="w-full" style={{ maxWidth: "1400px" }}>
               {/* White Card Container */}
               <div className="bg-white shadow-xl p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16">
@@ -382,7 +382,7 @@ export default function LatestNewsPage() {
                       <video
                         className="w-full h-full object-cover"
                         controls
-                        src="/videos/Post.mp4"
+                        src="/videos/Post_2.mp4"
                       >
                         Your browser does not support the video tag.
                       </video>
@@ -420,7 +420,7 @@ export default function LatestNewsPage() {
 
         {/* Calorie Crusher Champion Section */}
         <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
-          <div className="flex justify-center w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32">
+          <div className="flex justify-center w-full">
             <div className="w-full" style={{ maxWidth: "1400px" }}>
               <div
                 className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-stretch"
@@ -428,7 +428,7 @@ export default function LatestNewsPage() {
               >
                 {/* Left Card - Image */}
                 <div className="relative">
-                  <div className="relative h-full shadow-xl overflow-hidden">
+                  <div className="relative h-[600px] lg:h-full min-h-[600px] shadow-xl overflow-hidden">
                     <Image
                       src="/latest-news_2/CalorieCrusherImage1.webp"
                       alt="Calorie crusher champion award ceremony"
@@ -498,7 +498,7 @@ export default function LatestNewsPage() {
 
         {/* Safety Expo Aberdeen Section */}
         <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
-          <div className="flex justify-center w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32">
+          <div className="flex justify-center w-full">
             <div className="w-full" style={{ maxWidth: "1400px" }}>
               <div className="space-y-4 sm:space-y-6 md:space-y-8">
                 {/* Top Card - Main Content (Full Width) */}
@@ -599,7 +599,7 @@ export default function LatestNewsPage() {
 
         {/* Hiring Beyond Technical Skills Section */}
         <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
-          <div className="flex justify-center w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32">
+          <div className="flex justify-center w-full">
             <div className="w-full" style={{ maxWidth: "1400px" }}>
               <div
                 className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-4 sm:gap-6 md:gap-8 items-stretch"
@@ -614,7 +614,6 @@ export default function LatestNewsPage() {
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         Hiring Beyond Technical Skills
-                        
                       </h3>
                       <p
                         className="text-sm sm:text-base italic text-gray-600 mt-2"
@@ -629,11 +628,11 @@ export default function LatestNewsPage() {
                         className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        When we're hiring new talent at S.A.S Transition, we always look
-                        beyond certificates and years of experience. Why? While
-                        these are a minimum requirement, they simply aren't
-                        enough to prove that someone is the right fit for our
-                        team. Many of our colleagues work in critical,
+                        When we're hiring new talent at S.A.S Transition, we
+                        always look beyond certificates and years of experience.
+                        Why? While these are a minimum requirement, they simply
+                        aren't enough to prove that someone is the right fit for
+                        our team. Many of our colleagues work in critical,
                         high-pressure environments where safety is on the line,
                         so we make it a priority to assess key competencies when
                         looking for future talent.
@@ -676,8 +675,8 @@ export default function LatestNewsPage() {
                       effectively, both within our team and with external
                       clients. If someone has all of that, as well as the
                       required skills and technical experience, then they might
-                      just be a fit. Because at S.A.S Transition, we don't just need
-                      technical experts — we need great communicators.
+                      just be a fit. Because at S.A.S Transition, we don't just
+                      need technical experts — we need great communicators.
                     </p>
                   </div>
                 </div>
@@ -697,7 +696,7 @@ export default function LatestNewsPage() {
 
         {/* DCD Connect Virginia Section */}
         <section style={{ paddingTop: "20px", paddingBottom: "20px" }}>
-          <div className="flex justify-center w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32">
+          <div className="flex justify-center w-full">
             <div className="w-full" style={{ maxWidth: "1400px" }}>
               <div className="space-y-4 sm:space-y-6 md:space-y-8">
                 {/* Top Card - Main Content (Full Width) */}
@@ -792,7 +791,7 @@ export default function LatestNewsPage() {
           className="pb-16 sm:pb-20 md:pb-24 lg:pb-32"
           style={{ paddingTop: "20px" }}
         >
-          <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
+          <div className="flex justify-center w-full">
             <div className="w-full" style={{ maxWidth: "1400px" }}>
               <div
                 className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch"

@@ -2,30 +2,62 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Clock,
-  Home,
-  ChevronDown,
-  ChevronRight,
-} from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Home, ChevronRight } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+
+// Zod validation schema
+const contactFormSchema = z.object({
+  name: z
+    .string()
+    .min(2, "Name must be at least 2 characters")
+    .max(100, "Name must be less than 100 characters")
+    .regex(
+      /^[a-zA-Z\s'-]+$/,
+      "Name can only contain letters, spaces, hyphens and apostrophes"
+    ),
+  company: z
+    .string()
+    .max(200, "Company name must be less than 200 characters")
+    .optional()
+    .or(z.literal("")),
+  email: z
+    .string()
+    .email("Please enter a valid email address")
+    .max(255, "Email must be less than 255 characters"),
+  phone: z
+    .string()
+    .regex(/^[\d\s()+-]+$/, "Please enter a valid phone number")
+    .min(10, "Phone number must be at least 10 characters")
+    .max(20, "Phone number must be less than 20 characters")
+    .optional()
+    .or(z.literal("")),
+  enquiryType: z.string().min(1, "Please select an enquiry type"),
+  message: z
+    .string()
+    .min(10, "Message must be at least 10 characters")
+    .max(2000, "Message must be less than 2000 characters"),
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export default function ContactForms() {
-  const [formData, setFormData] = useState({
-    name: "",
-    company: "",
-    email: "",
-    phone: "",
-    enquiryType: "",
-    message: "",
-  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
     type: "success" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+    mode: "onBlur",
+  });
 
   // Auto-hide success message after 5 seconds
   useEffect(() => {
@@ -38,8 +70,7 @@ export default function ContactForms() {
     }
   }, [submitStatus.type]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: "" });
 
@@ -49,30 +80,22 @@ export default function ContactForms() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(data),
       });
 
-      const data = await response.json();
+      const result = await response.json();
 
       if (response.ok) {
         setSubmitStatus({
           type: "success",
-          message:
-            "Thank you for contacting us! We'll get back to you soon.",
+          message: "Thank you for contacting us! We'll get back to you soon.",
         });
         // Reset form
-        setFormData({
-          name: "",
-          company: "",
-          email: "",
-          phone: "",
-          enquiryType: "",
-          message: "",
-        });
+        reset();
       } else {
         setSubmitStatus({
           type: "error",
-          message: data.error || "Failed to send message. Please try again.",
+          message: result.error || "Failed to send message. Please try again.",
         });
       }
     } catch (error) {
@@ -83,17 +106,6 @@ export default function ContactForms() {
     } finally {
       setIsSubmitting(false);
     }
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
   };
 
   return (
@@ -183,7 +195,7 @@ export default function ContactForms() {
 
       {/* Info Section (Similar to Section1) */}
       <section className="pt-0 mb-15">
-        <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
+        <div className="flex justify-center w-full">
           <div className="w-full" style={{ maxWidth: "1600px" }}>
             {/* Decorative Border Element */}
             <div className="flex justify-center w-full mb-15">
@@ -253,7 +265,7 @@ export default function ContactForms() {
 
       {/* Contact Form Section */}
       <section className="pb-16">
-        <div className="flex justify-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
+        <div className="flex justify-center w-full">
           <div className="w-full" style={{ maxWidth: "1600px" }}>
             {/* White Card Container */}
             <div className="bg-white shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
@@ -475,7 +487,7 @@ export default function ContactForms() {
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmit} className="space-y-5">
+                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                     {/* Name Field */}
                     <div>
                       <label
@@ -483,20 +495,31 @@ export default function ContactForms() {
                         className="block text-sm font-medium text-gray-700 mb-2"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Name
+                        Name *
                       </label>
                       <input
                         type="text"
                         id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
-                        style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
-                        required
+                        {...register("name")}
+                        className={`w-full px-4 py-3 border ${
+                          errors.name ? "border-red-500" : "border-black"
+                        } focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white`}
+                        style={{
+                          fontFamily: "var(--font-montserrat)",
+                          color: "#000000",
+                          backgroundColor: "#ffffff",
+                        }}
                         autoComplete="name"
                         placeholder="Enter your name"
                       />
+                      {errors.name && (
+                        <p
+                          className="mt-1 text-sm text-red-600"
+                          style={{ fontFamily: "var(--font-montserrat)" }}
+                        >
+                          {errors.name.message}
+                        </p>
+                      )}
                     </div>
 
                     {/* Company Field */}
@@ -511,14 +534,26 @@ export default function ContactForms() {
                       <input
                         type="text"
                         id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
-                        style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                        {...register("company")}
+                        className={`w-full px-4 py-3 border ${
+                          errors.company ? "border-red-500" : "border-black"
+                        } focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white`}
+                        style={{
+                          fontFamily: "var(--font-montserrat)",
+                          color: "#000000",
+                          backgroundColor: "#ffffff",
+                        }}
                         autoComplete="organization"
                         placeholder="Enter your company name"
                       />
+                      {errors.company && (
+                        <p
+                          className="mt-1 text-sm text-red-600"
+                          style={{ fontFamily: "var(--font-montserrat)" }}
+                        >
+                          {errors.company.message}
+                        </p>
+                      )}
                     </div>
 
                     {/* Email Field */}
@@ -528,20 +563,31 @@ export default function ContactForms() {
                         className="block text-sm font-medium text-gray-700 mb-2"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Email
+                        Email *
                       </label>
                       <input
                         type="email"
                         id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
-                        style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
-                        required
+                        {...register("email")}
+                        className={`w-full px-4 py-3 border ${
+                          errors.email ? "border-red-500" : "border-black"
+                        } focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white`}
+                        style={{
+                          fontFamily: "var(--font-montserrat)",
+                          color: "#000000",
+                          backgroundColor: "#ffffff",
+                        }}
                         autoComplete="email"
                         placeholder="Enter your email address"
                       />
+                      {errors.email && (
+                        <p
+                          className="mt-1 text-sm text-red-600"
+                          style={{ fontFamily: "var(--font-montserrat)" }}
+                        >
+                          {errors.email.message}
+                        </p>
+                      )}
                     </div>
 
                     {/* Phone Field */}
@@ -556,14 +602,26 @@ export default function ContactForms() {
                       <input
                         type="tel"
                         id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white"
-                        style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
+                        {...register("phone")}
+                        className={`w-full px-4 py-3 border ${
+                          errors.phone ? "border-red-500" : "border-black"
+                        } focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors text-black bg-white`}
+                        style={{
+                          fontFamily: "var(--font-montserrat)",
+                          color: "#000000",
+                          backgroundColor: "#ffffff",
+                        }}
                         autoComplete="tel"
                         placeholder="Enter your phone number"
                       />
+                      {errors.phone && (
+                        <p
+                          className="mt-1 text-sm text-red-600"
+                          style={{ fontFamily: "var(--font-montserrat)" }}
+                        >
+                          {errors.phone.message}
+                        </p>
+                      )}
                     </div>
 
                     {/* Enquiry Type Dropdown */}
@@ -573,25 +631,24 @@ export default function ContactForms() {
                         className="block text-sm font-medium text-gray-700 mb-2"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Enquiry Type
+                        Enquiry Type *
                       </label>
                       <select
                         id="enquiryType"
-                        name="enquiryType"
-                        value={formData.enquiryType}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors bg-white appearance-none text-black"
+                        {...register("enquiryType")}
+                        className={`w-full px-4 py-3 border ${
+                          errors.enquiryType ? "border-red-500" : "border-black"
+                        } focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors bg-white appearance-none text-black`}
                         style={{
                           fontFamily: "var(--font-montserrat)",
-                          color: '#000000',
-                          backgroundColor: '#ffffff',
+                          color: "#000000",
+                          backgroundColor: "#ffffff",
                           backgroundImage:
                             'url(\'data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>\')',
                           backgroundRepeat: "no-repeat",
                           backgroundPosition: "right 12px center",
                           backgroundSize: "12px",
                         }}
-                        required
                       >
                         <option
                           value=""
@@ -630,6 +687,14 @@ export default function ContactForms() {
                           Partnership Enquiry
                         </option>
                       </select>
+                      {errors.enquiryType && (
+                        <p
+                          className="mt-1 text-sm text-red-600"
+                          style={{ fontFamily: "var(--font-montserrat)" }}
+                        >
+                          {errors.enquiryType.message}
+                        </p>
+                      )}
                     </div>
 
                     {/* Message Field */}
@@ -639,19 +704,30 @@ export default function ContactForms() {
                         className="block text-sm font-medium text-gray-700 mb-2"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Send Message
+                        Send Message *
                       </label>
                       <textarea
                         id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
+                        {...register("message")}
                         rows={5}
-                        className="w-full px-4 py-3 border border-black focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors resize-vertical text-black bg-white"
-                        style={{ fontFamily: "var(--font-montserrat)", color: '#000000', backgroundColor: '#ffffff' }}
-                        required
+                        className={`w-full px-4 py-3 border ${
+                          errors.message ? "border-red-500" : "border-black"
+                        } focus:ring-2 focus:ring-[#D0B970] focus:border-[#D0B970] transition-colors resize-vertical text-black bg-white`}
+                        style={{
+                          fontFamily: "var(--font-montserrat)",
+                          color: "#000000",
+                          backgroundColor: "#ffffff",
+                        }}
                         placeholder="Enter your message here..."
                       />
+                      {errors.message && (
+                        <p
+                          className="mt-1 text-sm text-red-600"
+                          style={{ fontFamily: "var(--font-montserrat)" }}
+                        >
+                          {errors.message.message}
+                        </p>
+                      )}
                     </div>
 
                     {/* Upload Files - TEMPORARILY DISABLED */}
