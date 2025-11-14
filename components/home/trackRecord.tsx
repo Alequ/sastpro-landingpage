@@ -227,14 +227,14 @@ export default function HowWeWork() {
               className="px-6 py-3 md:px-8 md:py-4 bg-transparent border-2 border-[#D0B970] text-white font-bold text-base md:text-lg hover:bg-[#D0B970] hover:text-black transition-all duration-300 rounded-full text-center"
               style={{ fontFamily: "var(--font-montserrat)" }}
             >
-              Career opportunities
+              Career Opportunities
             </Link>
             <Link
               href="/consultation"
               className="px-6 py-3 md:px-8 md:py-4 bg-transparent border-2 border-[#D0B970] text-white font-bold text-base md:text-lg hover:bg-[#D0B970] hover:text-black transition-all duration-300 rounded-full text-center"
               style={{ fontFamily: "var(--font-montserrat)" }}
             >
-              Business opportunities
+              Business Opportunities
             </Link>
           </div>
         </div>

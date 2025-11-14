@@ -217,21 +217,23 @@ export default function MaintenancePage() {
 
                       {/* Contact Button */}
                       <div className="flex items-center">
-                        <button className="group flex items-center gap-3 text-black font-bold text-lg sm:text-xl hover:text-[#D0B970] transition-colors duration-300">
-                          <span
-                            style={{ fontFamily: "var(--font-montserrat)" }}
-                          >
-                            CONTACT US
-                          </span>
-                          <div className="relative w-6 h-6 group-hover:translate-x-1 transition-transform duration-300">
-                            <Image
-                              src="/shared/ButtonGoldav.png"
-                              alt="Arrow"
-                              fill
-                              className="object-contain"
-                            />
-                          </div>
-                        </button>
+                        <Link href="/consultation">
+                          <button className="group flex items-center gap-3 text-black font-bold text-lg sm:text-xl hover:text-[#D0B970] transition-colors duration-300">
+                            <span
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              CONTACT US
+                            </span>
+                            <div className="relative w-6 h-6 group-hover:translate-x-1 transition-transform duration-300">
+                              <Image
+                                src="/shared/ButtonGoldav.png"
+                                alt="Arrow"
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -287,7 +289,7 @@ export default function MaintenancePage() {
                           src="/shared/ButtonGoldav.png"
                           alt="Arrow"
                           fill
-                          className="object-contain"
+                          className="object-contain group-hover:brightness-0 transition-all duration-300"
                         />
                       </div>
                     </div>

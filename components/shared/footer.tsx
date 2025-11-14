@@ -62,8 +62,8 @@ const footerLinks = {
     ],
     phoneNumbers: [
       { label: "+372 5886 4233", href: "tel:+37258864233" },
-      { label: "+44 1224034200", href: "tel:+441224034200" },
-      { label: "+31 202991400", href: "tel:+31202991400" },
+      // { label: "+44 1224034200", href: "tel:+441224034200" },
+      // { label: "+31 202991400", href: "tel:+31202991400" },
     ],
   },
 };
@@ -116,7 +116,7 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400">
-            © {currentYear} Electrical Services. All rights reserved.
+            © {currentYear} S.A.S Transition All rights reserved.
           </p>
 
           {/* <div className="flex flex-wrap gap-6 justify-center">

@@ -14,7 +14,6 @@ export default function Section12() {
         "Relay and protection fault investigation",
         "Mechanical breakdown analysis and response",
         "Incident reporting and recovery documentation",
-
       ],
     },
     {
@@ -27,7 +26,6 @@ export default function Section12() {
         "Temporary power setup and management",
         "Mechanical operations and shutdown support",
         "QA/QC inspections and equipment verification",
-
       ],
     },
     {
@@ -40,7 +38,6 @@ export default function Section12() {
         "Operational risk reviews and energy optimisation",
         "Documentation updates and procedural reviews",
         "Client-side advisory for commissioning or shutdown events",
-
       ],
     },
   ];
