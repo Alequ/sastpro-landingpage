@@ -534,8 +534,8 @@ export default function WhoWeArePage() {
                   <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
-                        src="/who-we-are_2/TEAM/Bryson.webp"
-                        alt="Stephen Bryson"
+                        src="/who-we-are_2/TEAM/Zeph.png"
+                        alt="Zeph Hiroz"
                         fill
                         sizes="160px"
                         className="object-cover rounded-full"
