@@ -546,7 +546,7 @@ export default function WhoWeArePage() {
                         className="text-white font-bold text-lg mb-1"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Zeph Hiroz <span className="text-[#D0B970]">Bryson</span>
+                        Zeph <span className="text-[#D0B970]"> Hiroz</span>
                       </h3>
                       <p
                         className="text-gray-300 text-sm"
