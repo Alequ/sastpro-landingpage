@@ -10,9 +10,9 @@ import BackToTop from "@/components/home/back-to-top";
 import LatestNews from "@/components/home/LatestNews";
 
 export const metadata: Metadata = {
-  title: "Electrical Engineering & Safety Services - Expert Solutions",
+  title: "Electrical & Mechanical Turnkey Solutions | S.A.S Transition",
   description:
-    "Expert electrical engineering, maintenance, and safety services for onshore and offshore installations. Certified professionals delivering safe and compliant solutions.",
+    "Electrical and mechanical turnkey engineering solutions for construction, commissioning, and maintenance across critical infrastructure projects.",
   keywords:
     "electrical engineering, maintenance services, permit to work, safety procedures, offshore installations, onshore installations, COHE procedures, authorized energy engineers",
 };
