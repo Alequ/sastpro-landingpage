@@ -535,7 +535,7 @@ export default function WhoWeArePage() {
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are_2/TEAM/Bryson.webp"
-                        alt="Stephen Bryson"
+                        alt="Zeph Hiroz"
                         fill
                         sizes="160px"
                         className="object-cover rounded-full"
@@ -546,7 +546,7 @@ export default function WhoWeArePage() {
                         className="text-white font-bold text-lg mb-1"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Stephen <span className="text-[#D0B970]">Bryson</span>
+                        Zeph Hiroz <span className="text-[#D0B970]">Bryson</span>
                       </h3>
                       <p
                         className="text-gray-300 text-sm"
