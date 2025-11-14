@@ -9,13 +9,15 @@ import { carouselData } from "@/app/data/CarouselData";
 
 export default function MaintenancePage() {
   // Display all projects from CarouselData
-  const maintenanceProjects = carouselData.carouselCards.map((project, idx) => ({
-    id: `maintenance-${idx + 1}`,
-    title: project.category,
-    client: project.client,
-    location: project.location,
-    description: project.description
-  }));
+  const maintenanceProjects = carouselData.carouselCards.map(
+    (project, idx) => ({
+      id: `maintenance-${idx + 1}`,
+      title: project.category,
+      client: project.client,
+      location: project.location,
+      description: project.description,
+    })
+  );
   return (
     <>
       <HeaderNavigation />
@@ -172,8 +174,8 @@ export default function MaintenancePage() {
                         Every technician and engineer is authorised, competent,
                         and SAST-trained - ready to act quickly while
                         maintaining safety and system integrity. Whether through
-                        continuous site support or on-call response,
-                        S.A.S Transition ensures reliability where it matters most.
+                        continuous site support or on-call response, S.A.S
+                        Transition ensures reliability where it matters most.
                       </p>
                     </div>
                   </div>
@@ -215,21 +217,23 @@ export default function MaintenancePage() {
 
                       {/* Contact Button */}
                       <div className="flex items-center">
-                        <button className="group flex items-center gap-3 text-black font-bold text-lg sm:text-xl hover:text-[#D0B970] transition-colors duration-300">
-                          <span
-                            style={{ fontFamily: "var(--font-montserrat)" }}
-                          >
-                            CONTACT US
-                          </span>
-                          <div className="relative w-6 h-6 group-hover:translate-x-1 transition-transform duration-300">
-                            <Image
-                              src="/shared/ButtonGoldav.png"
-                              alt="Arrow"
-                              fill
-                              className="object-contain"
-                            />
-                          </div>
-                        </button>
+                        <Link href="/consultation">
+                          <button className="group flex items-center gap-3 text-black font-bold text-lg sm:text-xl hover:text-[#D0B970] transition-colors duration-300">
+                            <span
+                              style={{ fontFamily: "var(--font-montserrat)" }}
+                            >
+                              CONTACT US
+                            </span>
+                            <div className="relative w-6 h-6 group-hover:translate-x-1 transition-transform duration-300">
+                              <Image
+                                src="/shared/ButtonGoldav.png"
+                                alt="Arrow"
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -255,7 +259,10 @@ export default function MaintenancePage() {
             <div className="w-full" style={{ maxWidth: "1600px" }}>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Left Card - Areas of expertise */}
-                <Link href="/our-services" className="overflow-hidden shadow-xl relative group cursor-pointer transition-all duration-300">
+                <Link
+                  href="/our-services"
+                  className="overflow-hidden shadow-xl relative group cursor-pointer transition-all duration-300"
+                >
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
@@ -282,7 +289,7 @@ export default function MaintenancePage() {
                           src="/shared/ButtonGoldav.png"
                           alt="Arrow"
                           fill
-                          className="object-contain"
+                          className="object-contain group-hover:brightness-0 transition-all duration-300"
                         />
                       </div>
                     </div>

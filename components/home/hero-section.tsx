@@ -16,7 +16,17 @@ export default function HeroSection() {
         >
           <source src="/videos/Website_Video2.webm" type="video/webm" />
         </video>
-        <div className="absolute inset-0 bg-black/90" />
+        <div
+          className="absolute bg-cover bg-center bg-no-repeat opacity-10"
+          style={{
+            backgroundImage: "url('/home_2/BackgroundFullOpacity.png')",
+            top: "100px",
+            left: 0,
+            right: 0,
+            bottom: 0,
+          }}
+        />
+        <div className="absolute inset-0 bg-black/80" />
       </div>
 
       {/* Content */}

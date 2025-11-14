@@ -1,58 +1,71 @@
-'use client'
+"use client";
 
-import { TrendingUp, Clock, Shield, Users, BarChart3, Sparkles, ArrowUpRight, Zap } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
+import {
+  TrendingUp,
+  Clock,
+  Shield,
+  Users,
+  BarChart3,
+  Sparkles,
+  ArrowUpRight,
+  Zap,
+} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 // Count-up animation hook
-function useCountUp(end: number, duration: number = 2000, shouldStart: boolean) {
-  const [count, setCount] = useState(0)
+function useCountUp(
+  end: number,
+  duration: number = 2000,
+  shouldStart: boolean
+) {
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!shouldStart) return
+    if (!shouldStart) return;
 
-    let startTime: number | null = null
-    const startValue = 0
+    let startTime: number | null = null;
+    const startValue = 0;
 
     const animate = (currentTime: number) => {
-      if (startTime === null) startTime = currentTime
-      const progress = Math.min((currentTime - startTime) / duration, 1)
+      if (startTime === null) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
 
       // Easing function for smooth animation
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4)
-      setCount(Math.floor(startValue + (end - startValue) * easeOutQuart))
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      setCount(Math.floor(startValue + (end - startValue) * easeOutQuart));
 
       if (progress < 1) {
-        requestAnimationFrame(animate)
+        requestAnimationFrame(animate);
       }
-    }
+    };
 
-    requestAnimationFrame(animate)
-  }, [end, duration, shouldStart])
+    requestAnimationFrame(animate);
+  }, [end, duration, shouldStart]);
 
-  return count
+  return count;
 }
 
 export function StatsMetrics() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-  const sectionRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
       { threshold: 0.1 }
-    )
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   const stats = [
     {
@@ -99,31 +112,34 @@ export function StatsMetrics() {
       bgGlow: "bg-orange-500/20",
       trend: "+150",
     },
-  ]
+  ];
 
   const additionalStats = [
     {
       value: "$2.4M",
       label: "Average ROI per year",
       icon: TrendingUp,
-      color: "text-green-500"
+      color: "text-green-500",
     },
     {
       value: "3 weeks",
       label: "Average implementation time",
       icon: Zap,
-      color: "text-blue-500"
+      color: "text-blue-500",
     },
     {
       value: "24/7",
       label: "Support & uptime guarantee",
       icon: Shield,
-      color: "text-purple-500"
+      color: "text-purple-500",
     },
-  ]
+  ];
 
   return (
-    <section ref={sectionRef} className="relative py-24 overflow-hidden bg-gradient-to-b from-secondary/20 to-background">
+    <section
+      ref={sectionRef}
+      className="relative py-24 overflow-hidden bg-gradient-to-b from-secondary/20 to-background"
+    >
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
       <div className="absolute top-0 left-1/3 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
@@ -167,9 +183,13 @@ export function StatsMetrics() {
 
         {/* Additional Stats - Enhanced ROI Banner */}
         <div className="mx-auto mt-16 max-w-5xl">
-          <div className={`relative rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-accent/10 to-purple-500/10 p-8 overflow-hidden backdrop-blur-sm ${
-            isVisible ? 'animate-in fade-in slide-in-from-bottom duration-700 delay-500' : 'opacity-0'
-          }`}>
+          <div
+            className={`relative rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-accent/10 to-purple-500/10 p-8 overflow-hidden backdrop-blur-sm ${
+              isVisible
+                ? "animate-in fade-in slide-in-from-bottom duration-700 delay-500"
+                : "opacity-0"
+            }`}
+          >
             {/* Decorative glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/20 opacity-50" />
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/30 rounded-full blur-3xl" />
@@ -183,7 +203,10 @@ export function StatsMetrics() {
                 >
                   {/* Icon */}
                   <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-background/80 border border-border/50 mb-3 group-hover:shadow-lg transition-shadow">
-                    <item.icon className={`h-6 w-6 ${item.color}`} strokeWidth={2.5} />
+                    <item.icon
+                      className={`h-6 w-6 ${item.color}`}
+                      strokeWidth={2.5}
+                    />
                   </div>
 
                   {/* Value */}
@@ -220,59 +243,70 @@ export function StatsMetrics() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 // StatCard component with count-up animation
 interface StatCardProps {
   stat: {
-    icon: React.ElementType
-    value: string
-    numericValue: number
-    suffix: string
-    label: string
-    description: string
-    color: string
-    bgGlow: string
-    trend: string
-  }
-  index: number
-  isVisible: boolean
-  hoveredIndex: number | null
-  setHoveredIndex: (index: number | null) => void
+    icon: React.ElementType;
+    value: string;
+    numericValue: number;
+    suffix: string;
+    label: string;
+    description: string;
+    color: string;
+    bgGlow: string;
+    trend: string;
+  };
+  index: number;
+  isVisible: boolean;
+  hoveredIndex: number | null;
+  setHoveredIndex: (index: number | null) => void;
 }
 
-function StatCard({ stat, index, isVisible, hoveredIndex, setHoveredIndex }: StatCardProps) {
-  const count = useCountUp(stat.numericValue, 2000, isVisible)
-  const isHovered = hoveredIndex === index
+function StatCard({
+  stat,
+  index,
+  isVisible,
+  hoveredIndex,
+  setHoveredIndex,
+}: StatCardProps) {
+  const count = useCountUp(stat.numericValue, 2000, isVisible);
+  const isHovered = hoveredIndex === index;
 
   // Format the count based on the suffix
-  const displayValue = stat.suffix === '%' && stat.numericValue < 100
-    ? count.toFixed(1)
-    : count
+  const displayValue =
+    stat.suffix === "%" && stat.numericValue < 100 ? count.toFixed(1) : count;
 
   return (
     <div
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
       className={`group relative rounded-2xl border border-border/50 bg-card overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:border-primary/30 ${
-        isVisible ? `animate-in fade-in zoom-in duration-700` : 'opacity-0'
+        isVisible ? `animate-in fade-in zoom-in duration-700` : "opacity-0"
       }`}
       style={{
-        animationDelay: `${index * 100}ms`
+        animationDelay: `${index * 100}ms`,
       }}
     >
       {/* Glow effect on hover */}
-      <div className={`absolute inset-0 ${stat.bgGlow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl`} />
+      <div
+        className={`absolute inset-0 ${stat.bgGlow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl`}
+      />
 
       {/* Decorative corner gradient */}
-      <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 rounded-bl-full transition-opacity duration-500`} />
+      <div
+        className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 rounded-bl-full transition-opacity duration-500`}
+      />
 
       {/* Content */}
       <div className="relative p-6 text-center">
         {/* Icon with gradient */}
         <div className="mx-auto mb-4 relative">
-          <div className={`mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br ${stat.color} shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+          <div
+            className={`mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br ${stat.color} shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
+          >
             <stat.icon className="h-8 w-8 text-white" strokeWidth={2.5} />
           </div>
 
@@ -287,12 +321,15 @@ function StatCard({ stat, index, isVisible, hoveredIndex, setHoveredIndex }: Sta
 
         {/* Value - large and bold with count-up animation */}
         <div className="min-h-[60px] flex items-center justify-center">
-          <p className={`text-5xl font-extrabold transition-all duration-300 ${
-            isHovered
-              ? `bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`
-              : 'text-card-foreground'
-          }`}>
-            {displayValue}{stat.suffix}
+          <p
+            className={`text-5xl font-extrabold transition-all duration-300 ${
+              isHovered
+                ? `bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`
+                : "text-card-foreground"
+            }`}
+          >
+            {displayValue}
+            {stat.suffix}
           </p>
         </div>
 
@@ -307,16 +344,20 @@ function StatCard({ stat, index, isVisible, hoveredIndex, setHoveredIndex }: Sta
         </p>
 
         {/* Sparkle effect on hover */}
-        <div className={`mt-4 flex items-center justify-center gap-1 text-accent transition-all duration-300 ${
-          isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-        }`}>
+        <div
+          className={`mt-4 flex items-center justify-center gap-1 text-accent transition-all duration-300 ${
+            isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+          }`}
+        >
           <Sparkles className="h-4 w-4" />
           <span className="text-xs font-medium">Live data</span>
         </div>
 
         {/* Bottom accent line */}
-        <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${stat.color} opacity-0 group-hover:opacity-100 transition-all duration-500`} />
+        <div
+          className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${stat.color} opacity-0 group-hover:opacity-100 transition-all duration-500`}
+        />
       </div>
     </div>
-  )
+  );
 }

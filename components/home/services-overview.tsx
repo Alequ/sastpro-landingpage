@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const services = [
   {
-    title: "Who Are We",
+    title: "Who We Are",
     image: "/home_2/AboutUS.webp",
     span: "col-span-1 md:col-span-1 lg:col-span-3 row-span-1",
     link: "/who-we-are",

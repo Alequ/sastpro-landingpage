@@ -62,8 +62,8 @@ const footerLinks = {
     ],
     phoneNumbers: [
       { label: "+372 5886 4233", href: "tel:+37258864233" },
-      { label: "+44 1224034200", href: "tel:+441224034200" },
-      { label: "+31 202991400", href: "tel:+31202991400" },
+      // { label: "+44 1224034200", href: "tel:+441224034200" },
+      // { label: "+31 202991400", href: "tel:+31202991400" },
     ],
   },
 };
@@ -85,7 +85,10 @@ export default function Footer() {
 
   return (
     <footer style={{ backgroundColor: "#222323" }} className="text-white">
-      <div className="section-container">
+      <div
+        className="section-container"
+        style={{ paddingTop: "50px", paddingBottom: "50px" }}
+      >
         {/* Main Footer Content */}
         <div className="flex flex-col md:flex-row md:justify-between">
           {/* Links Columns */}
@@ -113,7 +116,7 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400">
-            © {currentYear} Electrical Services. All rights reserved.
+            © {currentYear} S.A.S Transition All rights reserved.
           </p>
 
           {/* <div className="flex flex-wrap gap-6 justify-center">
@@ -140,7 +143,7 @@ interface FooterColumnProps {
 
 function FooterColumn({ title, links }: FooterColumnProps) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 mt-6 md:mt-0">
       <h4 className="font-bold whitespace-nowrap" style={{ color: "#D0B970" }}>
         {title}
       </h4>
@@ -173,7 +176,11 @@ interface FooterContactColumnProps {
   }>;
 }
 
-function FooterContactColumn({ title, items, phoneNumbers }: FooterContactColumnProps) {
+function FooterContactColumn({
+  title,
+  items,
+  phoneNumbers,
+}: FooterContactColumnProps) {
   return (
     <div className="space-y-4">
       <h4 className="font-bold whitespace-nowrap" style={{ color: "#D0B970" }}>
@@ -183,31 +190,52 @@ function FooterContactColumn({ title, items, phoneNumbers }: FooterContactColumn
         {items.map((item, index) => {
           const IconComponent = item.icon;
           const isLinkedIn = item.label === "LinkedIn";
-          const isLastAddress = item.label === "Rhijnspoorplein 10-38, Amsterdam, 1018 TX, Netherlands";
+          const isLocation = item.icon === MapPin;
+          const isLastAddress =
+            item.label ===
+            "Rhijnspoorplein 10-38, Amsterdam, 1018 TX, Netherlands";
 
           return (
             <div key={item.label}>
               <li>
-                <Link
-                  href={item.href}
-                  className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors duration-300 group"
-                  target={isLinkedIn ? "_blank" : undefined}
-                  rel={isLinkedIn ? "noopener noreferrer" : undefined}
-                >
-                  <IconComponent
+                {isLocation ? (
+                  <div className="flex items-center gap-3 text-sm text-gray-400">
+                    <IconComponent
+                      size={16}
+                      className="flex-shrink-0"
+                      style={{ color: "#D0B970" }}
+                    />
+                    <span>{item.label}</span>
+                  </div>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors duration-300 group"
+                    target={isLinkedIn ? "_blank" : undefined}
+                    rel={isLinkedIn ? "noopener noreferrer" : undefined}
+                  >
+                    <IconComponent
+                      size={16}
+                      className="flex-shrink-0"
+                      style={{ color: "#D0B970" }}
+                    />
+                    <span>{item.label}</span>
+                  </Link>
+                )}
+              </li>
+              {isLastAddress && phoneNumbers && (
+                <li className="flex items-center gap-2 text-sm text-gray-400 mt-3">
+                  <Phone
                     size={16}
                     className="flex-shrink-0"
                     style={{ color: "#D0B970" }}
                   />
-                  <span>{item.label}</span>
-                </Link>
-              </li>
-              {isLastAddress && phoneNumbers && (
-                <li className="flex items-center gap-2 text-sm text-gray-400 mt-3">
-                  <Phone size={16} className="flex-shrink-0" style={{ color: "#D0B970" }} />
                   <div className="flex items-center gap-2">
                     {phoneNumbers.map((phone, phoneIndex) => (
-                      <div key={phone.label} className="flex items-center gap-2">
+                      <div
+                        key={phone.label}
+                        className="flex items-center gap-2"
+                      >
                         <Link
                           href={phone.href}
                           className="hover:text-white transition-colors duration-300"

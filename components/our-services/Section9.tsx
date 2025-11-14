@@ -7,8 +7,6 @@ export default function Section9() {
     <section className="py-6 sm:py-8">
       <div className="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="w-full" style={{ maxWidth: "1600px" }}>
-
-
           {/* White Card Container */}
           <div className="bg-white shadow-xl p-8 sm:p-10 md:p-12 lg:p-16">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
@@ -49,10 +47,10 @@ export default function Section9() {
                     className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed"
                     style={{ fontFamily: "var(--font-montserrat)" }}
                   >
-                SASTAcademy develops and certifies personnel to operate safely and
-effectively in high-risk electrical and mechanical environments. Our
-programs combine real-world expertise with digital assessment
-through SASTpro.
+                    SASTAcademy develops and certifies personnel to operate
+                    safely and effectively in high-risk electrical and
+                    mechanical environments. Our programs combine real-world
+                    expertise with digital assessment through SASTpro.
                   </p>
                 </div>
               </div>

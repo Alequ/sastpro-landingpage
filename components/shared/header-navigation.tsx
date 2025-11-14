@@ -19,7 +19,9 @@ export default function HeaderNavigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(
+    null
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,19 +40,36 @@ export default function HeaderNavigation() {
         { label: "Who We Are", href: "/who-we-are" },
         { label: "Our Team", href: "/who-we-are#team" },
         { label: "Latest News", href: "/latest-news" },
-
       ],
     },
     {
       label: "OUR SERVICES",
       dropdown: [
         { label: "Our Services Overview", href: "/our-services" },
-        { label: "Engineering and Design Solutions", href: "/our-services#engineering-design" },
-        { label: "Authorised and Competent Personnel", href: "/our-services#authorised-personnel" },
-        { label: "Safety, Compliance and Management Systems", href: "/our-services#safety-compliance" },
-        { label: "Digital Solutions - SASTPro", href: "/our-services#digital-solutions" },
-        { label: "Training and Development - Sastacademy", href: "/our-services#training-development" },
-        { label: "Callout, Fault Response and Technical Support", href: "/our-services#callout-support" },
+        {
+          label: "Engineering and Design Solutions",
+          href: "/our-services#engineering-design",
+        },
+        {
+          label: "Authorised and Competent Personnel",
+          href: "/our-services#authorised-personnel",
+        },
+        {
+          label: "Safety, Compliance and Management Systems",
+          href: "/our-services#safety-compliance",
+        },
+        {
+          label: "Digital Solutions - SASTPro",
+          href: "/our-services#digital-solutions",
+        },
+        {
+          label: "Training and Development - Sastacademy",
+          href: "/our-services#training-development",
+        },
+        {
+          label: "Callout, Fault Response and Technical Support",
+          href: "/our-services#callout-support",
+        },
       ],
     },
     {
@@ -86,10 +105,11 @@ export default function HeaderNavigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
           ? "bg-[#0d1111]/95 backdrop-blur-md shadow-lg border-b border-neutral-800"
           : "bg-[#0d1111]/90 backdrop-blur-sm"
-        }`}
+      }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
@@ -184,8 +204,9 @@ export default function HeaderNavigation() {
                     >
                       {link.label}
                       <ChevronDown
-                        className={`w-4 h-4 transition-transform ${openMobileDropdown === link.label ? "rotate-180" : ""
-                          }`}
+                        className={`w-4 h-4 transition-transform ${
+                          openMobileDropdown === link.label ? "rotate-180" : ""
+                        }`}
                       />
                     </button>
                     {openMobileDropdown === link.label && (

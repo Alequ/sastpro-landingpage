@@ -14,7 +14,6 @@ export default function Section6() {
         "Authorisation management systems",
         "Digital permit tracking through SASTpro",
         "Permit-to-Work systems (electrical, mechanical, confined space, hot work)",
-
       ],
     },
     {
@@ -27,7 +26,6 @@ export default function Section6() {
         "Risk assessments, HAZOP, and method statement reviews",
         "Technical governance and reporting frameworks",
         "Non-conformance tracking and corrective actions",
-  
       ],
     },
     {
@@ -40,7 +38,6 @@ export default function Section6() {
         "HSEQ monitoring and performance metrics",
         "Root cause and incident investigations",
         "Continuous improvement and lessons learned programs",
-  
       ],
     },
   ];

@@ -43,6 +43,7 @@ export default function HomePage() {
         </div>
       </div>
       <HowWeWork />
+      <div className="h-3 bg-[#D0B970]"></div>
       <Footer />
       <BackToTop />
     </main>

@@ -1,6 +1,13 @@
-'use client'
+"use client";
 
-import { Shield, Mail, Linkedin, Twitter, Github, ExternalLink } from "lucide-react"
+import {
+  Shield,
+  Mail,
+  Linkedin,
+  Twitter,
+  Github,
+  ExternalLink,
+} from "lucide-react";
 
 export function Footer() {
   const quickLinks = [
@@ -8,19 +15,19 @@ export function Footer() {
     { name: "Pricing", href: "#pricing" },
     { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
-  ]
+  ];
 
   const legalLinks = [
     { name: "Privacy", href: "#privacy" },
     { name: "Terms", href: "#terms" },
     { name: "Security", href: "#security" },
-  ]
+  ];
 
   const socialLinks = [
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: Github, href: "#", label: "GitHub" },
-  ]
+  ];
 
   return (
     <footer className="relative border-t border-border bg-gradient-to-b from-background to-secondary/20 overflow-hidden">
@@ -42,7 +49,8 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm text-muted-foreground max-w-md">
-              Complete platform for managing safety documents and electrical engineering assets in construction.
+              Complete platform for managing safety documents and electrical
+              engineering assets in construction.
             </p>
           </div>
 
@@ -115,5 +123,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

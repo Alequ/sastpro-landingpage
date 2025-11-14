@@ -2,7 +2,16 @@
 
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Award, ShieldCheck, FileCheck, Briefcase, UserCheck, Settings, AlertTriangle, Waves } from "lucide-react";
+import {
+  Award,
+  ShieldCheck,
+  FileCheck,
+  Briefcase,
+  UserCheck,
+  Settings,
+  AlertTriangle,
+  Waves,
+} from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 const certifications = [
@@ -10,50 +19,50 @@ const certifications = [
     name: "ISO 9001:2015",
     icon: Award,
     description: "Quality Management Systems",
-    color: "blue"
+    color: "blue",
   },
   {
     name: "NICEIC Approved",
     icon: ShieldCheck,
     description: "Electrical Contractor Certification",
-    color: "green"
+    color: "green",
   },
   {
     name: "ConstructionLine Gold",
     icon: Briefcase,
     description: "Pre-Qualification Service",
-    color: "amber"
+    color: "amber",
   },
   {
     name: "SafeContractor",
     icon: AlertTriangle,
     description: "Health & Safety Assessment",
-    color: "red"
+    color: "red",
   },
   {
     name: "CHAS Accredited",
     icon: FileCheck,
     description: "Contractors Health and Safety",
-    color: "purple"
+    color: "purple",
   },
   {
     name: "ECS Card Scheme",
     icon: UserCheck,
     description: "Electrotechnical Certification",
-    color: "cyan"
+    color: "cyan",
   },
   {
     name: "IOSH Certified",
     icon: Settings,
     description: "Occupational Safety & Health",
-    color: "indigo"
+    color: "indigo",
   },
   {
     name: "OPITO Approved",
     icon: Waves,
     description: "Offshore Survival Training",
-    color: "teal"
-  }
+    color: "teal",
+  },
 ];
 
 const colorClasses = {
@@ -64,7 +73,7 @@ const colorClasses = {
   purple: "from-purple-600 to-purple-700",
   cyan: "from-cyan-600 to-cyan-700",
   indigo: "from-indigo-600 to-indigo-700",
-  teal: "from-teal-600 to-teal-700"
+  teal: "from-teal-600 to-teal-700",
 };
 
 export default function CertificationsSection() {
@@ -79,7 +88,8 @@ export default function CertificationsSection() {
           Trusted & Certified
         </h2>
         <p className="section-subtitle">
-          Accredited by leading industry bodies to ensure the highest standards of quality and safety
+          Accredited by leading industry bodies to ensure the highest standards
+          of quality and safety
         </p>
       </div>
 
@@ -98,12 +108,16 @@ export default function CertificationsSection() {
 }
 
 interface CertificationCardProps {
-  certification: typeof certifications[0];
+  certification: (typeof certifications)[0];
   isVisible: boolean;
   delay: number;
 }
 
-function CertificationCard({ certification, isVisible, delay }: CertificationCardProps) {
+function CertificationCard({
+  certification,
+  isVisible,
+  delay,
+}: CertificationCardProps) {
   const { name, icon: Icon, description, color } = certification;
 
   return (
@@ -114,7 +128,11 @@ function CertificationCard({ certification, isVisible, delay }: CertificationCar
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div className="space-y-4 text-center">
-        <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${colorClasses[color as keyof typeof colorClasses]} flex items-center justify-center mx-auto`}>
+        <div
+          className={`w-16 h-16 rounded-full bg-gradient-to-br ${
+            colorClasses[color as keyof typeof colorClasses]
+          } flex items-center justify-center mx-auto`}
+        >
           <Icon className="w-8 h-8 text-white" />
         </div>
 

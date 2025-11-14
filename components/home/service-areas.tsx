@@ -10,20 +10,20 @@ const serviceAreas = {
     title: "Primary Service Area",
     icon: MapPin,
     regions: ["North Sea Region", "Scottish Offshore", "Northeast England"],
-    badge: "Main Coverage"
+    badge: "Main Coverage",
   },
   secondary: {
     title: "Extended Coverage",
     icon: Globe,
     regions: ["England", "Scotland", "Wales", "Northern Ireland"],
-    badge: "UK Wide"
+    badge: "UK Wide",
   },
   specialization: {
     title: "Specialized Services",
     icon: Anchor,
     areas: ["Offshore Platforms", "Hazardous Environments", "Remote Locations"],
-    badge: "Expert"
-  }
+    badge: "Expert",
+  },
 };
 
 export default function ServiceAreas() {
@@ -84,8 +84,12 @@ export default function ServiceAreas() {
         <div className="bg-gradient-to-br from-blue-100 to-cyan-100 h-96 flex items-center justify-center">
           <div className="text-center space-y-4">
             <MapPin className="w-16 h-16 text-primary mx-auto" />
-            <p className="text-2xl font-bold text-foreground">Service Coverage Map</p>
-            <p className="text-muted-foreground">Comprehensive coverage across the UK</p>
+            <p className="text-2xl font-bold text-foreground">
+              Service Coverage Map
+            </p>
+            <p className="text-muted-foreground">
+              Comprehensive coverage across the UK
+            </p>
           </div>
         </div>
       </div>
@@ -102,7 +106,14 @@ interface ServiceAreaCardProps {
   delay: number;
 }
 
-function ServiceAreaCard({ title, icon: Icon, items, badge, isVisible, delay }: ServiceAreaCardProps) {
+function ServiceAreaCard({
+  title,
+  icon: Icon,
+  items,
+  badge,
+  isVisible,
+  delay,
+}: ServiceAreaCardProps) {
   return (
     <Card
       className={`p-8 card-hover-lift border-2 hover:border-primary hover:shadow-primary/20 ${

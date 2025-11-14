@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const processSteps = [
   {
@@ -55,17 +56,20 @@ export default function HowWeWork() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative py-12 md:py-16 lg:py-24 overflow-hidden">
+    <section
+      className="relative py-12 md:py-16 lg:py-24 overflow-hidden"
+      style={{ backgroundColor: "#222323" }}
+    >
       {/* Background Image */}
       <div className="absolute inset-0">
-        <Image
+        {/* <Image
           src="/home_2/Background1.webp"
           alt="Background"
           fill
           className="object-cover"
           priority
-        />
-        <div className="absolute inset-0 bg-black/70" />
+        /> */}
+        <div className="absolute" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -133,7 +137,7 @@ export default function HowWeWork() {
                     className={`w-6 h-6 md:w-8 md:h-8 rounded-full border transition-all duration-300 z-10 ${
                       hoveredIndex === index
                         ? "bg-[#D7BE6A] border-[#D7BE6A] scale-125"
-                        : "bg-black border-[#D7BE6A]"
+                        : "bg-[#222323] border-[#D7BE6A]"
                     }`}
                   />
                 </div>
@@ -148,7 +152,7 @@ export default function HowWeWork() {
                     className={`w-8 h-8 rounded-full border transition-all duration-300 z-10 ${
                       hoveredIndex === index
                         ? "bg-[#D7BE6A] border-[#D7BE6A] scale-125"
-                        : "bg-black border-[#D7BE6A]"
+                        : "bg-[#222323] border-[#D7BE6A]"
                     }`}
                   />
                 </div>
@@ -218,18 +222,20 @@ export default function HowWeWork() {
             reliable electrical solutions. Get your free consultation today.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
-            <button
-              className="px-6 py-3 md:px-8 md:py-4 bg-transparent border-2 border-[#D0B970] text-white font-bold text-base md:text-lg hover:bg-[#D0B970] hover:text-black transition-all duration-300 rounded-full"
+            <Link
+              href="/careers"
+              className="px-6 py-3 md:px-8 md:py-4 bg-transparent border-2 border-[#D0B970] text-white font-bold text-base md:text-lg hover:bg-[#D0B970] hover:text-black transition-all duration-300 rounded-full text-center"
               style={{ fontFamily: "var(--font-montserrat)" }}
             >
-              Career opportunities
-            </button>
-            <button
-              className="px-6 py-3 md:px-8 md:py-4 bg-transparent border-2 border-[#D0B970] text-white font-bold text-base md:text-lg hover:bg-[#D0B970] hover:text-black transition-all duration-300 rounded-full"
+              Career Opportunities
+            </Link>
+            <Link
+              href="/consultation"
+              className="px-6 py-3 md:px-8 md:py-4 bg-transparent border-2 border-[#D0B970] text-white font-bold text-base md:text-lg hover:bg-[#D0B970] hover:text-black transition-all duration-300 rounded-full text-center"
               style={{ fontFamily: "var(--font-montserrat)" }}
             >
-              Business opportunities
-            </button>
+              Business Opportunities
+            </Link>
           </div>
         </div>
       </div>
@@ -269,9 +275,16 @@ function ProcessStep({
       >
         {/* Inner top border - appears on hover */}
         <div
-          className={`absolute top-0 left-0 right-0 bg-[#D7BE6A] rounded-t-lg transition-all duration-500 ${
+          className={`absolute bg-[#D7BE6A] transition-all duration-500 ${
             isHovered ? "h-[10px] md:h-[12px] opacity-100" : "h-0 opacity-0"
           }`}
+          style={{
+            top: "-2px",
+            left: "-2px",
+            right: "-2px",
+            borderTopLeftRadius: "8px",
+            borderTopRightRadius: "8px",
+          }}
         />
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center h-full">

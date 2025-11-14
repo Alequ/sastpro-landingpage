@@ -1,28 +1,28 @@
-'use client'
+"use client";
 
-import { AlertTriangle, FileX, Clock, TrendingDown } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
+import { AlertTriangle, FileX, Clock, TrendingDown } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 export function ProblemStatement() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
       { threshold: 0.1 }
-    )
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   const problems = [
     {
@@ -32,25 +32,27 @@ export function ProblemStatement() {
         "Safety documents spread across emails, drives, and filing cabinets making retrieval impossible during audits.",
       color: "from-red-500 to-orange-500",
       bgGlow: "bg-red-500/10",
-      delay: "delay-100"
+      delay: "delay-100",
     },
     {
       icon: AlertTriangle,
       title: "Compliance Risks",
-      description: "Missing or outdated documentation leading to failed inspections and potential project shutdowns.",
+      description:
+        "Missing or outdated documentation leading to failed inspections and potential project shutdowns.",
       color: "from-orange-500 to-yellow-500",
       bgGlow: "bg-orange-500/10",
-      delay: "delay-200"
+      delay: "delay-200",
     },
     {
       icon: Clock,
       title: "Manual Tracking Errors",
-      description: "Hours wasted on spreadsheets and paper trails that are prone to human error and version conflicts.",
+      description:
+        "Hours wasted on spreadsheets and paper trails that are prone to human error and version conflicts.",
       color: "from-yellow-500 to-red-500",
       bgGlow: "bg-yellow-500/10",
-      delay: "delay-300"
+      delay: "delay-300",
     },
-  ]
+  ];
 
   return (
     <section
@@ -77,8 +79,8 @@ export function ProblemStatement() {
             </span>
           </h2>
           <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground max-w-xl mx-auto">
-            Every day, construction teams lose valuable time and face unnecessary risks due to outdated document
-            management systems.
+            Every day, construction teams lose valuable time and face
+            unnecessary risks due to outdated document management systems.
           </p>
         </div>
 
@@ -88,17 +90,26 @@ export function ProblemStatement() {
             <div
               key={problem.title}
               className={`group relative rounded-xl border border-border/50 bg-card p-6 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:border-destructive/30 ${
-                isVisible ? `animate-in fade-in slide-in-from-bottom-4 ${problem.delay}` : 'opacity-0'
+                isVisible
+                  ? `animate-in fade-in slide-in-from-bottom-4 ${problem.delay}`
+                  : "opacity-0"
               }`}
             >
               {/* Glow effect on hover */}
-              <div className={`absolute inset-0 rounded-xl ${problem.bgGlow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl`} />
+              <div
+                className={`absolute inset-0 rounded-xl ${problem.bgGlow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl`}
+              />
 
               {/* Content */}
               <div className="relative">
                 {/* Icon container */}
-                <div className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${problem.color} shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <problem.icon className="h-6 w-6 text-white" strokeWidth={2.5} />
+                <div
+                  className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${problem.color} shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300`}
+                >
+                  <problem.icon
+                    className="h-6 w-6 text-white"
+                    strokeWidth={2.5}
+                  />
                 </div>
 
                 {/* Number badge */}
@@ -130,5 +141,5 @@ export function ProblemStatement() {
         </div>
       </div>
     </section>
-  )
+  );
 }

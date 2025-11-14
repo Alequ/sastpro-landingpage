@@ -14,7 +14,6 @@ export default function Section10() {
         "Mechanical system operation and maintenance",
         "Commissioning and energisation best practices",
         "Arc flash and high-energy safety awareness",
-
       ],
     },
     {
@@ -27,7 +26,6 @@ export default function Section10() {
         "Incident prevention and human factors awareness",
         "Team leadership and supervisor development programs",
         "Digital safety and permit management workshops",
-
       ],
     },
     {
@@ -40,7 +38,6 @@ export default function Section10() {
         "Client-specific course design and delivery",
         "Blended learning (classroom, practical, digital)",
         "Skills gap analysis and workforce development planning",
-
       ],
     },
   ];

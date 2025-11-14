@@ -173,7 +173,7 @@ function IndustryCard({
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D4AF37] via-[#E5C158] to-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Content */}
-      <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+      <div className="relative z-10 p-8 h-full flex flex-col">
         {/* Header with arrow */}
         <div className="flex justify-between items-start mb-4">
           <div className="flex-1">
@@ -200,7 +200,7 @@ function IndustryCard({
         </p>
 
         {/* Applications list */}
-        <div className="space-y-3">
+        <div className="space-y-3 mb-6">
           {applications.map((app, idx) => (
             <div
               key={idx}
@@ -221,24 +221,24 @@ function IndustryCard({
           ))}
         </div>
 
-        {/* Contact us button */}
-        <Link href="/contact">
-          <button className="mt-6 w-full rounded-full border-2 border-[#d7be6a] bg-transparent hover:bg-[#d7be6a] text-white hover:text-black font-semibold py-3 px-6 transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg hover:shadow-xl hover:shadow-[#d7be6a]/30">
-            <span>Contact Us</span>
-            <div className="relative w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1">
-              <Image
-                src="/shared/ButtonGoldav.png"
-                alt="Arrow"
-                fill
-                sizes="16px"
-                className="object-contain transition-all duration-300 group-hover/btn:brightness-0"
-              />
-            </div>
-          </button>
-        </Link>
-
-        {/* Bottom gold accent line */}
-        <div className="mt-6 h-0.5 rounded-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 transform origin-center scale-x-0 group-hover:scale-x-100" />
+        <div className="mt-auto">
+          <Link href="/contact">
+            <button className="mt-6 w-full rounded-full border-2 border-[#d7be6a] bg-transparent hover:bg-[#d7be6a] text-white hover:text-black font-semibold py-3 px-6 transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg hover:shadow-xl hover:shadow-[#d7be6a]/30">
+              <span>Contact Us</span>
+              <div className="relative w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1">
+                <Image
+                  src="/shared/ButtonGoldav.png"
+                  alt="Arrow"
+                  fill
+                  sizes="16px"
+                  className="object-contain transition-all duration-300 group-hover/btn:brightness-0"
+                />
+              </div>
+            </button>
+          </Link>
+          {/* Bottom gold accent line */}
+          <div className="mt-6 h-0.5 rounded-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 transform origin-center scale-x-0 group-hover:scale-x-100" />
+        </div>
       </div>
     </div>
   );

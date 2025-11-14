@@ -14,7 +14,6 @@ export default function Section8() {
         "Digital SSoW workflows and authorisation control",
         "Multi-user access and role-based permissions",
         "Live digital permit system (electrical, mechanical,high-risk works)",
-
       ],
     },
     {
@@ -27,7 +26,6 @@ export default function Section8() {
         "Document management (RAMS, drawings, QA packs)",
         "Live reporting dashboards and KPI metrics",
         "QR and NFC tagging for field verification",
-
       ],
     },
     {
@@ -40,7 +38,6 @@ export default function Section8() {
         "Audit trail of safety actions and performance",
         "Live analytics for compliance and workforce metrics",
         "Cloud-based and offline capability for field environments",
-
       ],
     },
   ];
