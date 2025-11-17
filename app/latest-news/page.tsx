@@ -248,7 +248,7 @@ export default function LatestNewsPage() {
                         className="text-sm sm:text-base md:text-lg text-white group-hover:text-black leading-relaxed transition-colors duration-300"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        With several of our team, including our founder Ailyn
+                        With several of our team, including our founder Allyn
                         Coady, growing up in Banff, Scotland, our partnership
                         with CattleSkate Academy CIC is a meaningful way for us
                         to support local young people and promote wellbeing

@@ -642,7 +642,7 @@ export default function WhoWeArePage() {
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
                         src="/who-we-are_2/TEAM/Lizzo.webp"
-                        alt="Marilis Kulamaa"
+                        alt="Marillis Kulamaa"
                         fill
                         sizes="160px"
                         className="object-cover rounded-full"

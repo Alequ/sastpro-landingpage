@@ -10,7 +10,7 @@ import BackToTop from "@/components/home/back-to-top";
 import LatestNews from "@/components/home/LatestNews";
 
 export const metadata: Metadata = {
-  title: "Electrical & Mechanical Turnkey Solutions | S.A.S Transition",
+  title: "Electrical & Mechanical Engineering Turnkey Solutions | S.A.S Transition",
   description:
     "Electrical and mechanical turnkey engineering solutions for construction, commissioning, and maintenance across critical infrastructure projects.",
   keywords:

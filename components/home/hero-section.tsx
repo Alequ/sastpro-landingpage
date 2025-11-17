@@ -44,8 +44,7 @@ export default function HeroSection() {
 
           {/* Subheadline */}
           <p className="text-xl sm:text-2xl lg:text-3xl text-gray-200 max-w-3xl mx-auto">
-            Expert electrical engineering, maintenance, and safety services for
-            onshore and offshore installations
+            Specialist electrical and mechanical teams delivering safe, compliant engineering across critical onshore and offshore installations.
           </p>
 
           {/* CTA Buttons */}
