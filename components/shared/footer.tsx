@@ -9,10 +9,11 @@ const footerLinks = {
   company: {
     title: "Can We Help You?",
     links: [
-      { label: "General Enquiries", href: "/contact" },
+   
       { label: "Book A Consultation", href: "/consultation" },
       { label: "Contact Us", href: "/contact" },
       { label: "Cookie Policy", href: "/cookie-policy" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
     ],
   },
   services: {
