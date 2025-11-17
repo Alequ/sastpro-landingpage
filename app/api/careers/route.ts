@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: "SAS Transition Careers <onboarding@resend.dev>", // Replace with your verified domain
+      from: "SAS Transition Careers <webadmin@sastransition.com>", // Use your verified domain
       to: ["Recruitment@sastransition.com"], // Email address to receive career applications
       subject: `New Career Application: ${tradeLabels[trade] || trade}`,
       html: `

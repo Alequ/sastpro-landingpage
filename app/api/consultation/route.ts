@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: "SAS Transition Consultation Form <onboarding@resend.dev>", // Replace with your verified domain
+      from: "SAS Transition Consultation Form <webadmin@sastransition.com>", 
       to: ["consultation@sastransition.com"], // Email address to receive consultation form submissions
       subject: `New Consultation Request: ${
         enquiryTypeLabels[enquiryType] || enquiryType
