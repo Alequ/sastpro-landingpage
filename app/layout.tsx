@@ -14,8 +14,11 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'SASTPRO ALPHA',
-  description: 'SME',
+  title: {
+    default: 'S.A.S Transition',
+    template: '%s | S.A.S Transition',
+  },
+  description: 'Electrical and mechanical engineering solutions for critical infrastructure projects.',
 }
 
 export default function RootLayout({
