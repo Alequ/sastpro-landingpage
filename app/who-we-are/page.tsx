@@ -653,7 +653,7 @@ export default function WhoWeArePage() {
                         className="text-white font-bold text-lg mb-1"
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
-                        Marilis <span className="text-[#D0B970]">Kulamaa</span>
+                        Marillis <span className="text-[#D0B970]">Kulamaa</span>
                       </h3>
                       <p
                         className="text-gray-300 text-sm"
