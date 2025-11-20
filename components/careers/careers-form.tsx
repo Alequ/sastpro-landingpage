@@ -40,6 +40,12 @@ const careersFormSchema = z.object({
     .max(2000, "Message must be less than 2000 characters")
     .optional()
     .or(z.literal("")),
+  // Honeypot field - should always be empty
+  website: z.string().max(0, "Invalid submission").optional().or(z.literal("")),
+  // GDPR consent checkbox
+  consent: z.boolean().refine((val) => val === true, {
+    message: "You must agree to the privacy policy to submit your application",
+  }),
 });
 
 type CareersFormData = z.infer<typeof careersFormSchema>;
@@ -50,6 +56,8 @@ export default function CareersForm() {
     type: "success" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
+  const [fileError, setFileError] = useState<string>("");
 
   const {
     register,
@@ -60,6 +68,93 @@ export default function CareersForm() {
     resolver: zodResolver(careersFormSchema),
     mode: "onBlur",
   });
+
+  // File upload configuration
+  const MAX_FILE_SIZE = 3 * 1024 * 1024; // 3MB in bytes
+  const MAX_FILES = 1;
+  const ALLOWED_FILE_TYPES = [
+    "application/pdf",
+    "application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  ];
+  const ALLOWED_EXTENSIONS = [".pdf", ".doc", ".docx"];
+
+  // Validate file
+  const validateFile = (file: File): string | null => {
+    // Check file size
+    if (file.size > MAX_FILE_SIZE) {
+      return `${file.name} is too large. Maximum size is 3MB.`;
+    }
+
+    // Check file type by extension
+    const fileExtension = file.name.substring(file.name.lastIndexOf(".")).toLowerCase();
+    if (!ALLOWED_EXTENSIONS.includes(fileExtension)) {
+      return `${file.name} has an invalid file type. Only PDF, DOC, and DOCX files are allowed.`;
+    }
+
+    // Check MIME type
+    if (!ALLOWED_FILE_TYPES.includes(file.type)) {
+      return `${file.name} has an invalid MIME type. Only PDF, DOC, and DOCX files are allowed.`;
+    }
+
+    return null;
+  };
+
+  // Handle file selection
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFileError("");
+    const files = event.target.files;
+
+    if (!files || files.length === 0) return;
+
+    // Check total file count
+    if (selectedFiles.length + files.length > MAX_FILES) {
+      setFileError(`You can only upload up to ${MAX_FILES} files in total.`);
+      return;
+    }
+
+    const newFiles: File[] = [];
+    const errors: string[] = [];
+
+    // Validate each file
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      const error = validateFile(file);
+
+      if (error) {
+        errors.push(error);
+      } else {
+        // Check for duplicate file names
+        const isDuplicate = [...selectedFiles, ...newFiles].some(
+          (existingFile) => existingFile.name === file.name
+        );
+        if (isDuplicate) {
+          errors.push(`${file.name} is already selected.`);
+        } else {
+          newFiles.push(file);
+        }
+      }
+    }
+
+    // Display errors if any
+    if (errors.length > 0) {
+      setFileError(errors.join(" "));
+    }
+
+    // Add valid files to selected files
+    if (newFiles.length > 0) {
+      setSelectedFiles((prev) => [...prev, ...newFiles]);
+    }
+
+    // Reset input value to allow selecting the same file again after removal
+    event.target.value = "";
+  };
+
+  // Remove file from selection
+  const removeFile = (index: number) => {
+    setSelectedFiles((prev) => prev.filter((_, i) => i !== index));
+    setFileError("");
+  };
 
   // Auto-hide success message after 5 seconds
   useEffect(() => {
@@ -73,16 +168,42 @@ export default function CareersForm() {
   }, [submitStatus.type]);
 
   const onSubmit = async (data: CareersFormData) => {
+    // Validate that at least one file is uploaded
+    if (selectedFiles.length === 0) {
+      setFileError("Please upload a file (CV, cover letter, or certifications)");
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: "" });
 
     try {
+      // Create FormData to handle both form fields and files
+      const formData = new FormData();
+
+      // Append form fields
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      if (data.phone) formData.append("phone", data.phone);
+      formData.append("trade", data.trade);
+      formData.append("region", data.region);
+      if (data.location) formData.append("location", data.location);
+      if (data.message) formData.append("message", data.message);
+
+      // Append honeypot field (should be empty)
+      formData.append("website", data.website || "");
+
+      // Append consent (GDPR)
+      formData.append("consent", data.consent.toString());
+
+      // Append files
+      selectedFiles.forEach((file, index) => {
+        formData.append(`files`, file);
+      });
+
       const response = await fetch("/api/careers", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+        body: formData, // Note: Don't set Content-Type header, browser will set it with boundary
       });
 
       const result = await response.json();
@@ -93,8 +214,10 @@ export default function CareersForm() {
           message:
             "Thank you for your application! We'll review it and get back to you soon.",
         });
-        // Reset form
+        // Reset form and files
         reset();
+        setSelectedFiles([]);
+        setFileError("");
       } else {
         setSubmitStatus({
           type: "error",
@@ -423,30 +546,47 @@ export default function CareersForm() {
                 )}
               </div>
 
-              {/* Upload Files Section - TEMPORARILY DISABLED */}
-              {/* <div>
+              {/* Honeypot Field - Hidden from users, catches bots */}
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="website">Website</label>
+                <input
+                  type="text"
+                  id="website"
+                  {...register("website")}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
+              {/* Upload Files Section */}
+              <div>
                 <label
                   className="block text-sm font-medium text-gray-700 mb-3"
                   style={{ fontFamily: "var(--font-montserrat)" }}
                 >
-                  Upload Files
+                  Upload File (CV, Cover Letter, or Certifications) *
                 </label>
                 <div className="border-2 border-dashed border-black p-6 hover:border-[#D0B970] transition-colors">
                   <input
                     type="file"
                     id="files"
                     name="files"
-                    multiple
                     className="hidden"
-                    accept=".pdf,.doc,.docx,.txt"
+                    accept=".pdf,.doc,.docx"
+                    onChange={handleFileChange}
+                    disabled={selectedFiles.length >= MAX_FILES}
                   />
                   <div className="flex justify-start">
                     <label
                       htmlFor="files"
-                      className="cursor-pointer inline-flex items-center px-4 py-2 bg-gray-300 text-black font-bold rounded-full hover:bg-gray-400 transition-colors"
+                      className={`cursor-pointer inline-flex items-center px-4 py-2 ${
+                        selectedFiles.length >= MAX_FILES
+                          ? "bg-gray-200 text-gray-500 cursor-not-allowed"
+                          : "bg-gray-300 text-black hover:bg-gray-400"
+                      } font-bold rounded-full transition-colors`}
                       style={{ fontFamily: "var(--font-montserrat)" }}
                     >
-                      Choose Files
+                      Choose File
                       <ChevronRight
                         className="ml-2 h-4 w-4"
                         strokeWidth={3}
@@ -454,13 +594,135 @@ export default function CareersForm() {
                     </label>
                   </div>
                   <p
-                    className="mt-3 text-sm text-gray-500 text-left"
+                    className="mt-3 text-sm text-gray-600 text-left"
                     style={{ fontFamily: "var(--font-montserrat)" }}
                   >
-                    Upload your CV, cover letter, and certifications
+                    Upload your CV, cover letter, or certifications (PDF, DOC,
+                    DOCX)
                   </p>
+                  <p
+                    className="mt-1 text-xs text-gray-500 text-left"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  >
+                    Required - Maximum 3MB per file
+                  </p>
+
+                  {/* File Error Display */}
+                  {fileError && (
+                    <div
+                      className="mt-3 p-3 bg-red-100 border border-red-300 rounded text-sm text-red-800"
+                      style={{ fontFamily: "var(--font-montserrat)" }}
+                    >
+                      {fileError}
+                    </div>
+                  )}
+
+                  {/* Selected Files Display */}
+                  {selectedFiles.length > 0 && (
+                    <div className="mt-4 space-y-2">
+                      <p
+                        className="text-sm font-medium text-gray-700"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        Selected File:
+                      </p>
+                      {selectedFiles.map((file, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center justify-between p-3 bg-gray-50 border border-gray-300 rounded"
+                        >
+                          <div className="flex items-center space-x-3 flex-1 min-w-0">
+                            <svg
+                              className="h-5 w-5 text-gray-500 flex-shrink-0"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                            <div className="flex-1 min-w-0">
+                              <p
+                                className="text-sm font-medium text-gray-900 truncate"
+                                style={{ fontFamily: "var(--font-montserrat)" }}
+                              >
+                                {file.name}
+                              </p>
+                              <p
+                                className="text-xs text-gray-500"
+                                style={{ fontFamily: "var(--font-montserrat)" }}
+                              >
+                                {(file.size / 1024 / 1024).toFixed(2)} MB
+                              </p>
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => removeFile(index)}
+                            className="ml-4 text-red-600 hover:text-red-800 transition-colors flex-shrink-0"
+                            aria-label={`Remove ${file.name}`}
+                          >
+                            <svg
+                              className="h-5 w-5"
+                              fill="none"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              </div> */}
+              </div>
+
+              {/* GDPR Consent Checkbox */}
+              <div className="pt-4">
+                <div className="flex items-start">
+                  <div className="flex items-center h-5">
+                    <input
+                      type="checkbox"
+                      id="consent"
+                      {...register("consent")}
+                      className="w-4 h-4 border border-gray-300 rounded bg-white focus:ring-2 focus:ring-[#D0B970] text-[#D0B970] cursor-pointer"
+                    />
+                  </div>
+                  <div className="ml-3 text-sm">
+                    <label
+                      htmlFor="consent"
+                      className="text-gray-700 cursor-pointer"
+                      style={{ fontFamily: "var(--font-montserrat)" }}
+                    >
+                      I consent to the processing of my personal data in
+                      accordance with the{" "}
+                      <a
+                        href="/privacy-policy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#D0B970] underline hover:text-[#b8a55e]"
+                      >
+                        Privacy Policy
+                      </a>{" "}
+                      and agree to be contacted regarding my application. *
+                    </label>
+                  </div>
+                </div>
+                {errors.consent && (
+                  <p
+                    className="mt-2 text-sm text-red-600"
+                    style={{ fontFamily: "var(--font-montserrat)" }}
+                  >
+                    {errors.consent.message}
+                  </p>
+                )}
+              </div>
 
               {/* Submit Button */}
               <div className="pt-4 flex justify-end">
