@@ -252,7 +252,7 @@ export default function LatestNewsPage() {
                         Coady, growing up in Banff, Scotland, our partnership
                         with CattleSkate Academy CIC is a meaningful way for us
                         to support local young people and promote wellbeing
-                        through sport. Recently, we've been working with team at
+                        through sport. Recently, we've been working with the team at
                         CattleSkate Academy CIC to deliver introductory
                         skateboarding sessions for young people in Banff as part
                         of the S.A.S Skate Starters Scheme, funded by S.A.S

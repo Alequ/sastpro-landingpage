@@ -421,10 +421,10 @@ export default function ContactForms() {
                             style={{ fontFamily: "var(--font-montserrat)" }}
                           >
                             <a
-                              href="tel:+441224034200"
+                              href="tel:+44 1224 012923"
                               className="hover:text-[#D0B970] transition-colors"
                             >
-                              +44 1224 034200
+                              +44 1224 012923
                             </a>
                           </p>
                         </div>
