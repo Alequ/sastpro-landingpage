@@ -41,17 +41,17 @@ const footerLinks = {
         icon: Mail,
       },
       {
-        label: "Tuleviku Tee 10, Peetri, 75312 Harju Maakond",
+        label: "Estonia: Tuleviku Tee 10, Peetri, 75312 Harju Maakond",
         href: "#",
         icon: MapPin,
       },
       {
-        label: "1 Marischal Square, Aberdeen, AB10 1BL",
+        label: "UK: 1 Marischal Square, Aberdeen, AB10 1BL",
         href: "#",
         icon: MapPin,
       },
       {
-        label: "Rhijnspoorplein 10-38, Amsterdam, 1018 TX, Netherlands",
+        label: "NL: Rhijnspoorplein 10-38, Amsterdam, 1018 TX, Netherlands",
         href: "#",
         icon: MapPin,
       },
