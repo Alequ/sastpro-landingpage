@@ -691,8 +691,8 @@ export default function WhoWeArePage() {
                   </div>
                 </div>
 
-                {/* Third Row - Three members centered */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12 max-w-3xl mx-auto">
+                {/* Third Row - Two members centered */}
+                <div className="grid grid-cols-2 gap-8 lg:gap-12 max-w-2xl mx-auto">
                   <div className="text-center flex flex-col items-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
                       <Image
@@ -741,32 +741,6 @@ export default function WhoWeArePage() {
                         style={{ fontFamily: "var(--font-montserrat)" }}
                       >
                         Systems & Software Manager
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="text-center flex flex-col items-center">
-                    <div className="relative w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4">
-                      <Image
-                        src="/who-we-are_2/TEAM/astrid.png"
-                        alt="Team Member"
-                        fill
-                        sizes="160px"
-                        className="object-cover rounded-full"
-                      />
-                    </div>
-                    <div className="min-h-[4rem] flex flex-col justify-start">
-                      <h3
-                        className="text-white font-bold text-lg mb-1"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        Astrid<span className="text-[#D0B970]"> Linder</span>
-                      </h3>
-                      <p
-                        className="text-gray-300 text-sm"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        PA / Business Administrator
                       </p>
                     </div>
                   </div>
